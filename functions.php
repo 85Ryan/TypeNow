@@ -224,3 +224,14 @@ function typenow_content_image_sizes_attr( $sizes, $size ) {
     return $sizes;
 }
 add_filter( 'wp_calculate_image_sizes', 'typenow_content_image_sizes_attr', 10, 2 );
+
+/**
+ * Filter the `sizes` value in the header image markup.
+ */
+function typenow_header_image_tag ( $html, $header, $attr ) {
+	if ( isset( $attr['sizes'] ) ) {
+		$html = str_replace( $attr['sizes'], '100vw', $html );
+	}
+	return $html;
+}
+add_filter( 'get_header_image_tag', 'typenow_header_image_tag', 10, 3 );
