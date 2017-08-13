@@ -66,6 +66,68 @@ function typenow_setup() {
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
     
+    // Customize the visual editor to resemble the theme style.
+    add_editor_style( 'assets/css/editor-style.css' );
     
+    // Define and register starter content on new sites.
+    $starter_content = array(
+        
+        // Add custom thumbnail to specify the core-defined pages.
+        'posts' => array(
+            'home',
+            'about' => array(
+                'thumbnail' => '{{image-sandwich}}',
+            ),
+            'content' => array(
+                'thumbnail' => '{{image-espresso}}',
+            ),
+            'archive' => array(
+                'thumbnail' => '{{image-coffee}}',
+            ),
+        ),
+        
+        // Creat the custom image attachments used as post thumbnails for pages.
+        'attachments' => array(
+			'image-espresso' => array(
+				'post_title' => _x( 'Espresso', 'Theme starter content', 'typenow' ),
+				'file' => 'assets/images/espresso.jpg',
+			),
+			'image-sandwich' => array(
+				'post_title' => _x( 'Sandwich', 'Theme starter content', 'typenow' ),
+				'file' => 'assets/images/sandwich.jpg',
+			),
+			'image-coffee' => array(
+				'post_title' => _x( 'Coffee', 'Theme starter content', 'typenow' ),
+				'file' => 'assets/images/coffee.jpg',
+			),
+        ),
+        
+        // Set up nav menus.
+        'nav-menus' => array(
+            'top' => array(
+                'name' => __( 'Top Menu', 'typenow' ),
+                'items' => array(
+                    'link_home',
+                    'page_about',
+                    'page_archive',
+                    'page_contact',
+                ),
+            ),
+            
+            'social' => array(
+                'name' => __( 'Social Links Menu', 'typenow' ),
+                'items' => array(
+                    'link_weibo',
+                    'link_twitter',
+                    'link_facebook',
+                    'link_instagram',
+                    'link_email',
+                ),
+            ),
+        ),
+    );
+    $starter_content = apply_filters( 'typenow_starter_content', $starter_content );
+    
+    add_theme_support( 'starter-content', $starter_content );
 }
-add_action( 'after_setup_theme', 'typenow_setup' );
+add_action( 'after_setup_theme', 'typenow_setup' ); 
