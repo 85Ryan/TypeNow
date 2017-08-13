@@ -148,3 +148,13 @@ function typenow_excerpt_more( $link ) {
     return ' &hellip; ' . $link;
 }
 add_filter( 'excerpt_more', 'typenow_excerpt_more' );
+
+/**
+ * Handles JavaScript detection.
+ * Adds a `js` class to the root `<html>` element when JavaScript is detected.
+ */
+function typenow_javascript_detection() {
+    
+    echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>\n"; 
+}
+add_action( 'wp_head', 'typenow_javascript_detection', 0 );
