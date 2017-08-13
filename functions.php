@@ -131,3 +131,20 @@ function typenow_setup() {
     add_theme_support( 'starter-content', $starter_content );
 }
 add_action( 'after_setup_theme', 'typenow_setup' ); 
+
+/**
+ * Replaces "[...]" with a 'Continue Reading' link.
+ */
+function typenow_excerpt_more( $link ) {
+    if ( is_admin() ) {
+        return $link;
+    }
+    
+    $link = sprintf( 
+        '<p class="link-more"><a href="%1$s" class="more-link">%2$s</a></p>', 
+        esc_url( get_permalink( get_the_ID() ) ),
+        sprintf( __( 'Continue Reading<span class="screen-reader-text"> "%s"</span>', 'typenow' ), get_the_title( get_the_ID() ) )
+    );
+    return ' &hellip; ' . $link;
+}
+add_filter( 'excerpt_more', 'typenow_excerpt_more' );
