@@ -158,3 +158,13 @@ function typenow_javascript_detection() {
     echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>\n"; 
 }
 add_action( 'wp_head', 'typenow_javascript_detection', 0 );
+
+/**
+ * Add a pingback url auto-discovery header for singularly identifiable articles.
+ */
+function typenow_pingback_header() {
+	if ( is_singular() && pings_open() ) {
+		printf( '<link rel="pingback" href="%s">' . "\n", get_bloginfo( 'pingback_url' ) );
+	}
+}
+add_action( 'wp_head', 'typenow_pingback_header' );
