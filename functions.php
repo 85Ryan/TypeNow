@@ -205,3 +205,22 @@ function typenow_scripts() {
     }
 }
 add_action( 'wp_enqueue_scripts', 'typenow_scripts' );
+
+/**
+ * Add custom image sizes attribute to enhance responsive image functionality for content images.
+ */
+function typenow_content_image_sizes_attr( $sizes, $size ) {
+    $width = $size[0];
+    
+    if ( 740 <= $width ) {
+        $sizes = '(max-width: 706px) 89vw, (max-width: 767px) 82vw, 740px';
+    }
+    
+    if ( is_archive() || is_search() || is_home() || is_page() ) {
+        if ( ! ( is_page() && 'one-column' === get_theme_mod( 'page_options' ) ) && 767 <= $width ) {
+            $sizes = '(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px';
+        }
+    }
+    return $sizes;
+}
+add_filter( 'wp_calculate_image_sizes', 'typenow_content_image_sizes_attr', 10, 2 );
