@@ -235,3 +235,17 @@ function typenow_header_image_tag ( $html, $header, $attr ) {
 	return $html;
 }
 add_filter( 'get_header_image_tag', 'typenow_header_image_tag', 10, 3 );
+
+/**
+ * Add custom image sizes attribute to enhance responsive image functionality for post thumbnails.
+ */
+function typenow_post_thumbnail_sizes_attr ( $attr, $attachment, $size ) {
+	if ( is_archive() || is_search() || is_home() ) {
+		$attr['sizes'] = '(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px';
+	} else {
+		$attr['sizes'] = '100vw';
+	}
+
+	return $attr;
+}
+add_filter( 'wp_get_attachment_image_attributes', 'typenow_post_thumbnail_sizes_attr', 10, 3 );
