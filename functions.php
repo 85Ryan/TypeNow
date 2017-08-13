@@ -249,3 +249,17 @@ function typenow_post_thumbnail_sizes_attr ( $attr, $attachment, $size ) {
 	return $attr;
 }
 add_filter( 'wp_get_attachment_image_attributes', 'typenow_post_thumbnail_sizes_attr', 10, 3 );
+
+/** 
+ * Include template file.
+ */
+// Implement the Custom Header feature.
+require get_parent_theme_file_path( '/inc/custom-header.php' );
+// Custom template tags for this theme.
+require get_parent_theme_file_path( '/inc/template-tags.php' );
+// Additional features to allow styling of the templates.
+require get_parent_theme_file_path( '/inc/template-functions.php' );
+// Customizer additions.
+require get_parent_theme_file_path( '/inc/customizer.php' );
+// SVG icons functions and filters.
+require get_parent_theme_file_path( '/inc/icon-functions.php' );
