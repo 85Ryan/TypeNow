@@ -168,3 +168,40 @@ function typenow_pingback_header() {
 	}
 }
 add_action( 'wp_head', 'typenow_pingback_header' );
+
+/**
+ * Enqueue scripts and styles.
+ */
+function typenow_scripts() {
+    
+    // Theme stylesheet.
+    wp_enqueue_style( 'typenow-style', get_stylesheet_uri() );
+    
+    // Load the html5 shiv.
+    wp_enqueue_script( 'html5', get_theme_file_uri( '/assets/js/html5.js' ), array(), '3.7.3' );
+    wp_script_add_data( 'html5', 'conditional', 'lt IE 9' );
+    
+    wp_enqueue_script( 'typenow-skip-link-focus-fix', get_theme_file_uri( '/assets/js/skip-link-focus-fix.js' ), array(), '1.0', true );
+    
+    $typenow_l10n = array(
+        'quote' => typenow_get_svg( array( 'icon' => 'quote-right' ) ),
+    );
+    
+    if ( has_nav_menu( 'top' ) ) {
+        wp_enqueue_script( 'typenow-navigation', get_theme_file_uri( '/assets/js/navigation.js' ), array( 'jquery' ), '1.0', true );
+        $typenow_l10n['expand']         = __( 'Expand child menu', 'typenow' );
+        $typenow_l10n['collapse']       = __( 'Collapse child menu', 'typenow' );
+        $typenow_l10n['icon']           = typenow_get_svg( array( 'icon' => 'angle-down', 'fallback' => true ) );
+    }
+    
+    wp_enqueue_script( 'typenow-global', get_theme_file_uri( '/assets/js/global.js' ), array( 'jquery' ), '1.0', true );
+    
+    wp_enqueue_script( 'jquery-scrollto', get_theme_file_uri( '/assets/js/jquery.scrollTo.js' ), array( 'jquery' ), '2.1.2', true );
+    
+    wp_localize_script( 'typenow-skip-link-focus-fix', 'typenowScreenReaderText', $typenow_l10n );
+    
+    if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+        wp_enqueue_script( 'comment-reply' );
+    }
+}
+add_action( 'wp_enqueue_scripts', 'typenow_scripts' );
