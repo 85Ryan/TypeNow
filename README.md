@@ -1,2 +1,3 @@
 # TypeNow
-A Theme for WordPress https://iiiryan.com
+
+这就是一个 WordPress 主题。
