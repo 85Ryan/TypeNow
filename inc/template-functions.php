@@ -14,7 +14,7 @@ function typenow_body_classes( $classes ) {
     
     // Add class of hfeed to non-singular pages.
     if ( ! is_singular() ) {
-        $classes[] 'hfeed';
+        $classes[] = 'hfeed';
     }
     
     // Add class if we're viewing the Customizer for easier styling of theme options.
