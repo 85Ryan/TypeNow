@@ -42,10 +42,6 @@
                 <header class="page-header">
                     <h1 class="page-title"><?php single_post_title(); ?></h1>
                 </header>
-                <?php else : ?>
-                <header class="page-header">
-                    <h2 class="page-title"><?php _e( 'Posts', 'typenow' ); ?></h2>
-                </header>
                 <?php endif; ?>
                 
                 <div id="primary" class="content-area">
