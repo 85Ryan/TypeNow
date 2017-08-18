@@ -393,6 +393,7 @@ h6 {
     line-height: 1.4;
     margin: 0 0 0.75em;
     padding: 1.5em -0px 0;
+    text-transform: capitalize;
 }
 
 h1:first-child,
@@ -414,33 +415,31 @@ h1,
 h2 {
 	font-size: 20px;
 	font-size: 1.25rem;
-	font-weight: 300;
+	font-weight: 500;
 }
 
 h3 {
     font-size: 18px;
     font-size: 1.125rem;
-    font-weight: 300;
+    font-weight: 500;
 }
 
 h4 {
-    font-size: 16px;
-	font-size: 1rem;
-	font-weight: 800;
+    font-size: 17px;
+	font-size: 1.063rem;
+	font-weight: 500;
 }
 
 h5 {
-	font-size: 13px;
-	font-size: 0.8125rem;
-	font-weight: 800;
-	letter-spacing: 0.15em;
-	text-transform: uppercase;
+	font-size: 16px;
+	font-size: 1rem;
+	font-weight: 500;
 }
 
 h6 {
 	font-size: 15px;
 	font-size: 0.9375rem;
-	font-weight: 800;
+	font-weight: 500;
 }
 
 p {
@@ -457,8 +456,8 @@ i {
 
 blockquote {
 	color: #666;
-	font-size: 18px;
-	font-size: 1.125rem;
+	font-size: 14px;
+	font-size: 0.875rem;
 	font-style: italic;
 	line-height: 1.7;
 	margin: 0;
@@ -478,24 +477,32 @@ address {
 }
 
 pre {
-	background: #eee;
-	font-family: "Courier 10 Pitch", Courier, monospace;
-	font-size: 15px;
-	font-size: 0.9375rem;
-	line-height: 1.6;
+	background: #f7f7f7;
+	font-family: Monaco, Menlo, "Courier 10 Pitch", Courier, monospace;
+	font-size: 13px;
+	font-size: 0.813rem;
+	line-height: 1.4;
 	margin-bottom: 1.6em;
 	max-width: 100%;
 	overflow: auto;
-	padding: 1.6em;
+	padding: 1em;
+    border-radius: 3px;
+    tab-size: 4;
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
 }
 
 code,
 kbd,
 tt,
 var {
-	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
-	font-size: 15px;
-	font-size: 0.9375rem;
+	font-family: Monaco, Menlo, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+	font-size: 13px;
+	font-size: 0.813rem;
+    margin: 0 2px;
+    padding: 2px 4px;
+    border-radius: 3px;
+    background-color: #f7f7f7;
 }
 
 abbr,
@@ -507,6 +514,9 @@ acronym {
 mark,
 ins {
 	background: #eee;
+    border-radius: 2px;
+    margin: 0 1px;
+    padding: 1px 2px;
 	text-decoration: none;
 }
 
