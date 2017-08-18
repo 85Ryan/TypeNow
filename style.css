@@ -709,3 +709,73 @@ hr {
 	height: 1px;
 	margin-bottom: 1.5em;
 }
+
+/*--------------------------------------------------------------
+8.0 Lists
+--------------------------------------------------------------*/
+
+ul,
+ol {
+	margin: 5px 0;
+    padding-left: 30px;
+    vertical-align: baseline
+}
+
+ul {
+    list-style: circle;
+}
+
+
+ol {
+	list-style: decimal;
+}
+
+li > ul {
+	margin-bottom: 0;
+	margin-left: 1.5em;
+    padding-left: 10px;
+    list-style: circle;
+}
+
+li > ol {
+	margin-bottom: 0;
+	margin-left: 1.5em;
+    padding-left: 10px;
+}
+
+dt {
+	font-weight: 500;
+}
+
+dd {
+	margin: 0 1.5em 1.5em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
