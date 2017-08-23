@@ -70,7 +70,7 @@ function typenow_entry_footer() {
                     echo '</span>';
                 }
             }
-            typnow_edit_link();
+            typenow_edit_link();
         echo '</footer> <!-- .entry-footer -->';
     }
     
