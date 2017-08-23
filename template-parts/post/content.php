@@ -43,7 +43,7 @@
     <div class="entry-content">
         <?php 
         the_content( sprintf(
-			__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'typenow' ),
+			__( 'Continue Reading<span class="screen-reader-text"> "%s"</span>', 'typenow' ),
 			get_the_title()
         ) );
         
@@ -55,7 +55,11 @@
 		) );
         ?>
     </div><!-- .entry-content -->
-    <?php if ( is_single() ) {
+    
+    <?php
+    if ( is_single() ) {
         typenow_entry_footer();
-    } ?>
+    }
+    ?>
+    
 </article>
