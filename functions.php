@@ -54,6 +54,7 @@ function typenow_setup() {
         'image',
         'quote',
         'link',
+		'status',
     ) );
     
     // Add them support for Custom Logo.
