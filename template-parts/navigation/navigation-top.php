@@ -19,7 +19,7 @@
     
     <a class="menu-search-icon" href="<?php echo wp_login_url( home_url() ); ?>"><?php echo typenow_get_svg( array( 'icon' => 'search' ) ); ?><span class="screen-reader-text"><?php _e( 'Search', 'typenow' ); ?></span></a>
 
-    <?php if ( is_user_logged_in() ) : ?>
+    <?php if ( ! is_user_logged_in() ) : ?>
         <a class="menu-login-icon" href="<?php echo wp_login_url( home_url() ); ?>"><?php echo typenow_get_svg( array( 'icon' => 'login' ) ); ?><span class="screen-reader-text"><?php _e( 'Login', 'typenow' ); ?></span></a>
     <?php endif; ?>
 
