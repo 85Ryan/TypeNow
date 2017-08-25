@@ -17,6 +17,10 @@
         'menu_id'   => 'top-menu',
     ) ); ?>
     
+    <?php if ( is_user_logged_in() ) : ?>
+        <a class="meta-login-icon" href="<?php echo wp_login_url( home_url() ); ?>"><?php echo typenow_get_svg( array( 'icon' => 'login' ) ); ?><span class="screen-reader-text"><?php _e( 'Login', 'typenow' ); ?></span></a>
+    <?php endif; ?>
+
     <?php if ( ( typenow_is_frontpage() || ( is_home() && is_front_page() ) ) && has_custom_header() ) : ?>
         <a href="#content" class="menu-scroll-down"><?php echo typenow_get_svg( array( 'icon' => 'arrow-right' ) ); ?><span class="screen-reader-text"><?php _e( 'Scroll Down to Content', 'typenow' ); ?></span></a>
     <?php endif; ?>
