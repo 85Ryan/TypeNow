@@ -1128,7 +1128,9 @@ a:hover .nav-title,
 
 /* Scroll down arrow */
 
-.site-header .menu-scroll-down {
+.site-header .menu-scroll-down,
+.site-header .menu-search-icon,
+.site-header .menu-login-icon {
 	display: none;
 }
 
