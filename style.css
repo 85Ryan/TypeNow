@@ -2735,12 +2735,29 @@ object {
     
     /* Scroll down arrow */
 
-	.site-header .menu-scroll-down {
+	.site-header .menu-scroll-down,
+    .site-header .menu-search-icon,
+    .site-header .menu-login-icon {
 		display: block;
 		padding: 1em;
 		position: absolute;
-		right: 0;
 	}
+
+    .site-header .menu-scroll-down {
+        right: -50px;
+    }
+
+    .site-header .menu-login-icon {
+        right: 0;
+    }
+
+    .site-header .menu-search-icon {
+        right: 50px;
+    }
+
+    .logged-in .site-header .menu-search-icon {
+        right: 0;
+    }
 
 	.site-header .menu-scroll-down .icon {
 		-webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
@@ -2748,12 +2765,16 @@ object {
 		transform: rotate(90deg);
 	}
 
-	.site-header .menu-scroll-down {
+	.site-header .menu-scroll-down,
+    .site-header .menu-search-icon,
+    .site-header .menu-login-icon{
 		color: #fff;
 		top: 2em;
 	}
 
-	.site-header .navigation-top .menu-scroll-down {
+	.site-header .navigation-top .menu-scroll-down,
+    .site-header .navigation-top .menu-search-icon,
+    .site-header .navigation-top .menu-login-icon {
 		color: #767676;
 		top: 0.7em;
 	}
@@ -2762,7 +2783,9 @@ object {
 		outline: thin dotted;
 	}
 
-	.menu-scroll-down .icon {
+	.menu-scroll-down .icon,
+    .menu-search-icon .icon,
+    .menu-login-icon .icon {
 		height: 18px;
 		width: 18px;
 	}
