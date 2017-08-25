@@ -30,47 +30,27 @@ function typenow_custom_header_setup() {
 add_action( 'after_setup_theme', 'typenow_custom_header_setup' );
 
 if ( ! function_exists( 'typenow_header_style' ) ) :
-// Styles the header image and text displayed on the blog.
+// Styles the text displayed on the blog.
 function typenow_header_style() {
-    $header_text_color = get_header_textcolor();
-    if ( get_theme_support( 'custom-header', 'default-text-color' ) === $header_text_color ) {
-        return;
-    }
 
     ?>
     <style id="typenow-custom-header-styles" type="text/css">
     <?php
-        if ( 'blank' === $header_text_color ) :
+        if ( false === get_theme_mod( 'tn_display_blogname' ) ) {
     ?>
-        .site-title,
+        .site-title {
+            position: absolute;
+			clip: rect(1px, 1px, 1px, 1px);
+        }
+    <?php } ?>
+    <?php
+        if ( false === get_theme_mod( 'tn_display_blogdes' ) ) {
+    ?>
         .site-description {
             position: absolute;
-            clip: rect(1px, 1px, 1px, 1px);
+			clip: rect(1px, 1px, 1px, 1px);
         }
-    <?php
-        else :
-    ?>
-        .site-title a,
-		.colors-dark .site-title a,
-		.colors-custom .site-title a,
-		body.has-header-image .site-title a,
-		body.has-header-video .site-title a,
-		body.has-header-image.colors-dark .site-title a,
-		body.has-header-video.colors-dark .site-title a,
-		body.has-header-image.colors-custom .site-title a,
-		body.has-header-video.colors-custom .site-title a,
-		.site-description,
-		.colors-dark .site-description,
-		.colors-custom .site-description,
-		body.has-header-image .site-description,
-		body.has-header-video .site-description,
-		body.has-header-image.colors-dark .site-description,
-		body.has-header-video.colors-dark .site-description,
-		body.has-header-image.colors-custom .site-description,
-        body.has-header-video.colors-custom .site-description {
-            color: #<?php echo esc_attr( $header_text_color ); ?>;
-        }
-        <?php endif; ?>
+    <?php } ?>
     </style>
     <?php
 }
