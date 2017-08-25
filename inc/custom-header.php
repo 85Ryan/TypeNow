@@ -16,6 +16,7 @@ function typenow_custom_header_setup() {
         'flex-height'       => true,
         'video'             => false,
         'wp-head-callback'  => 'typenow_header_style',
+        'header-text'       => false,
     ) ) );
     
     register_default_headers( array(
