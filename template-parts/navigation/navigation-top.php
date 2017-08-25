@@ -17,10 +17,10 @@
         'menu_id'   => 'top-menu',
     ) ); ?>
     
-    <a class="meta-search-icon" href="<?php echo wp_login_url( home_url() ); ?>"><?php echo typenow_get_svg( array( 'icon' => 'search' ) ); ?><span class="screen-reader-text"><?php _e( 'Search', 'typenow' ); ?></span></a>
+    <a class="menu-search-icon" href="<?php echo wp_login_url( home_url() ); ?>"><?php echo typenow_get_svg( array( 'icon' => 'search' ) ); ?><span class="screen-reader-text"><?php _e( 'Search', 'typenow' ); ?></span></a>
 
     <?php if ( is_user_logged_in() ) : ?>
-        <a class="meta-login-icon" href="<?php echo wp_login_url( home_url() ); ?>"><?php echo typenow_get_svg( array( 'icon' => 'login' ) ); ?><span class="screen-reader-text"><?php _e( 'Login', 'typenow' ); ?></span></a>
+        <a class="menu-login-icon" href="<?php echo wp_login_url( home_url() ); ?>"><?php echo typenow_get_svg( array( 'icon' => 'login' ) ); ?><span class="screen-reader-text"><?php _e( 'Login', 'typenow' ); ?></span></a>
     <?php endif; ?>
 
     <?php if ( ( typenow_is_frontpage() || ( is_home() && is_front_page() ) ) && has_custom_header() ) : ?>
