@@ -33,7 +33,11 @@ function typenow_body_classes( $classes ) {
     }
     
     // Add class if the site title and tagline is hidden.
-    if ( 'blank' === get_header_textcolor() ) {
+    if ( ( false === get_theme_mod( 'typenow_display_title' ) ) && ( true === get_theme_mod( 'typenow_display_tagline' ) ) ) {
+        $classes[] = 'title-hidden';
+    } elseif ( ( true === get_theme_mod( 'typenow_display_title' ) ) && ( false === get_theme_mod( 'typenow_display_tagline' ) ) ) {
+        $classes[] = 'tagline-hidden';
+    } elseif ( ( false === get_theme_mod( 'typenow_display_title' ) ) && ( false === get_theme_mod( 'typenow_display_tagline' ) ) ) {
         $classes[] = 'title-tagline-hidden';
     }
     
