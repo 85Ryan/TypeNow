@@ -36,7 +36,7 @@ function typenow_header_style() {
     ?>
     <style id="typenow-custom-header-styles" type="text/css">
     <?php
-        if ( false === get_theme_mod( 'tn_display_blogname' ) ) {
+        if ( false === get_theme_mod( 'typenow_display_blogname' ) ) {
     ?>
         .site-title {
             position: absolute;
@@ -44,7 +44,7 @@ function typenow_header_style() {
         }
     <?php } ?>
     <?php
-        if ( false === get_theme_mod( 'tn_display_blogdes' ) ) {
+        if ( false === get_theme_mod( 'typenow_display_blogdes' ) ) {
     ?>
         .site-description {
             position: absolute;
