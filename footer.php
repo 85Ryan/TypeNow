@@ -26,5 +26,7 @@
     </div><!-- .site-content-contain -->
 </div><!-- #page -->
 <?php wp_footer(); ?>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 </body>
 </html>
