@@ -189,10 +189,7 @@ function typenow_scripts() {
     );
     
     if ( has_nav_menu( 'top' ) ) {
-        wp_enqueue_script( 'typenow-navigation', get_theme_file_uri( '/assets/js/navigation.js' ), array( 'jquery' ), '1.0', true );
-        $typenow_l10n['expand']         = __( 'Expand child menu', 'typenow' );
-        $typenow_l10n['collapse']       = __( 'Collapse child menu', 'typenow' );
-        $typenow_l10n['icon']           = typenow_get_svg( array( 'icon' => 'angle-down', 'fallback' => true ) );
+        wp_enqueue_script( 'typenow-script', get_theme_file_uri( '/assets/js/functions.js' ), array( 'jquery' ), '1.0', true );
     }
     
     wp_enqueue_script( 'typenow-global', get_theme_file_uri( '/assets/js/global.js' ), array( 'jquery' ), '1.0', true );
