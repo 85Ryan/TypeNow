@@ -1,35 +1,39 @@
 <?php 
 /**
  * Template part for displaying posts.
+ *
+ * @package:    TypeNow
+ * @since:      1.0
+ * @version:    1.0
  */
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <?php 
     if ( is_sticky() && is_home() ) :
-        echo typenow_get_svg( array( 'icon' => 'thumb-tack' ) );
+        echo typenow_get_svg( array( 'icon' => 'sticky' ) );
     endif;
     ?>
     <header class="entry-header">
         <?php 
+		if ( is_single() ) {
+			the_title( '<h1 class="entry-title">', '</h1>' );
+		} else {
+			the_title( '<h1 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h1>' );
+		};
+
         if ( 'post' === get_post_type() ) {
             echo '<div class="entry-meta">';
                 if ( is_single() ) {
                     typenow_posted_on();
                 } else {
-                    echo typenow_time_link();
+                    typenow_posted_on();
                     typenow_edit_link();
                 };
             echo '</div><!-- .entry-meta -->';
-        };
-
-		if ( is_single() ) {
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		} else {
-			the_title( '<h1 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h1>' );
-		}
-
+        }
         ?>
+        <hr class="entry-header-separator" />
     </header><!-- .entry-header -->
     
     <?php if ( '' !== get_the_post_thumbnail() && ! is_single() ) : ?>
