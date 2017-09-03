@@ -1,6 +1,10 @@
 <?php
 /**
  * SVG icons related functions and filters.
+ *
+ * @package:    TypeNow
+ * @since:      1.0
+ * @version:    1.0
  */
 
 
@@ -101,21 +105,6 @@ function typenow_nav_menu_social_icons( $item_output, $item, $depth, $args ) {
 }
 
 add_filter( 'walker_nav_menu_start_el', 'typenow_nav_menu_social_icons', 10, 4 );
-
-/**
- * Add dropdown icon if menu item has children.
- */
-function typenow_dropdown_icon_to_menu_link( $title, $item, $args, $depth ) {
-    if ( 'top' === $args->theme_location ) {
-        foreach ( $item->classes as $value ) {
-            if ( 'menu-item-has-children' === $value || 'page_item_has_children' === $value ) {
-                $title = $title . typenow_get_svg( array( 'icon' => 'angle-down' ) );
-            }
-        }
-    }
-    return $title;
-}
-add_filter( 'nav_menu_item_title', 'typenow_dropdown_icon_to_menu_link', 10, 4 );
 
 /**
  * Returns an array of supported social links (URL and icon name).
