@@ -7,15 +7,26 @@
  */
 
 (function( $ ) {
-    /**
-	 * Enables menu toggle for small screens.
-	 */
-    $(function() {
-		$('.menu-toggle').click(function(){
-			if($('.nav-menu').is(':hidden')){
-				$('.nav-menu').slideDown();}
-			else{$('.nav-menu').slideUp();}
-			$('#touch-menu').toggleClass( 'open' );
-		});
-	});
+    var masthead, menuToggle, siteNavContain, siteNavigation;
+
+    masthead       = $( '#masthead' );
+    menuToggle     = masthead.find( '.menu-toggle' );
+    siteNavContain = masthead.find( '.main-navigation' );
+
+    // Enables menu toggle for small screens.
+    (function() {
+
+		// Return early if menuToggle is missing.
+		if ( ! menuToggle.length ) {
+			return;
+		}
+
+        // Add an initial value for the attribute.
+		menuToggle.attr( 'aria-expanded', 'false' );
+
+        menuToggle.on( 'click.typenow', function() {
+			siteNavContain.toggleClass( 'toggled-on' );
+            $( this ).attr( 'aria-expanded', siteNavContain.hasClass( 'toggled-on' ) );
+        });
+	})();
 })( jQuery );
