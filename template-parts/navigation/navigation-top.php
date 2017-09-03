@@ -1,6 +1,10 @@
 <?php 
 /**
  * Display top navigation.
+ *
+ * @package:    TypeNow
+ * @since:      1.0
+ * @version:    1.0
  */
 ?>
 <nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'typenow' ); ?>">
@@ -15,6 +19,7 @@
     <?php wp_nav_menu( array(
         'theme_location' => 'top',
         'menu_id'   => 'top-menu',
+        'depth'     => 1,
     ) ); ?>
     
     <a class="menu-search-icon" href="<?php echo wp_login_url( home_url() ); ?>"><?php echo typenow_get_svg( array( 'icon' => 'search' ) ); ?><span class="screen-reader-text"><?php _e( 'Search', 'typenow' ); ?></span></a>
