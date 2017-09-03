@@ -1,6 +1,10 @@
 <?php
 /**
  * Custom template tags for this theme.
+ *
+ * @package:    TypeNow
+ * @since:      1.0
+ * @version:    1.0
  */
 
 /**
@@ -13,7 +17,7 @@ function typenow_posted_on() {
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . get_the_author() . '</a></span>'
     );
     
-    echo '<span class="posted-on">' . typenow_time_link() . '</span><span class="byline"> ' . $byline . '</span>';
+    echo '<span class="posted-on">' . _e( 'Posted on ' , 'typenow' ) . typenow_time_link() . '</span><span class="byline"> ' . $byline . '</span>';
 }
 endif;
 
@@ -29,9 +33,9 @@ function typenow_time_link() {
     
     $time_string = sprintf( $time_string,
         get_the_date( DATE_W3C ),
-        get_the_date(),
+        date('M jS, Y', get_the_time('U')),
 		get_the_modified_date( DATE_W3C ),
-		get_the_modified_date()
+		date('M jS, Y', get_the_modified_time('U'))
     );
     
     return sprintf(
