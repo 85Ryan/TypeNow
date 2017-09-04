@@ -1,11 +1,15 @@
 <?php 
 /**
  * Display header image.
+ *
+ * @package:    TypeNow
+ * @since:      1.0
+ * @version:    1.0
  */
 
 ?>
 <div class="custom-header">
-    <div class="custom-header-media">
+    <div class="custom-header-image">
         <?php the_custom_header_markup(); ?>
     </div><!-- .custom-header-media -->
     <div class="site-branding">
