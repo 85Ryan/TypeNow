@@ -47,41 +47,6 @@ function typenow_time_link() {
 endif;
 
 /**
- * Prints HTML with meta information for the categories, tags and comments.
- */
-if ( ! function_exists( 'typenow_entry_footer' ) ) :
-function typenow_entry_footer() {
-    // Translators: used between list items, there is a space after the comma.
-    $separate_meta = __( ', ', 'typenow' );
-    
-    // Get Categories for posts.
-    $categories_list = get_the_category_list( $separate_meta );
-    
-    // Get Tags for posts.
-    $tags_list = get_the_tag_list( '', $separate_meta );
-    
-    if ( ( ( typenow_categorized_blog() && $categories_list ) || $tags_list ) || get_edit_post_link() ) {
-        echo '<footer class="entry-footer">';
-            if ( 'post' === get_post_type() ) {
-                if ( ( $categories_list && typenow_categorized_blog() ) || $tags_list ) {
-                    echo '<span class="cat-tags-links">';
-                    if ( $categories_list && typenow_categorized_blog() ) {
-                        echo '<span class="cat-links">' . typenow_get_svg( array( 'icon' => 'folder-open' ) ) . '<span class="screen-reader-text">' . __( 'Categories', 'typenow' ) . '</span>' . $categories_list . '</span>';
-                    }
-                    if ( $tags_list ) {
-                        echo '<span class="tags-links">' . typenow_get_svg( array( 'icon' => 'hashtag' ) ) . '<span class="screen-reader-text">' . __( 'Tags', 'typenow' ) . '</span>' . $tags_list . '</span>';
-                    }
-                    echo '</span>';
-                }
-            }
-            typenow_edit_link();
-        echo '</footer> <!-- .entry-footer -->';
-    }
-    
-}
-endif;
-
-/**
  * Returns an accessibility-friendly link to edit a post or page.
  */
 if ( ! function_exists( 'typenow_edit_link' ) ) :
