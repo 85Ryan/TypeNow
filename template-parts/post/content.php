@@ -52,18 +52,22 @@
         ) );
         
         wp_link_pages( array(
-			'before'      => '<div class="page-links">' . __( 'Pages:', 'typenow' ),
-			'after'       => '</div>',
-			'link_before' => '<span class="page-number">',
-			'link_after'  => '</span>',
+			'before'             => '<div class="page-links">',
+			'after'              => '</div>',
+            'next_or_number'     => 'next',
+			'link_before'        => '',
+			'link_after'         => '',
 		) );
         ?>
     </div><!-- .entry-content -->
     
+    <div class="entry-footer">
     <?php
-    if ( is_single() ) {
-        typenow_entry_footer();
-    }
-    ?>
+    if ( is_single() && get_the_tag_list() ) : ?>
+        <span class="tags-links">
+            <?php echo get_the_tag_list('<ul><li>','</li><li>','</li></ul>'); ?>
+        </span>
+    <?php endif; ?>
+    </div><!-- .entry-footer -->
     
 </article>
