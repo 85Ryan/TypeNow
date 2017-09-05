@@ -201,8 +201,23 @@ function typenow_scripts() {
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
         wp_enqueue_script( 'comment-reply' );
     }
+
+    // Highlight.js
+    wp_enqueue_script( 'bootcdn-highlight', get_theme_file_uri( '/assets/js/highlight.min.js' ), array( 'jquery' ), '9.12.0', true );
+
+    // Highlight.js xcode stylesheet.
+    wp_enqueue_style( 'highlight-style-xcode', get_theme_file_uri( '/assets/css/highlight.js.css' ), array( 'typenow-style' ), '9.12.0' );
 }
 add_action( 'wp_enqueue_scripts', 'typenow_scripts' );
+
+/**
+ * Load Highlight.js.
+ */
+function typenow_highlighting_load() {
+    echo "<script>hljs.initHighlightingOnLoad();</script>\n";
+}
+add_action( 'wp_footer', 'typenow_highlighting_load',99 );
+
 
 /**
  * Add custom image sizes attribute to enhance responsive image functionality for content images.
