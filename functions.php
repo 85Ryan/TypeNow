@@ -2,6 +2,9 @@
 /**
  * Typenow functions and definitions.
  *
+ * @package:    TypeNow
+ * @since:      1.0
+ * @version:    1.0
  */
 
 /**
@@ -304,25 +307,27 @@ function typenow_related_post( $post_id ) {
 /**
  * Get copyright time.
  */
-function typenow_copyright_time() {
+function typenow_copyright() {
     global $wpdb;
+    $url = home_url( '/' );
+    $copyname = get_bloginfo('name');
     $first = $wpdb -> get_results("
         SELECT user_registered
         FROM   $wpdb->users
         ORDER BY  ID ASC
         LIMIT 0,1
     ");
-    $output = '';
+    $copyright = '';
     $current = date( 'Y' ) ;
     if( $first ) {
         $first = date( 'Y', strtotime( $first[0] -> user_registered ) );
-        $copyright = "&copy; " . $first;
+        $copytime = $first;
     if( $first != $current ) {
-        $copyright .= '-' .$current;
+        $copytime .= '-' .$current;
     }
-    $output = $copyright;
+    $copyright = sprintf( wp_kses(__('&copy; <a href="%1$s">%2$s</a>, %3$s', 'typnow'), array(  'a' => array( 'href' => array() ) ) ) , esc_url( $url ),$copyname, $copytime );
     }
-    echo  $output;
+    echo  $copyright;
 }
 
 /** 
