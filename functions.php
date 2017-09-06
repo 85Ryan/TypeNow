@@ -263,6 +263,44 @@ function typenow_post_thumbnail_sizes_attr ( $attr, $attachment, $size ) {
 }
 add_filter( 'wp_get_attachment_image_attributes', 'typenow_post_thumbnail_sizes_attr', 10, 3 );
 
+/**
+ * Define the related posts.
+ */
+function typenow_related_post( $post_id ) {
+    $tags = wp_get_post_tags( $post_id );
+    if ( $tags ) {
+        $tag_ids = array();
+        foreach( $tags as $typenow_tag ) $tag_ids[] = $typenow_tag -> term_id;
+        $args = array (
+            'tag_in' => $tag_ids,
+            'post_not_in' => array( $post_id ),
+            'posts_per_page' => 5,
+            'ingore_sticky_post' => 1
+        );
+    } else {
+        $args = array (
+            'post_not_in' => array( $post_id ),
+            'posts_per_page' => 5,
+            'ingore_sticky_post' => 1
+        );
+    } ?>
+
+    <?php $related_query = new wp_query( $args ); ?>
+        <?php if ( $related_query->have_posts() ) : ?>
+        <div class="related-posts">
+            <h2 class="related-posts-title"><?php _e( 'Related Posts', 'typenow' ); ?></h2>
+            <ul class="related-content">
+                <?php while ( $related_query->have_posts() ) : $related_query->the_post(); ?>
+                <li class="related-post clearfix">
+                    <a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
+                </li><!-- .related-post -->
+                <?php endwhile; ?>
+            </ul><!-- .related-content -->
+        </div><!-- .related-posts -->
+        <?php endif; ?>
+    <?php wp_reset_query(); ?>
+<?php }
+
 /** 
  * Include template file.
  */
