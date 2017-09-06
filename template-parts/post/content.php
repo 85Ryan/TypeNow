@@ -60,14 +60,15 @@
 		) );
         ?>
     </div><!-- .entry-content -->
-    
-    <div class="entry-footer">
+
     <?php
     if ( is_single() && get_the_tag_list() ) : ?>
-        <span class="tags-links">
-            <?php echo get_the_tag_list('<ul><li>','</li><li>','</li></ul>'); ?>
-        </span>
+       <div class="entry-footer">
+            <span class="tags-links">
+                <span class="screen-reader-text"><?php _e( 'Tags', 'typenow' ); ?></span>
+                <?php echo get_the_tag_list(); ?>
+            </span>
+        </div><!-- .entry-footer -->
     <?php endif; ?>
-    </div><!-- .entry-footer -->
     
 </article>
