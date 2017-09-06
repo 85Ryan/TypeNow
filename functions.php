@@ -301,6 +301,30 @@ function typenow_related_post( $post_id ) {
     <?php wp_reset_query(); ?>
 <?php }
 
+/**
+ * Get copyright time.
+ */
+function typenow_copyright_time() {
+    global $wpdb;
+    $first = $wpdb -> get_results("
+        SELECT user_registered
+        FROM   $wpdb->users
+        ORDER BY  ID ASC
+        LIMIT 0,1
+    ");
+    $output = '';
+    $current = date( 'Y' ) ;
+    if( $first ) {
+        $first = date( 'Y', strtotime( $first[0] -> user_registered ) );
+        $copyright = "&copy; " . $first;
+    if( $first != $current ) {
+        $copyright .= '-' .$current;
+    }
+    $output = $copyright;
+    }
+    echo  $output;
+}
+
 /** 
  * Include template file.
  */
