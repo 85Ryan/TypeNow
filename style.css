@@ -4,8 +4,8 @@ Theme URI: https://github.com/85Ryan/TypeNow
 Author: iiiRyan
 Author URI: https://iiiryan.com/
 Description: Just a WordPress Theme.
-Version: 0.017
-License: MIT License
+Version: 0.0.18
+License: GPL-3.0
 License URI: https://github.com/85Ryan/TypeNow/blob/master/LICENSE
 Text Domain: TypeNow
 Tags: TypeNow
@@ -840,9 +840,7 @@ a:active {
 
 .entry-title a,
 .entry-meta a,
-.entry-footer a,
-.entry-footer .cat-links a,
-.entry-footer .tags-links a,
+.entry-footer:not(.tags-links) > a,
 .edit-link a,
 .post-navigation a,
 .logged-in-as a,
@@ -882,12 +880,8 @@ a .nav-title,
 .entry-meta a:hover,
 .page-links a:focus .page-number,
 .page-links a:hover .page-number,
-.entry-footer a:focus,
-.entry-footer a:hover,
-.entry-footer .cat-links a:focus,
-.entry-footer .cat-links a:hover,
-.entry-footer .tags-links a:focus,
-.entry-footer .tags-links a:hover,
+.entry-footer:not(.tags-links) > a:focus,
+.entry-footer:not(.tags-links) > a:hover,
 .post-navigation a:focus,
 .post-navigation a:hover,
 .pagination a:not(.prev):not(.next):focus,
@@ -948,9 +942,9 @@ a:hover .nav-title,
 	font-size: 16px;
 	font-size: 1rem;
 	position: relative;
-    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, .1);
-    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, .1);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, .1)
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .1);
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .1);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .1)
 }
 
 .navigation-top .wrap {
@@ -1574,62 +1568,58 @@ body:not(.typenow-front-page) .entry-header {
 	padding: 2em 0;
 }
 
-.entry-footer .cat-links,
 .entry-footer .tags-links {
 	display: block;
 	font-size: 11px;
 	font-size: 0.6875rem;
-	font-weight: 800;
-	letter-spacing: 0.1818em;
-	padding-left: 2.5em;
+    font-weight: 600;
 	position: relative;
 	text-transform: uppercase;
 }
 
-.entry-footer .cat-links + .tags-links {
-	margin-top: 1em;
-}
-
-.entry-footer .cat-links a,
 .entry-footer .tags-links a {
-	color: #333;
+    color: #222;
+    display: inline-block;
+    margin: 4px 8px 0 0;
+    padding: 2px 12px;
+    -webkit-transition-duration: .2s;
+    -o-transition-duration: .2s;
+    transition-duration: .2s;
 }
 
-.entry-footer .cat-links .icon,
-.entry-footer .tags-links .icon {
-	color: #767676;
-	left: 0;
-	margin-right: 0.5em;
-	position: absolute;
-	top: 2px;
+.tags-links a:nth-child(3n-1) {
+    color: #fff;
+    border: 1px solid #ff3043;
+    border-radius: 15px;
+    background: #ff3043;
 }
 
-.entry-footer .edit-link {
-	display: inline-block;
+.tags-links a:nth-child(3n) {
+    color: #fff;
+    border: 1px solid #ffd02f;
+    border-radius: 15px;
+    background: #ffd02f;
 }
 
-.entry-footer .edit-link a.post-edit-link {
-	background-color: #222;
-	-webkit-border-radius: 2px;
-	border-radius: 2px;
-	-webkit-box-shadow: none;
-	box-shadow: none;
-	color: #fff;
-	display: inline-block;
-	font-size: 14px;
-	font-size: 0.875rem;
-	font-weight: 800;
-	margin-top: 2em;
-	padding: 0.7em 2em;
-	-webkit-transition: background-color 0.2s ease-in-out;
-	transition: background-color 0.2s ease-in-out;
-	white-space: nowrap;
+.tags-links a:nth-child(3n+1) {
+    color: #fff;
+    border: 1px solid #54d669;
+    border-radius: 15px;
+    background: #54d669;
 }
 
-.entry-footer .edit-link a.post-edit-link:hover,
-.entry-footer .edit-link a.post-edit-link:focus {
-	background-color: #767676;
+.tags-links a::before {
+    content: '# '
 }
+
+.entry-footer .tags-links a:focus,
+.entry-footer .tags-links a:hover {
+    transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+}
+
 
 /* Post Formats */
 
@@ -1664,7 +1654,6 @@ body:not(.typenow-front-page) .entry-header {
 /* Post Navigation */
 
 .post-navigation {
-	font-weight: 800;
 	margin: 3em 0;
 }
 
@@ -1672,52 +1661,39 @@ body:not(.typenow-front-page) .entry-header {
 	padding: 1em 0;
 }
 
-.nav-subtitle {
+.post-navigation .nav-links .nav-text {
 	background: transparent;
 	color: #767676;
-	display: block;
-	font-size: 11px;
-	font-size: 0.6875rem;
-	letter-spacing: 0.1818em;
+	font-size: 12px;
+	font-size: 0.75rem;
+    font-weight: 600;
 	margin-bottom: 1em;
 	text-transform: uppercase;
 }
 
-.nav-title {
-	color: #333;
-	font-size: 15px;
-	font-size: 0.9375rem;
+.nav-links .nav-previous {
+    width: 50%;
+    float: left;
+    text-align: left;
 }
 
-.post-navigation .nav-next {
-	margin-top: 1.5em;
+.nav-links .nav-next {
+    width: 50%;
+    float: right;
+    text-align: right;
 }
 
-.nav-links .nav-previous .nav-title .nav-title-icon-wrapper {
-	margin-right: 0.5em;
+.nav-links .nav-previous .nav-title-icon-wrapper {
+	margin-right: 6px;
 }
 
-.nav-links .nav-next .nav-title .nav-title-icon-wrapper {
-	margin-left: 0.5em;
+.nav-links .nav-next .nav-title-icon-wrapper {
+	margin-left: 6px;
 }
 
 /*--------------------------------------------------------------
 13.4 Pages
 --------------------------------------------------------------*/
-
-.page-header {
-	padding-bottom: 2em;
-}
-
-.page .entry-header .edit-link {
-	font-size: 14px;
-	font-size: 0.875rem;
-}
-
-.search .page .entry-header .edit-link {
-	font-size: 11px;
-	font-size: 0.6875rem;
-}
 
 .page-links {
 	clear: both;
@@ -1757,13 +1733,18 @@ body:not(.typenow-front-page) .entry-header {
 .social-navigation {
 	font-size: 16px;
 	font-size: 1rem;
-	margin-bottom: 1em;
+	margin-bottom: 0;
+    text-align: center;
+    float: left;
+    clear: left;
+    width: 100%;
 }
 
 .social-navigation ul {
 	list-style: none;
 	margin-bottom: 0;
 	margin-left: 0;
+    padding-left: 0;
 }
 
 .social-navigation li {
@@ -1771,47 +1752,74 @@ body:not(.typenow-front-page) .entry-header {
 }
 
 .social-navigation a {
-	background-color: #767676;
-	-webkit-border-radius: 40px;
-	border-radius: 40px;
-	color: #fff;
+    color: #767676;
 	display: inline-block;
-	height: 40px;
+	height: 24px;
 	margin: 0 1em 0.5em 0;
 	text-align: center;
-	width: 40px;
+	width: 24px;
 }
 
 .social-navigation a:hover,
 .social-navigation a:focus {
-	background-color: #333;
+    color: #333;
+}
+
+.social-navigation a[href*="twitter.com"]:hover,
+.social-navigation a[href*="twitter.com"]:focus {
+    color: #1da1f2;
+}
+
+.social-navigation a[href*="facebook.com"]:hover,
+.social-navigation a[href*="facebook.com"]:focus {
+    color: #3b5999;
+}
+
+.social-navigation a[href*="dribbble.com"]:hover,
+.social-navigation a[href*="dribbble.com"]:focus {
+    color: #ea4c89;
+}
+
+.social-navigation a[href*="instagram.com"]:hover,
+.social-navigation a[href*="instagram.com"]:focus {
+    color: #d6249f;
 }
 
 .social-navigation .icon {
-	height: 20px;
-	top: 10px;
-	width: 20px;
+	height: 24px;
+	top: 0;
+	width: 24px;
 	vertical-align: top;
+}
+
+.social-navigation .social-say-hi {
+    display: block;
+    font-size: 14px;
+    font-size: 0.875rem;
+    color: #666;
+    margin: 1em 0;
 }
 
 /* Site info */
 
 .site-info {
-	font-size: 14px;
-	font-size: 0.875rem;
+	font-size: 12px;
+	font-size: 0.75rem;
 	margin-bottom: 1em;
+    color: #999;
+    text-align: center;
+    float: left;
+    clear: left;
+    width: 100%;
 }
 
 .site-info a {
-	color: #666;
+	color: #999;
 }
 
-.site-info .sep {
-	margin: 0;
-	display: block;
-	visibility: hidden;
-	height: 0;
-	width: 100%;
+.site-info span {
+	display: inline-block;
+    margin: 0 1em 0.5em 0;
 }
 
 /*--------------------------------------------------------------
@@ -2711,7 +2719,7 @@ object {
 	.page .entry-header,
 	.typenow-front-page .entry-header,
 	.archive .page-header {
-		margin-bottom: 4em;
+		margin-bottom: 2em;
 	}
 
 	.page:not(.home) #content {
@@ -2735,26 +2743,6 @@ object {
 	ol.children .children {
 		padding-left: 2em;
 	}
-
-	/* Posts pagination */
-
-	.nav-links .nav-title {
-		position: relative;
-	}
-
-	.nav-title-icon-wrapper {
-		position: absolute;
-		text-align: center;
-		width: 2em;
-	}
-
-	.nav-links .nav-previous .nav-title .nav-title-icon-wrapper {
-		left: -2em;
-	}
-
-	.nav-links .nav-next .nav-title .nav-title-icon-wrapper {
-		right: -2em;
-	}
     
     /* Secondary */
 
@@ -2772,32 +2760,7 @@ object {
 		line-height: 1.6;
 		margin-top: 3em;
 	}
-    
-    .social-navigation {
-		clear: left;
-		float: left;
-		margin-bottom: 0;
-		width: 36%;
-	}
 
-	.site-info {
-		float: left;
-		padding: 0.7em 0 0;
-		width: 58%;
-	}
-
-	.social-navigation + .site-info {
-		margin-left: 6%;
-	}
-
-	.site-info .sep {
-		margin: 0 0.5em;
-		display: inline;
-		visibility: visible;
-		height: auto;
-		width: auto;
-	}
-    
     /* Gallery Columns */
 
 	.gallery-columns-5 .gallery-item {
