@@ -17,6 +17,7 @@
                                 'link_after'        => '</span>' . typenow_get_svg( array( 'icon' => 'chain' ) ),
                             ) );
                         ?>
+                        <span class="social-say-hi"><?php _e( 'You Can Speak <strong>"Hi"</strong> to Me in Those Ways', 'typenow' ); ?></span>
                     </nav><!-- .social-navigation -->
                 <?php endif; 
                 get_template_part( 'template-parts/footer/site', 'info' );
