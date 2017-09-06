@@ -18,9 +18,16 @@ get_header(); ?>
                 endif;
 
                 the_post_navigation( array(
-                        'prev_text' => '<span class="screen-reader-text">' . __( 'Previous Post', 'typenow' ) . '</span><span aria-hidden="true" class="nav-subtitle">' . __( 'Previous', 'typenow' ) . '</span> <span class="nav-title"><span class="nav-title-icon-wrapper">' . typenow_get_svg( array( 'icon' => 'arrow-left' ) ) . '</span>%title</span>',
-                        'next_text' => '<span class="screen-reader-text">' . __( 'Next Post', 'typenow' ) . '</span><span aria-hidden="true" class="nav-subtitle">' . __( 'Next', 'typenow' ) . '</span> <span class="nav-title">%title<span class="nav-title-icon-wrapper">' . typenow_get_svg( array( 'icon' => 'arrow-right' ) ) . '</span></span>',
+                        'prev_text' => '<span class="screen-reader-text">' . __( 'Previous Post', 'typenow' ) . '</span><span class="nav-title-icon-wrapper">' . typenow_get_svg( array( 'icon' => 'arrow-left' ) ) . '</span> <span aria-hidden="true" class="nav-text">' . __( 'Previous Post', 'typenow' ) . '</span>',
+                        'next_text' => '<span class="screen-reader-text">' . __( 'Next Post', 'typenow' ) . '</span><span aria-hidden="true" class="nav-text">' . __( 'Next Post', 'typenow' ) . '</span> <span class="nav-title-icon-wrapper">' . typenow_get_svg( array( 'icon' => 'arrow-right' ) ) . '</span>',
+                        'in_same_term'       => true,
                 ) );
+
+                // If post format is not status, display the related posts.
+                //if ( ! has_post_format('status') ) :
+                //    typenow_related_post($post->ID);
+                //endif;
+
             endwhile; // End of the loop.
             ?>
         </main><!-- .site-mian -->
