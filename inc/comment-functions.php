@@ -42,6 +42,11 @@ function typenow_comment_form_defaults($defaults) {
     $defaults['comment_field'] = '<textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" placeholder="'. __( 'Your email address will not be published. ','typenow') . ( $req ? __('Required fields are marked ( * ).', 'typenow') : __('You can also post a comment anonymously.', 'typenow') ) . '" aria-required="true" required="required"></textarea>';
 
     $defaults['comment_notes_before'] = '';
+    $defaults['comment_notes_after'] = '<p class="form-allowed-tags">' .
+    sprintf(
+      __( 'You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: %s' ),
+      ' <code>' . allowed_tags() . '</code>'
+    ) . '</p>';
     $defaults['label_submit'] = __( 'Submit', 'typenow' );
     $defaults['submit_field'] = '%1$s %2$s';
     $defaults['cancel_reply_before'] = '<span class="cancel-reply">';
