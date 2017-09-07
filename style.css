@@ -4,7 +4,7 @@ Theme URI: https://github.com/85Ryan/TypeNow
 Author: iiiRyan
 Author URI: https://iiiryan.com/
 Description: Just a WordPress Theme.
-Version: 0.0.18
+Version: 0.0.19
 License: GPL-3.0
 License URI: https://github.com/85Ryan/TypeNow/blob/master/LICENSE
 Text Domain: TypeNow
@@ -635,7 +635,6 @@ input[type="submit"] {
 	display: inline-block;
 	font-size: 14px;
 	font-size: 0.875rem;
-	font-weight: 800;
 	line-height: 1;
 	padding: 1em 2em;
 	text-shadow: none;
@@ -682,21 +681,24 @@ input[type="submit"].secondary:focus {
 
 /* Placeholder text color -- selectors need to be separate to work. */
 ::-webkit-input-placeholder {
-	color: #666;
+	color: #767676;
+    text-transform: uppercase;
 }
 
 :-moz-placeholder {
-	color: #666;
+	color: #767676;
 }
 
 ::-moz-placeholder {
-	color: #666;
+	color: #767676;
+    text-transform: uppercase;
 	opacity: 1;
 	/* Since FF19 lowers the opacity of the placeholder by default */
 }
 
 :-ms-input-placeholder {
-	color: #666;
+	color: #767676;
+    text-transform: uppercase;
 }
 
 /*--------------------------------------------------------------
@@ -828,7 +830,8 @@ a:active {
 
 .entry-content a,
 .entry-summary a,
-.posts-navigation a {
+.posts-navigation a,
+.comment-content a {
 	-webkit-box-shadow: inset 0 -1px 0 rgba(15, 15, 15, 1);
 	box-shadow: inset 0 -1px 0 rgba(15, 15, 15, 1);
 	-webkit-transition: color 80ms ease-in, -webkit-box-shadow 130ms ease-in-out;
@@ -844,8 +847,9 @@ a:active {
 .edit-link a,
 .post-navigation a,
 .logged-in-as a,
+.comment-respond a,
 .comment-navigation a,
-.comment-metadata a,
+.comment-meta a,
 .comment-metadata a.comment-edit-link,
 .comment-reply-link,
 a .nav-title,
@@ -868,8 +872,12 @@ a .nav-title,
 .entry-summary a:hover,
 .posts-navigation a:focus,
 .posts-navigation a:hover,
-.comment-metadata a:focus,
-.comment-metadata a:hover,
+.comment-respond a:focus,
+.comment-respond a:hover,
+.comment-content a:focus,
+.comment-content a:hover,
+.comment-meta a:focus,
+.comment-meta a:hover,
 .comment-metadata a.comment-edit-link:focus,
 .comment-metadata a.comment-edit-link:hover,
 .comment-reply-link:focus,
@@ -1832,6 +1840,211 @@ body:not(.typenow-front-page) .entry-header {
 14.0 Comments
 --------------------------------------------------------------*/
 
+.comment-container {
+    position: relative;
+    z-index: 1;
+    color: #5f5f5f;
+    background-color: #f7f7f7;
+    border-top: 1px solid #eee;
+}
+
+/* Comment form. */
+
+.comment-respond {
+    position: relative;
+    padding: 2em 2em 3.5em 2em;
+    border-radius: 3px;
+    background: #fff;
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .04);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .04);
+    display: block;
+}
+
+.comment-respond .cancel-reply {
+    font-size: 12px;
+    font-size: 0.75rem;
+    float: right;
+}
+
+.comment-form {
+    position: relative;
+}
+
+.comment-form input {
+    font-size: 13px;
+    font-size: 0.8125rem;
+    display: block;
+    height: 32px;
+    color: #313131;
+    outline: none;
+    float: left;
+    max-width: 27%;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    border-top: 1px dashed #ddd;
+    border-radius: 0;
+    padding: 0;
+    margin-bottom: 3em;
+    background-color: transparent;
+}
+
+.comment-form textarea {
+    overflow: scroll;
+    font-size: 13px;
+    font-size: 0.8125rem;
+    padding: 0;
+    height: 150px;
+    resize: none;
+    border:none;
+    background-color: transparent;
+}
+
+.comment-form .submit {
+    font-size: 11px;
+    font-size: 0.6875rem;
+    font-weight: 500;
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: -32px;
+    max-height: 32px;
+    width: 90px;
+    margin: 0 auto;
+    text-align: center;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    background-color: #333;
+    text-transform: uppercase;
+}
+
+/* Comment lists. */
+
+#comments {
+	clear: both;
+	padding: 3em 0;
+}
+
+.comments .comment-reply-title {
+    font-size: 18px;
+    font-size: 1.125rem;;
+    padding-bottom: 0.75em;
+}
+
+.comment-list,
+.comment-reply-title,
+.must-log-in,
+.comment-respond .comment-form,
+.comment-respond iframe {
+    display: block;
+    margin: 0;
+    padding-left: 0;
+    list-style-type: none
+}
+
+.comment-list,
+.comment-list .children {
+	list-style-type: none;
+	padding: 0;
+}
+
+.comment-list > li {
+    margin: 20px 0;
+    border: 1px solid rgba(184, 197, 214, .2);
+    border-radius: 3px;
+    background: #fff;
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .04);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .04)
+}
+
+.comment-list .children {
+	margin-left: 0;
+}
+
+.comment-list .comment-respond {
+    border-top: thin dashed #ddd;
+    background-color: #fcfcfc;
+}
+
+.comment-list > .pingback ,
+.comment-list > .trackback{
+	border-bottom:thin dashed #ddd;
+}
+
+.children {
+    margin-top: 0;
+}
+
+.children > li {
+    border-top: thin dashed #ddd;
+}
+
+.comment-body {
+    padding: 1.5em 2em;
+	position: relative;
+}
+
+.comment-meta {
+    display: inline-block;
+    width: 100%;
+    position: relative;
+    margin-bottom: 1.5em;
+}
+
+.comment-author .avatar {
+    display: inline-block;
+    float: left;
+    width: 40px;
+    height: 40px;
+    -webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.comment-author .says {
+	display:none;
+}
+
+.comment-author .fn {
+	word-wrap: break-word;
+	display:block;
+    position: absolute;
+    left:60px;
+    top: -2px;
+}
+
+.comment-metadata {
+	display:block;
+    font-size: 11px;
+    font-size: 0.6875rem;
+    position: absolute;
+    left: 60px;
+    top: 24px;
+    text-transform: uppercase;
+}
+
+.comment-metadata a {
+    color: #767676;
+}
+
+.comment-list .edit-link {
+	margin-left: 20px;
+}
+
+.comment-body .reply {
+    font-size: 12px;
+    font-size: 0.75rem;
+    display: block;
+    text-align: right;
+}
+
+.comment-respond .icon-cancel-reply,
+.comment-body .reply .icon-comment-reply {
+    font-size: 18px;
+    font-size: 1.125rem;
+    padding-right: 5px;
+}
 
 /*--------------------------------------------------------------
 15.0 Media
@@ -2731,19 +2944,7 @@ object {
 	.error404 .page-content {
 		padding-bottom: 9em;
 	}
-    
-    #comments {
-		padding-top: 5em;
-	}
 
-	.comments-title {
-		margin-bottom: 2.5em;
-	}
-
-	ol.children .children {
-		padding-left: 2em;
-	}
-    
     /* Secondary */
 
 	#secondary {
@@ -2758,7 +2959,6 @@ object {
 		font-size: 14px;
 		font-size: 0.875rem;
 		line-height: 1.6;
-		margin-top: 3em;
 	}
 
     /* Gallery Columns */
