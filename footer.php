@@ -3,7 +3,6 @@
  * The footer for TypeNow.
  */
 ?>
-        </div><!-- #content .site-content -->
         <footer id="colophon" class="site-footer" role="contentinfo">
             <div class="wrap">
                 <?php if ( has_nav_menu( 'social' ) ) : ?>
