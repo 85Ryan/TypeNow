@@ -341,5 +341,7 @@ require get_parent_theme_file_path( '/inc/template-tags.php' );
 require get_parent_theme_file_path( '/inc/template-functions.php' );
 // Customizer additions.
 require get_parent_theme_file_path( '/inc/customizer.php' );
+// Customiz comment form functions.
+require get_parent_theme_file_path( '/inc/comment-functions.php' );
 // SVG icons functions and filters.
 require get_parent_theme_file_path( '/inc/icon-functions.php' );
