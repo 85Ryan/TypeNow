@@ -1,6 +1,10 @@
 <?php
 /**
  * TypeNow Customizer.
+ *
+ * @package:    TypeNow
+ * @since:      1.0
+ * @version:    1.0
  */
 
 // Add postMessage support for site title and description for the Theme Customizer.
@@ -24,7 +28,7 @@ function typenow_customize_register( $wp_customize ) {
 	$wp_customize->add_setting('typenow_display_title', array(
         'capability' => 'edit_theme_options',
         'theme-supports' => array( 'custom-logo', 'header-text' ),
-        'defautl' => 1,
+        'default' => 1,
         'transport' => 'postMessage',
     ));
 
@@ -38,7 +42,7 @@ function typenow_customize_register( $wp_customize ) {
     $wp_customize->add_setting('typenow_display_tagline', array(
         'capability' => 'edit_theme_options',
         'theme-supports' => array( 'custom-logo', 'header-text' ),
-        'defautl' => 1,
+        'default' => 1,
         'transport' => 'postMessage',
     ));
 
