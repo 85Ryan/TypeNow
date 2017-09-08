@@ -1,6 +1,10 @@
 <?php
 /**
  * Additional features to allow styling of the templates.
+ *
+ * @package:    TypeNow
+ * @since:      1.0
+ * @version:    1.0
  */
 
 /** 
