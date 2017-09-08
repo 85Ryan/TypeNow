@@ -4,7 +4,7 @@ Theme URI: https://github.com/85Ryan/TypeNow
 Author: iiiRyan
 Author URI: https://iiiryan.com/
 Description: Just a WordPress Theme.
-Version: 0.0.20
+Version: 0.0.21
 License: GPL-3.0
 License URI: https://github.com/85Ryan/TypeNow/blob/master/LICENSE
 Text Domain: TypeNow
@@ -504,6 +504,10 @@ var {
     padding: 0 1px;
     border-radius: 2px;
     background-color: #f2f4f6;
+}
+
+pre > code {
+    background-color: #f6f8fa;
 }
 
 abbr,
