@@ -6,6 +6,9 @@
  * @version:    1.0
  */
 
+/**
+ * Add Menu Toggle.
+ */
 (function( $ ) {
     var masthead, menuToggle, siteNavContain, siteNavigation;
 
