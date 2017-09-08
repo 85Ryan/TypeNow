@@ -4,7 +4,7 @@ Theme URI: https://github.com/85Ryan/TypeNow
 Author: iiiRyan
 Author URI: https://iiiryan.com/
 Description: Just a WordPress Theme.
-Version: 0.0.19
+Version: 0.0.20
 License: GPL-3.0
 License URI: https://github.com/85Ryan/TypeNow/blob/master/LICENSE
 Text Domain: TypeNow
@@ -71,7 +71,7 @@ a:hover {
 }
 
 abbr[title] {
-	border-bottom: 1px #767676 dotted;
+	border-bottom: 1px #f2f4f6 dotted;
 	text-decoration: none;
 }
 
@@ -97,7 +97,7 @@ dfn {
 }
 
 mark {
-	background-color: #eee;
+	background-color: #f2f4f6;
 	color: #222;
 }
 
@@ -394,6 +394,7 @@ h6 {
     margin: 0 0 0.75em;
     padding: 0.75em 0 0;
     text-transform: capitalize;
+    position: relative;
 }
 
 h1:first-child,
@@ -477,7 +478,7 @@ address {
 }
 
 pre {
-	background: #f7f7f7;
+	background: #f6f8fa;
 	font-family: Monaco, Menlo, "Courier 10 Pitch", Courier, monospace;
 	font-size: 13px;
 	font-size: 0.813rem;
@@ -502,7 +503,7 @@ var {
     margin: 0 1px;
     padding: 0 1px;
     border-radius: 2px;
-    background-color: #f7f7f7;
+    background-color: #f2f4f6;
 }
 
 abbr,
@@ -513,7 +514,7 @@ acronym {
 
 mark,
 ins {
-	background: #eee;
+	background: #f2f4f6;
     border-radius: 2px;
     margin: 0 1px;
     padding: 1px 2px;
@@ -653,7 +654,7 @@ input[type="reset"],
 input[type="button"].secondary,
 input[type="reset"].secondary,
 input[type="submit"].secondary {
-	background-color: #ddd;
+	background-color: #e6e8ea;
 	color: #222;
 }
 
@@ -706,7 +707,7 @@ input[type="submit"].secondary:focus {
 --------------------------------------------------------------*/
 
 hr {
-	background-color: #ddd;
+	background-color: #e6e8ea;
 	border: 0;
 	height: 1px;
 	margin-bottom: 1.5em;
@@ -780,8 +781,8 @@ th {
 }
 
 thead th {
-    border-top: 2px solid #eee;
-	border-bottom: 2px solid #eee;
+    border-top: 2px solid #f2f4f6;
+	border-bottom: 2px solid #f2f4f6;
     padding-bottom: 0.5em;
 }
 
@@ -790,7 +791,7 @@ td {
 }
 
 tr {
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #f2f4f6;
 }
 
 th:first-child,
@@ -804,7 +805,7 @@ td:last-child {
 }
 
 tr:last-child {
-    border-bottom: 2px solid #eee;
+    border-bottom: 2px solid #f2f4f6;
 }
 
 /*--------------------------------------------------------------
@@ -822,7 +823,7 @@ a:focus {
 
 a:hover,
 a:active {
-	color: #000;
+	color: #eb5055;
 	outline: 0;
 }
 
@@ -848,13 +849,10 @@ a:active {
 .post-navigation a,
 .logged-in-as a,
 .comment-respond a,
-.comment-navigation a,
 .comment-meta a,
 .comment-metadata a.comment-edit-link,
 .comment-reply-link,
 a .nav-title,
-.pagination a,
-.comments-pagination a,
 .site-info a {
 	-webkit-box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 1);
 	box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 1);
@@ -890,12 +888,6 @@ a .nav-title,
 .page-links a:hover .page-number,
 .entry-footer:not(.tags-links) > a:focus,
 .entry-footer:not(.tags-links) > a:hover,
-.post-navigation a:focus,
-.post-navigation a:hover,
-.pagination a:not(.prev):not(.next):focus,
-.pagination a:not(.prev):not(.next):hover,
-.comments-pagination a:not(.prev):not(.next):focus,
-.comments-pagination a:not(.prev):not(.next):hover,
 .logged-in-as a:focus,
 .logged-in-as a:hover,
 a:focus .nav-title,
@@ -913,11 +905,6 @@ a:hover .nav-title,
 .entry-content a img {
 	-webkit-box-shadow: 0 0 0 8px #fff;
 	box-shadow: 0 0 0 8px #fff;
-}
-
-.post-navigation a:focus .icon,
-.post-navigation a:hover .icon {
-	color: #222;
 }
 
 /*--------------------------------------------------------------
@@ -945,8 +932,8 @@ a:hover .nav-title,
 
 .navigation-top {
 	background: #fff;
-	border-bottom: 1px solid #eee;
-	border-top: 1px solid #eee;
+	border-bottom: 1px solid #f2f4f6;
+	border-top: 1px solid #f2f4f6;
 	font-size: 16px;
 	font-size: 1rem;
 	position: relative;
@@ -956,7 +943,6 @@ a:hover .nav-title,
 }
 
 .navigation-top .wrap {
-	max-width: 796px;
 	padding: 0;
 }
 
@@ -969,7 +955,7 @@ a:hover .nav-title,
 
 .navigation-top .current-menu-item > a,
 .navigation-top .current_page_item > a {
-	color: #666;
+	color: #eb5055;
 }
 
 .main-navigation {
@@ -993,7 +979,7 @@ a:hover .nav-title,
 }
 
 .main-navigation > div > ul {
-	border-top: 1px solid #eee;
+	border-top: 1px solid #f2f4f6;
 	padding: 0.75em 1.695em;
 }
 
@@ -1002,7 +988,7 @@ a:hover .nav-title,
 }
 
 .main-navigation li {
-	border-bottom: 1px solid #eee;
+	border-bottom: 1px solid #f2f4f6;
 	position: relative;
 }
 
@@ -1017,8 +1003,21 @@ a:hover .nav-title,
 	text-decoration: none;
 }
 
-.main-navigation a:hover {
-	color: #666;
+.main-navigation a:hover,
+.main-navigation a:focus {
+    color: #eb5055;
+}
+
+.main-navigation .current-menu-item a:after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  margin-top: -3px;
+  right: 15px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #eb5055;
 }
 
 /* Menu toggle */
@@ -1238,7 +1237,6 @@ body:not(.title-tagline-hidden) .site-branding-text {
 	position: relative;
 }
 
-.has-header-image.typenow-front-page .custom-header,
 .has-header-image.home.blog .custom-header {
 	display: table;
 	height: 300px;
@@ -1289,7 +1287,7 @@ body:not(.title-tagline-hidden) .site-branding-text {
 	transform: translateX(-50%) translateY(-50%);
 }
 
-.has-header-image:not(.typenow-front-page):not(.home) .custom-header-image img {
+.has-header-image:not(.home) .custom-header-image img {
 	bottom: 0;
 	position: absolute;
 	top: auto;
@@ -1302,7 +1300,7 @@ body:not(.title-tagline-hidden) .site-branding-text {
 /* For browsers that support 'object-fit' */
 @supports ( object-fit: cover ) {
 	.has-header-image .custom-header-image img,
-	.has-header-image:not(.typenow-front-page):not(.home) .custom-header-image img {
+	.has-header-image:not(.home) .custom-header-image img {
 		height: 100%;
 		left: 0;
 		-o-object-fit: cover;
@@ -1322,7 +1320,6 @@ body:not(.has-header-image) .custom-header-image {
 	display: none;
 }
 
-.has-header-image.typenow-front-page .site-branding,
 .has-header-image.home.blog .site-branding {
 	display: table-cell;
 	height: 100%;
@@ -1363,6 +1360,7 @@ body:not(.has-header-image) .custom-header-image {
 	position: absolute;
 	top: 0.375em;
 	width: 20px;
+    color: #eb5055;
 }
 
 .entry-header .entry-title {
@@ -1405,9 +1403,22 @@ body:not(.has-header-image) .custom-header-image {
     margin-bottom: 1em;
 }
 
+.entry-content:not(pre) > h1::before,
+.entry-content:not(pre) > h2::before,
+.entry-content:not(pre) > h3::before,
+.entry-content:not(pre) > h4::before,
+.entry-content:not(pre) > h5::before,
+.entry-content:not(pre) > h6::before {
+    font-weight: 600;
+    position: absolute;
+    left: -24px;
+    content: '#';
+    color: #eb5055;
+}
+
 .pagination,
 .comments-pagination {
-	border-top: 1px solid #eee;
+	border-top: 1px solid #f2f4f6;
 	font-size: 14px;
 	font-size: 0.875rem;
 	padding: 2em 0 3em;
@@ -1444,7 +1455,7 @@ body:not(.has-header-image) .custom-header-image {
 
 .prev.page-numbers,
 .next.page-numbers {
-	background-color: #ddd;
+	background-color: #e6e8ea;
 	-webkit-border-radius: 2px;
 	border-radius: 2px;
 	display: inline-block;
@@ -1456,6 +1467,7 @@ body:not(.has-header-image) .custom-header-image {
 
 .prev.page-numbers,
 .next.page-numbers {
+    border: none;
 	-webkit-transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
 	transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
 }
@@ -1464,7 +1476,7 @@ body:not(.has-header-image) .custom-header-image {
 .prev.page-numbers:hover,
 .next.page-numbers:focus,
 .next.page-numbers:hover {
-	background-color: #666;
+	background-color: #222;
 	color: #fff;
 }
 
@@ -1494,18 +1506,18 @@ body:not(.has-header-image) .custom-header-image {
 	padding-bottom: 2em;
 }
 
-body:not(.typenow-front-page) .entry-header {
+body .entry-header {
 	padding: 1em 0;
 }
 
-body:not(.typenow-front-page) .entry-header,
-body:not(.typenow-front-page) .entry-content,
-body:not(.typenow-front-page) #comments {
+body .entry-header,
+body .entry-content,
+body #comments {
 	margin-left: auto;
 	margin-right: auto;
 }
 
-body:not(.typenow-front-page) .entry-header {
+body .entry-header {
 	padding-top: 0;
 }
 
@@ -1546,7 +1558,7 @@ body:not(.typenow-front-page) .entry-header {
 
 .single-featured-image-header {
 	background-color: #fff;
-	border-bottom: 1px solid #eee;
+	border-bottom: 1px solid #f2f4f6;
 }
 
 .single-featured-image-header img {
@@ -1570,8 +1582,8 @@ body:not(.typenow-front-page) .entry-header {
 /* Entry footer */
 
 .entry-footer {
-	border-bottom: 1px solid #eee;
-	border-top: 1px solid #eee;
+	border-bottom: 1px solid #f2f4f6;
+	border-top: 1px solid #f2f4f6;
 	margin-top: 2em;
 	padding: 2em 0;
 }
@@ -1728,7 +1740,7 @@ body:not(.typenow-front-page) .entry-header {
 --------------------------------------------------------------*/
 
 .site-footer {
-	border-top: 1px solid #eee;
+	border-top: 1px solid #f2f4f6;
 }
 
 .site-footer .wrap {
@@ -1844,8 +1856,8 @@ body:not(.typenow-front-page) .entry-header {
     position: relative;
     z-index: 1;
     color: #5f5f5f;
-    background-color: #f7f7f7;
-    border-top: 1px solid #eee;
+    background-color: #f2f4f6;
+    border-top: 1px solid #f2f4f6;
 }
 
 /* Comment form. */
@@ -1868,6 +1880,7 @@ body:not(.typenow-front-page) .entry-header {
 
 .comment-form {
     position: relative;
+    padding-bottom: 0;
 }
 
 .comment-form input {
@@ -1882,7 +1895,7 @@ body:not(.typenow-front-page) .entry-header {
     border-left: none;
     border-right: none;
     border-bottom: none;
-    border-top: 1px dashed #ddd;
+    border-top: 1px dashed #e6e8ea;
     border-radius: 0;
     padding: 0;
     margin-bottom: 3em;
@@ -1917,6 +1930,16 @@ body:not(.typenow-front-page) .entry-header {
     border-radius: 3px;
     background-color: #333;
     text-transform: uppercase;
+}
+
+.comment-form .comment-notes-after {
+    border-top: 1px dashed #e6e8ea;
+    padding: 10px 0;
+    margin-bottom: 0;
+}
+
+.comment-form .comment-notes-after p {
+    margin-bottom: 0;
 }
 
 /* Comment lists. */
@@ -1963,13 +1986,7 @@ body:not(.typenow-front-page) .entry-header {
 }
 
 .comment-list .comment-respond {
-    border-top: thin dashed #ddd;
-    background-color: #fcfcfc;
-}
-
-.comment-list > .pingback ,
-.comment-list > .trackback{
-	border-bottom:thin dashed #ddd;
+    border-top: thin dashed #e6e8ea;
 }
 
 .children {
@@ -1977,12 +1994,17 @@ body:not(.typenow-front-page) .entry-header {
 }
 
 .children > li {
-    border-top: thin dashed #ddd;
+    border-top: thin dashed #e6e8ea;
 }
 
 .comment-body {
-    padding: 1.5em 2em;
+    padding: 1.5em 2.4em;
 	position: relative;
+}
+
+.bypostauthor > .comment-body .fn:after {
+    content: " *";
+    color: #eb5055;
 }
 
 .comment-meta {
@@ -2030,6 +2052,18 @@ body:not(.typenow-front-page) .entry-header {
 
 .comment-list .edit-link {
 	margin-left: 20px;
+}
+
+.comment-content:not(pre) > h1::before,
+.comment-content:not(pre) > h2::before,
+.comment-content:not(pre) > h3::before,
+.comment-content:not(pre) > h4::before,
+.comment-content:not(pre) > h5::before,
+.comment-content:not(pre) > h6::before {
+    font-weight: 600;
+    content: '#';
+    color: #eb5055;
+    padding-right: 8px;
 }
 
 .comment-body .reply {
@@ -2118,7 +2152,7 @@ object {
 /* Playlist Color Overrides: Light */
 
 .site-content .wp-playlist-light {
-	border-color: #eee;
+	border-color: #f2f4f6;
 	color: #222;
 }
 
@@ -2131,7 +2165,7 @@ object {
 }
 
 .site-content .wp-playlist-light .wp-playlist-item {
-	border-bottom: 1px dotted #eee;
+	border-bottom: 1px dotted #f2f4f6;
 	-webkit-transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
 	transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
 }
@@ -2165,7 +2199,7 @@ object {
 }
 
 .site-content .wp-playlist-dark .wp-playlist-current-item .wp-playlist-item-album {
-	color: #eee;
+	color: #f2f4f6;
 }
 
 .site-content .wp-playlist-dark .wp-playlist-current-item .wp-playlist-item-artist {
@@ -2313,53 +2347,7 @@ object {
 16.0 Customizer
 --------------------------------------------------------------*/
 
-.highlight-front-sections.typenow-customizer.typenow-front-page .typenow-panel:after {
-	border: 2px dashed #0085ba; /* Matches visible edit shortcuts. */
-	bottom: 1em;
-	content: "";
-	display: block;
-	left: 1em;
-	position: absolute;
-	right: 1em;
-	top: 1em;
-	z-index: 1;
-}
 
-.highlight-front-sections.typenow-customizer.typenow-front-page .typenow-panel .panel-content {
-	z-index: 2; /* Prevent :after from preventing interactions within the section */
-}
-
-/* Used for placeholder text */
-.typenow-customizer.typenow-front-page .typenow-panel .typenow-panel-title {
-	display: block;
-	font-size: 14px;
-	font-size: 0.875rem;
-	font-weight: 700;
-	letter-spacing: 1px;
-	padding: 3em;
-	text-transform: uppercase;
-	text-align: center;
-}
-
-/* Show borders on the custom page panels only when the front page sections are being edited */
-.highlight-front-sections.typenow-customizer.typenow-front-page .typenow-panel:nth-of-type(1):after {
-	border: none;
-}
-
-.typenow-front-page.typenow-customizer #primary article.panel-placeholder {
-	border: 0;
-}
-
-/* Add some space around the visual edit shortcut buttons. */
-.typenow-panel .customize-partial-edit-shortcut button {
-	top: 30px;
-	left: 30px;
-}
-
-/* Ensure that placeholder icons are visible. */
-.typenow-panel .customize-partial-edit-shortcut-hidden:before {
-	visibility: visible;
-}
 
 /*--------------------------------------------------------------
 17.0 SVGs Fallbacks
@@ -2454,44 +2442,6 @@ object {
 		padding: 3em 0;
 	}
 
-	/* Front Page */
-
-	.panel-content .wrap {
-		padding-bottom: 2em;
-		padding-top: 3.5em;
-	}
-
-	.page-one-column .panel-content .wrap {
-		max-width: 740px;
-	}
-
-	.panel-content .entry-header {
-		margin-bottom: 4.5em;
-	}
-
-	.panel-content .recent-posts .entry-header {
-		margin-bottom: 0;
-	}
-    
-    /* Blog Index, Archive, Search */
-
-	.taxonomy-description {
-		font-size: 14px;
-		font-size: 0.875rem;
-	}
-
-	.page-numbers.current {
-		font-size: 16px;
-		font-size: 1rem;
-	}
-
-	/* Site Footer */
-
-	.site-footer {
-		font-size: 16px;
-		font-size: 1rem;
-	}
-
 	/* Gallery Columns */
 
 	.gallery-item {
@@ -2519,7 +2469,7 @@ object {
 
     /* Layout */
 	.wrap {
-		max-width: 796px;
+		max-width: 680px;
 		padding-left: 3em;
 		padding-right: 3em;
 	}
@@ -2533,8 +2483,7 @@ object {
 	.site-branding {
 		margin-bottom: 0;
 	}
-    
-    .has-header-image.typenow-front-page .site-branding,
+
 	.has-header-image.home.blog .site-branding {
 		bottom: 0;
 		display: block;
@@ -2544,8 +2493,7 @@ object {
 		position: absolute;
 		width: 100%;
 	}
-    
-    .has-header-image.typenow-front-page .custom-header,
+
 	.has-header-image.home.blog .custom-header {
 		display: block;
 		height: auto;
@@ -2555,14 +2503,13 @@ object {
 		height: 165px;
 		position: relative;
 	}
-    
-    .typenow-front-page.has-header-image .custom-header-image,
+
 	.home.blog.has-header-image .custom-header-image {
 		height: 0;
 		position: relative;
 	}
     
-    .has-header-image:not(.typenow-front-page):not(.home) .custom-header-image {
+    .has-header-image:not(.home) .custom-header-image {
 		bottom: 0;
 		height: auto;
 		left: 0;
@@ -2608,7 +2555,6 @@ object {
 	}
     
     .navigation-top .wrap {
-		max-width: 796px;
 		padding: 0.75em 3em;
 	}
     
@@ -2667,29 +2613,8 @@ object {
         padding: 0.5em 1.5em 0.75em 0;
 	}
     
-    .main-navigation > div a {
-		-webkit-box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 1);
-        box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 1);
-        text-decoration: none;
-        -webkit-transition: color 80ms ease-in, -webkit-box-shadow 130ms ease-in-out;
-        transition: color 80ms ease-in, -webkit-box-shadow 130ms ease-in-out;
-        transition: color 80ms ease-in, box-shadow 130ms ease-in-out;
-        transition: color 80ms ease-in, box-shadow 130ms ease-in-out, -webkit-box-shadow 130ms ease-in-out;
-        padding-bottom: 1px;
-	}
-    
-    .main-navigation > div a:focus,
-    .main-navigation > div a:hover {
-        color: #000;
-        -webkit-box-shadow: inset 0 0 0 rgba(0, 0, 0, 0), 0 3px 0 rgba(0, 0, 0, 1);
-        box-shadow: inset 0 0 0 rgba(0, 0, 0, 0), 0 3px 0 rgba(0, 0, 0, 1);
-    }
-    
-    .navigation-top .current-menu-item > a,
-    .navigation-top .current_page_item > a {
-        color: #000;
-        -webkit-box-shadow: inset 0 0 0 rgba(0, 0, 0, 0), 0 3px 0 rgba(0, 0, 0, 1);
-        box-shadow: inset 0 0 0 rgba(0, 0, 0, 0), 0 3px 0 rgba(0, 0, 0, 1);
+    .main-navigation .current-menu-item a::after {
+        content: none;
     }
     
     .site-header .site-navigation-fixed .menu-scroll-down {
@@ -2745,7 +2670,7 @@ object {
     .site-header .navigation-top .menu-scroll-down:hover,
     .site-header .navigation-top .menu-search-icon:hover,
     .site-header .navigation-top .menu-login-icon:hover {
-		color:#666;
+		color:#eb5055;
 	}
 
     .site-header .navigation-top .menu-scroll-down:focus,
@@ -2763,12 +2688,10 @@ object {
     
     /* Front Page */
 
-	.typenow-front-page.has-header-image .site-branding,
 	.home.blog.has-header-image .site-branding {
 		margin-bottom: 70px;
 	}
 
-	.typenow-front-page.has-header-image .custom-header-image,
 	.home.blog.has-header-image .custom-header-image {
 		height: 1200px;
 		height: 100vh;
@@ -2776,48 +2699,12 @@ object {
 		overflow: hidden;
 	}
 
-	.typenow-front-page.has-header-image .custom-header-image:before,
 	.home.blog.has-header-image .custom-header-image:before {
 		height: 33%;
 	}
 
-	.admin-bar.typenow-front-page.has-header-image .custom-header-image,
 	.admin-bar.home.blog.has-header-image .custom-header-image {
 		height: calc(100vh - 32px);
-	}
-
-	.panel-content .wrap {
-		padding-bottom: 4.5em;
-		padding-top: 6em;
-	}
-
-	.panel-image {
-		height: 100vh;
-		max-height: 1200px;
-	}
-    
-    /* With panel images 100% of the screen height, we're going to fix the background image where supported to create a parallax-like effect. */
-	.background-fixed .panel-image {
-		background-attachment: fixed;
-	}
-    
-    .panel-content .recent-posts article {
-		margin-bottom: 4em;
-	}
-    
-    .panel-content .recent-posts .entry-header,
-	.panel-content .recent-posts .entry-content {
-		float: none;
-		width: 100%;
-	}
-    
-    .panel-content .recent-posts .entry-header {
-		margin-bottom: 1.5em;
-	}
-    
-    .page .panel-content .recent-posts .entry-title {
-		font-size: 26px;
-		font-size: 1.625rem;
 	}
     
     /* Posts */
@@ -2857,9 +2744,9 @@ object {
     /* Blog, archive, search */
 
 	.sticky .icon-sticky {
-		height: 25px;
+		height: 26px;
 		left: -2.5em;
-		top: 1.5em;
+		top: 0.6em;
 		width: 32px;
 	}
     
@@ -2877,12 +2764,6 @@ object {
     
     .entry-footer {
 		display: table;
-		width: 100%;
-	}
-    
-    .entry-footer .cat-tags-links {
-		display: table-cell;
-		vertical-align: middle;
 		width: 100%;
 	}
 
@@ -2986,6 +2867,11 @@ object {
 
 @media screen and (min-width: 67em) {
     
+    /* Layout */
+	.wrap {
+		max-width: 796px;
+	}
+
     /* Navigation */
     .navigation-top nav {
 		margin-left: 0;
@@ -2996,9 +2882,9 @@ object {
 	.sticky .icon-sticky {
 		font-size: 36px;
 		font-size: 2.25rem;
-		height: 25px;
+		height: 28px;
 		left: -1.25em;
-		top: 0.75em;
+		top: 0.2em;
 		width: 32px;
 	}
     
@@ -3007,6 +2893,20 @@ object {
 	.comment-body {
 		margin-left: 0;
 	}
+
+    /* Site footer */
+    .social-navigation a {
+        height: 30px;
+        widows: 30px;
+        margin: 0 1.5em 0.5em 0;
+    }
+
+    .social-navigation .icon {
+	height: 30px;
+	top: 0;
+	width: 30px;
+	vertical-align: top;
+    }
 }
 
 @media screen and (min-width: 79em) {
@@ -3015,8 +2915,7 @@ object {
 	}
     
     .blog .entry-content blockquote.alignright,
-	.archive .entry-content blockquote.alignright,
-	.typenow-front-page .entry-content blockquote.alignright {
+	.archive .entry-content blockquote.alignright {
 		margin-right: -20%;
 	}
 }
@@ -3103,7 +3002,7 @@ object {
 
 	.page .panel-content .entry-title,
 	.page-title,
-	body.page:not(.typenow-front-page) .entry-title {
+	body.page .entry-title {
 		font-size: 10pt;
 	}
 
@@ -3126,7 +3025,6 @@ object {
 		padding: 0;
 	}
 
-	.typenow-front-page.has-header-image .site-branding,
 	.home.blog.has-header-image .site-branding {
 		position: relative;
 	}
@@ -3164,9 +3062,7 @@ object {
 
 	body,
 	a,
-	.site-title a,
-	.typenow-front-page.has-header-image .site-title,
-	.typenow-front-page.has-header-image .site-title a {
+	.site-title a {
 		color: #222 !important; /* Make sure color schemes don't affect to print */
 	}
 
@@ -3174,7 +3070,6 @@ object {
 	h5,
 	blockquote,
 	.site-description,
-	.typenow-front-page.has-header-image .site-description,
 	.entry-meta,
 	.entry-meta a {
 		color: #777 !important; /* Make sure color schemes don't affect to print */
