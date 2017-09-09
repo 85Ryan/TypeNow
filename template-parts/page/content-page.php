@@ -1,6 +1,10 @@
 <?php 
 /**
  * Template part for displaying page content in page.php.
+ *
+ * @package:    TypeNow
+ * @since:      1.0
+ * @version:    1.0
  */
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
