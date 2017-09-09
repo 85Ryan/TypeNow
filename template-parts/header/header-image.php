@@ -10,7 +10,11 @@
 ?>
 <div class="custom-header">
     <div class="custom-header-image">
-        <?php the_custom_header_markup(); ?>
+        <?php if ( '' !== get_the_post_thumbnail() && ( is_single() || is_page() ) ) : ?>
+            <?php the_post_thumbnail( 'typenow-featured-image' ); ?>
+        <?php else : ?>
+            <?php the_custom_header_markup(); ?>
+        <?php endif; ?>
     </div><!-- .custom-header-media -->
     <div class="site-branding">
        <div class="wrap">
