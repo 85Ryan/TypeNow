@@ -12,12 +12,21 @@
  */
 if ( ! function_exists( 'typenow_posted_on' ) ) :
 function typenow_posted_on() {
+
+    $sep = sprintf( __( '%s', 'typenow' ), '<span class="entry-meta-sep">|</span>' );
+
+    $categories_list = sprintf(
+        __( '%1$sin %2$s', 'typenow' ), $sep,
+		'<span class="cats-links">' . get_the_category_list( __( ', ', 'typenow' ) ) . '</span>'
+    );
+
     $byline = sprintf(
         __( 'by %s', 'typenow' ),
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . get_the_author() . '</a></span>'
     );
     
-    echo '<span class="posted-on">' . _e( 'Posted on ' , 'typenow' ) . typenow_time_link() . '</span><span class="byline"> ' . $byline . '</span>';
+    echo '<span class="posted-on">' . _e( 'Posted on ' , 'typenow' ) . typenow_time_link() . '</span>' . $categories_list .'<span class="byline">'. $sep . $byline . '</span>';
+
 }
 endif;
 
