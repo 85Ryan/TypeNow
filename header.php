@@ -1,6 +1,10 @@
 <?php 
 /** 
  * The header for TypeNow.
+ *
+ * @package:    TypeNow
+ * @since:      1.0
+ * @version:    1.0
  */
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js no-svg">
@@ -26,12 +30,4 @@
         </div><!-- .navigation-top -->
         <?php endif; ?>
     </header><!-- #masthead -->
-    
-    <?php if ( ( is_single() || ( is_page() && ! typenow_is_frontpage() ) ) && has_post_thumbnail( get_queried_object_id() ) ) :
-        echo '<div class="single-featured-image-header">';
-        echo get_the_post_thumbnail( get_queried_object_id(), 'typenow-featured-image' );
-        echo '</div><!-- .single-featured-image-header -->';
-    endif;
-    ?>
-    
     <div class="site-content-contain">
