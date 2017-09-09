@@ -10,6 +10,7 @@ get_header(); ?>
 
 <div id="content" class="site-content">
     <div class="wrap">
+        <?php if (function_exists('typenow_breadcrumbs')) typenow_breadcrumbs(); ?>
         <div id="primary" class="content-area">
             <main id="main" class="site-main" role="main">
                 <?php
