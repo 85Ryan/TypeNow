@@ -19,6 +19,9 @@ get_header(); ?>
                 endwhile;
                 ?>
             </main><!-- #main .site-main -->
+            <div id="directory-wrap" class="directory-wrap">
+                <div id="post-dir" class="post-dir"></div>
+            </div><!-- .directory-wrap -->
         </div><!-- #primary .content-area -->
     </div><!-- .wrap -->
 </div><!-- #content .site-content -->
