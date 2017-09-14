@@ -6,10 +6,9 @@
  * @version:    1.0
  */
 
-/**
- * Add Menu Toggle.
- */
 (function( $ ) {
+
+    // Top menu nav toggle.
     var masthead, menuToggle, siteNavContain, siteNavigation;
 
     masthead       = $( '#masthead' );
