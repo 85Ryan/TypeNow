@@ -8,6 +8,8 @@
 
 (function( $ ) {
 
+    $('.entry-content').attr('id','entry-content');
+
     // Create Post Directory.
     var postDirectoryBuild = function() {
         var postChildren = function children(childNodes, reg) {
