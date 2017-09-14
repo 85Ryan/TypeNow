@@ -4,7 +4,7 @@ Theme URI: https://github.com/85Ryan/TypeNow
 Author: iiiRyan
 Author URI: https://iiiryan.com/
 Description: Just a WordPress Theme.
-Version: 0.0.23
+Version: 0.0.24
 License: GPL-3.0
 License URI: https://github.com/85Ryan/TypeNow/blob/master/LICENSE
 Text Domain: TypeNow
@@ -2093,12 +2093,6 @@ body .entry-header {
     display: block;
     text-align: right;
 }
-
-.comment-content .at-user {
-    color: #eb5055;
-    font-weight: 600;
-}
-
 .comment-respond .icon-cancel-reply,
 .comment-body .reply .icon-comment-reply {
     font-size: 18px;
