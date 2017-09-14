@@ -66,10 +66,7 @@ function typenow_setup() {
 		'height'      => 250,
 		'flex-width'  => true,
     ) );
-    
-	// Add theme support for selective refresh for widgets.
-	add_theme_support( 'customize-selective-refresh-widgets' );
-    
+
     // Customize the visual editor to resemble the theme style.
     add_editor_style( 'assets/css/editor-style.css' );
     
@@ -191,6 +188,11 @@ function typenow_scripts() {
         'quote' => typenow_get_svg( array( 'icon' => 'quote-right' ) ),
     );
     
+    // Include post-directory.js in single and page.
+    if ( is_single() || is_page() ) {
+        wp_enqueue_script( 'post-dir', get_theme_file_uri( '/assets/js/post-directory.js' ), array( 'jquery' ), '1.0', true );
+    }
+
     if ( has_nav_menu( 'top' ) ) {
         wp_enqueue_script( 'typenow-script', get_theme_file_uri( '/assets/js/functions.js' ), array( 'jquery' ), '1.0', true );
     }
@@ -330,6 +332,17 @@ function typenow_copyright() {
     echo  $copyright;
 }
 
+/**
+ * Add 'EOF' to entry content for single.
+ */
+function typenow_single_eof ( $content ) {
+	if ( is_single() && ! has_post_format( 'aside' ) ) {
+		$content .= '<p class="text-eof">#EOF</p>';
+	}
+	return $content;
+}
+add_filter( 'the_content', 'typenow_single_eof', 8 ); // After embeds,
+
 /** 
  * Include template file.
  */
@@ -345,3 +358,5 @@ require get_parent_theme_file_path( '/inc/customizer.php' );
 require get_parent_theme_file_path( '/inc/comment-functions.php' );
 // SVG icons functions and filters.
 require get_parent_theme_file_path( '/inc/icon-functions.php' );
+// SEO functions and filters.
+require get_parent_theme_file_path( '/inc/seo-functions.php' );
