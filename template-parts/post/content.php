@@ -36,7 +36,7 @@
         <hr class="entry-header-separator" />
     </header><!-- .entry-header -->
 
-    <div id="entry-content" class="entry-content">
+    <div class="entry-content">
         <?php 
         the_content( sprintf(
 			__( 'Continue Reading<span class="screen-reader-text"> "%s"</span>', 'typenow' ),
