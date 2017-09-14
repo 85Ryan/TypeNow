@@ -32,6 +32,9 @@ get_header(); ?>
                 endwhile; // End of the loop.
                 ?>
             </main><!-- .site-mian -->
+            <div id="directory-wrap" class="directory-wrap">
+                <div id="post-dir" class="post-dir"></div>
+            </div><!-- .directory-wrap -->
         </div><!-- #primary .content-area -->
     </div><!-- .wrap -->
 </div><!-- #content .site-content -->
