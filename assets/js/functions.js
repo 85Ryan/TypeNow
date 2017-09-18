@@ -31,4 +31,39 @@
             $( this ).attr( 'aria-expanded', siteNavContain.hasClass( 'toggled-on' ) );
         });
 	})();
+
+    // Archives template tabs.
+    $('ul.archive-tabs').each(function() {
+        var $active, $content, $links = $(this).find('a');
+        $active = $($links.filter('[href="'+location.hash+'"]')[0] || $links[0]);
+        $active.addClass('active');
+        $content = $($active[0].hash);
+
+        $links.not($active).each(function () {
+            $(this.hash).hide();
+        });
+
+        $(this).on('click', 'a', function(e){
+            $active.removeClass('active');
+            $content.hide();
+            $active = $(this);
+            $content = $(this.hash);
+            $active.addClass('active');
+            $content.show();
+            e.preventDefault();
+        });
+    });
+
+    // Fix Post directory links position.
+    $('#page a').click(function() {
+        var target = document.getElementById(this.hash.slice(1));
+        if (!target) return;
+        var targetOffset = $(target).offset().top - 80;
+        $('html,body').animate({
+            scrollTop: targetOffset
+        },
+        300);
+        return false;
+    });
+
 })( jQuery );
