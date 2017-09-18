@@ -131,16 +131,4 @@
 
     });
 
-    // Fix Post directory links position.
-    $('#post-dir a').click(function() {
-        var target = document.getElementById(this.hash.slice(1));
-        if (!target) return;
-        var targetOffset = $(target).offset().top - 80;
-        $('html,body').animate({
-            scrollTop: targetOffset
-        },
-        300);
-        return false;
-    });
-
 })( jQuery );
