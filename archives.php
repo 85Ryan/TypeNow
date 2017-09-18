@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Archives
+ * Template Name: TypeNow Archives
  *
  * The template for archives.
  *
