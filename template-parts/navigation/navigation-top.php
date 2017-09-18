@@ -24,7 +24,7 @@
     
     <div class="nav-icon-container">
         <div class="search-icon-container">
-            <a class="menu-search-icon" href="<?php echo wp_login_url( home_url() ); ?>"><?php echo typenow_get_svg( array( 'icon' => 'search' ) ); ?><span class="screen-reader-text"><?php _e( 'Search', 'typenow' ); ?></span></a>
+            <a class="menu-search-icon" href="http://iiiryan.dev/search/"><?php echo typenow_get_svg( array( 'icon' => 'search' ) ); ?><span class="screen-reader-text"><?php _e( 'Search', 'typenow' ); ?></span></a>
         </div><!-- .search-icon-container -->
 
         <?php if ( ! is_user_logged_in() ) : ?>
