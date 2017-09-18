@@ -54,11 +54,11 @@
         });
     });
 
-    // Fix Post directory links position.
-    $('#page a').click(function() {
+    // Fix Comment links scroll position.
+    $('#comments a').click(function() {
         var target = document.getElementById(this.hash.slice(1));
         if (!target) return;
-        var targetOffset = $(target).offset().top - 80;
+        var targetOffset = $(target).offset().top - 100;
         $('html,body').animate({
             scrollTop: targetOffset
         },
