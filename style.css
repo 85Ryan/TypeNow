@@ -4,7 +4,7 @@ Theme URI: https://github.com/85Ryan/TypeNow
 Author: iiiRyan
 Author URI: https://iiiryan.com/
 Description: Just a WordPress Theme.
-Version: 0.1.01
+Version: 0.1.02
 License: GPL-3.0
 License URI: https://github.com/85Ryan/TypeNow/blob/master/LICENSE
 Text Domain: TypeNow
@@ -1884,7 +1884,7 @@ body .entry-header {
 13.6 Archives Template Page
 --------------------------------------------------------------*/
 
-.page-template-archives .site-content-contain {
+.page-template .site-content-contain {
     background-color: #f2f4f6;
 }
 
@@ -1998,9 +1998,119 @@ body .entry-header {
 }
 
 /*--------------------------------------------------------------
-13.7 Front page
+13.7 Search page
 --------------------------------------------------------------*/
 
+.search-form-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 40px;
+    padding: 0;
+    margin-bottom: 3em;
+}
+
+.search-form-container:hover {
+    -webkit-transition-duration: .3s;
+    transition-duration: .3s;
+    -webkit-transform: scale(1.02);
+    transform: scale(1.02);
+}
+
+.search-form-container .search-field {
+    font-size: 14px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    padding: 0 60px 0 20px;
+    color: #313131;
+    border: 1px solid rgba(184, 197, 214, .2);
+    border-radius: 20px;
+    outline: 0;
+    background-color: #fff;
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, .04);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .04);
+    -webkit-appearance: none;
+    border: none;
+    border: solid 1px #e6e8ea;
+}
+
+.search-form-container .search-field:focus,
+.search-form-container .search-field:hover {
+    border: solid 1px #e6e8ea;
+}
+
+.search-form-container .search-submit {
+    position: absolute;
+    right: 10px;
+    top: 0;
+    height: 40px;
+    width: 40px;
+    padding: 0;
+    color: #222;
+    outline: 0;
+    background-color: transparent;
+}
+
+.search-form-container .search-submit .icon {
+    height: 18px;
+    width: 18px;
+}
+
+.tag-cloud-container {
+    margin-bottom: 3em;
+    text-align: center;
+}
+
+.tag-cloud-container p {
+    margin: 20px 0;
+    text-align: center;
+    text-transform: capitalize;
+    color: #767676;
+}
+
+.search-none-text {
+    margin: 20px 0;
+    text-transform: capitalize;
+    color: #767676;
+}
+
+.tag-cloud-container a {
+    display: inline-block;
+    margin: 15px 15px 0 0;
+    padding: 4px 15px;
+    -webkit-transition-duration: .4s;
+    transition-duration: .4s;
+    letter-spacing: 0;
+    border-radius: 15px;
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, .04);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .04);
+    background-color: #fff;
+    text-transform: uppercase;
+}
+
+.tag-cloud-container a:hover {
+    -webkit-transition-duration: .3s;
+    transition-duration: .3s;
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+}
+
+.tag-cloud-container a::before {
+    content: '# ';
+    color: #eb5055;
+    font-weight: 600;
+}
+
+.tag-cloud-container .tagcount {
+    margin-left: 5px;
+}
+
+/*--------------------------------------------------------------
+13.8 Front page
+--------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
 14.0 Comments
@@ -3135,7 +3245,7 @@ object {
 
 @media screen and (min-width: 79em) {
     /* Layout */
-    .page-template-archives .wrap {
+    .page-template .wrap {
 		max-width: 844px;
 	}
 
