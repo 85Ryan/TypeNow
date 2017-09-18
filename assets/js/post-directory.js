@@ -131,4 +131,16 @@
 
     });
 
+    // Fix #post-dir links scroll position.
+    $('#post-dir a').click(function() {
+        var target = document.getElementById(this.hash.slice(1));
+        if (!target) return;
+        var targetOffset = $(target).offset().top - 100;
+        $('html,body').animate({
+            scrollTop: targetOffset
+        },
+        300);
+        return false;
+    });
+
 })( jQuery );
