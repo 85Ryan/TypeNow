@@ -830,7 +830,7 @@ a {
 }
 
 a:focus {
-	outline: thin dotted;
+	outline: none;
 }
 
 a:hover,
@@ -1401,7 +1401,6 @@ body:not(.has-header-image) .custom-header-image {
 
 .entry-meta a {
 	color: #666;
-    font-weight: 600;
 }
 
 .entry-meta .entry-meta-sep {
@@ -1669,32 +1668,151 @@ body .entry-header {
 
 /* Post Formats */
 
-.blog .format-status .entry-title,
-.archive .format-status .entry-title,
-.blog .format-aside .entry-title,
-.archive .format-aside .entry-title {
+.format-quote .entry-header {
 	display: none;
 }
 
-.format-quote blockquote {
-	color: #333;
-	font-size: 20px;
-	font-size: 1.25rem;
-	font-weight: 300;
-	overflow: visible;
-	position: relative;
+.format-quote .entry-content {
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, .04);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .04);
+    border-radius: 4px;
 }
 
-.format-quote blockquote .icon {
-	display: block;
-	height: 20px;
-	left: -1.25em;
-	position: absolute;
-	top: 0.4em;
-	-webkit-transform: scale(-1, 1);
-	-ms-transform: scale(-1, 1);
-	transform: scale(-1, 1);
-	width: 20px;
+.format-quote .quote-content-container {
+    background-color: #222;
+    color: #fff;
+    border: none;
+    border-top-left-radius:4px;
+    border-top-right-radius:4px;
+    min-height: 320px;
+    overflow: hidden;
+}
+
+.format-quote .quote-header-image {
+    height: 220px;
+    overflow: hidden;
+    position: relative;
+    border-top-left-radius:4px;
+    border-top-right-radius:4px;
+}
+
+.format-quote .quote-header-image img {
+    width: auto;
+    height: auto;
+    min-width: 100%;
+    min-height: 100%;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.format-quote .quote-content {
+    padding: 3em 3em 5em 3em;
+}
+
+.format-quote .quote-content-container a {
+    color: #fff;
+    -webkit-box-shadow: inset 0 -1px 0 rgba(34, 134, 34, 1);
+	box-shadow: inset 0 -1px 0 rgba(34, 34, 34, 1);
+}
+
+.format-quote .quote-content-container a:hover,
+.format-quote .quote-content-container a:focus {
+	-webkit-box-shadow: inset 0 0 0 rgba(255, 255, 255, 0), 0 3px 0 rgba(255, 255, 255, 1);
+	box-shadow: inset 0 0 0 rgba(255 255, 255, 0), 0 3px 0 rgba(255, 255, 255, 1);
+}
+
+.format-quote .quote-content p,
+.format-quote .quote-content blockquote {
+    color: #fff;
+    font-size: 15px;
+    resize: .9375rem;
+    font-style: normal;
+}
+
+.format-quote .quote-content blockquote cite {
+    font-style: italic;
+    float: right;
+}
+
+.format-quote .entry-content .icon-quote-right {
+    width: 40px;
+    height: 40px;
+    color: #444;
+    margin-bottom: 2em;
+}
+
+.format-quote .quote-footer-container {
+    background-color: #fff;
+    padding: 5em 3em 1em 3em;
+    text-align: center;
+    border: 1px solid rgba(184, 197, 214, .2);
+    border-top: none;
+    border-bottom-right-radius:4px;
+    border-bottom-left-radius:4px;
+    position: relative;
+    height: 150px;
+    z-index: 0
+}
+
+.format-quote .author-avatar-container {
+    width:100px;
+    height:100px;
+    overflow:hidden;
+    border-radius: 50%;
+    position: absolute;
+    margin: auto;
+    border: 5px solid #fff;;
+    top: -145px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #333;
+}
+
+.format-quote .author-avatar-container .author-avatar {
+    width: auto;
+    height: auto;
+    min-width: 100%;
+    mix-height: 100%
+}
+
+.format-quote .author-name {
+    font-size: 16px;
+    font-size: 1rem;
+    text-align: center;
+    color: #767676;
+    font-weight: 600;
+    margin-bottom: 0.75em;
+    height: 26px;
+}
+
+.format-quote .icon-quote-avatar {
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    top: 15px;
+}
+
+.format-quote .entry-meta,
+.format-quote .entry-meta a {
+    color: #999;
+}
+
+.format-quote .entry-meta .entry-format-text {
+    margin-right: 10px;
+}
+
+.format-quote .entry-meta .icon-time {
+    margin-right: 5px;
+}
+
+.format-quote .text-eof {
+    display: none;
 }
 
 /* Post Navigation */
@@ -2912,10 +3030,6 @@ object {
 		color:#eb5055;
 	}
 
-    .site-header .nav-icon-container a:focus {
-		outline: thin dotted;
-	}
-
 	.site-header .nav-icon-container .icon {
 		height: 18px;
 		width: 18px;
@@ -3014,23 +3128,7 @@ object {
 		float: right;
 		width: 58%;
 	}
-    
-    .entry-footer {
-		display: table;
-		width: 100%;
-	}
 
-	.entry-footer .edit-link {
-		display: table-cell;
-		text-align: right;
-		vertical-align: middle;
-	}
-
-	.entry-footer .edit-link a.post-edit-link {
-		margin-top: 0;
-		margin-left: 1em;
-	}
-    
     .entry-content blockquote.alignleft {
 		margin-left: -17.5%;
 		width: 48%;
