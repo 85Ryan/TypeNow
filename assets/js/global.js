@@ -102,11 +102,6 @@
 		}
 	}
 
-	// Set icon for quotes.
-	function setQuotesIcon() {
-		$( typenowScreenReaderText.quote ).prependTo( $formatQuote );
-	}
-
 	// Add 'below-entry-meta' class to elements.
 	function belowEntryMetaClass( param ) {
 		var sidebarPos, sidebarPosBottom;
@@ -207,7 +202,6 @@
 		}
 
 		adjustHeaderHeight();
-		setQuotesIcon();
 		if ( true === supportsInlineSVG() ) {
 			document.documentElement.className = document.documentElement.className.replace( /(\s*)no-svg(\s*)/, '$1svg$2' );
 		}
