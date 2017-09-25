@@ -10,7 +10,7 @@
 ?>
 <div class="custom-header">
     <div class="custom-header-image">
-        <?php if ( '' !== get_the_post_thumbnail() && ( is_single() || is_page() ) ) : ?>
+        <?php if ( '' !== get_the_post_thumbnail() && ( is_single() || is_page() ) && !has_post_format( 'quote' ) ) : ?>
             <?php the_post_thumbnail( 'typenow-featured-image' ); ?>
         <?php else : ?>
             <?php the_custom_header_markup(); ?>
