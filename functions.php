@@ -69,67 +69,7 @@ function typenow_setup() {
 
     // Customize the visual editor to resemble the theme style.
     add_editor_style( 'assets/css/editor-style.css' );
-    
-    // Define and register starter content on new sites.
-    $starter_content = array(
-        
-        // Add custom thumbnail to specify the core-defined pages.
-        'posts' => array(
-            'home',
-            'about' => array(
-                'thumbnail' => '{{image-sandwich}}',
-            ),
-            'content' => array(
-                'thumbnail' => '{{image-espresso}}',
-            ),
-            'archive' => array(
-                'thumbnail' => '{{image-coffee}}',
-            ),
-        ),
-        
-        // Creat the custom image attachments used as post thumbnails for pages.
-        'attachments' => array(
-			'image-espresso' => array(
-				'post_title' => _x( 'Espresso', 'Theme starter content', 'typenow' ),
-				'file' => 'assets/images/espresso.jpg',
-			),
-			'image-sandwich' => array(
-				'post_title' => _x( 'Sandwich', 'Theme starter content', 'typenow' ),
-				'file' => 'assets/images/sandwich.jpg',
-			),
-			'image-coffee' => array(
-				'post_title' => _x( 'Coffee', 'Theme starter content', 'typenow' ),
-				'file' => 'assets/images/coffee.jpg',
-			),
-        ),
-        
-        // Set up nav menus.
-        'nav-menus' => array(
-            'top' => array(
-                'name' => __( 'Top Menu', 'typenow' ),
-                'items' => array(
-                    'link_home',
-                    'page_about',
-                    'page_archive',
-                    'page_contact',
-                ),
-            ),
-            
-            'social' => array(
-                'name' => __( 'Social Links Menu', 'typenow' ),
-                'items' => array(
-                    'link_weibo',
-                    'link_twitter',
-                    'link_facebook',
-                    'link_instagram',
-                    'link_email',
-                ),
-            ),
-        ),
-    );
-    $starter_content = apply_filters( 'typenow_starter_content', $starter_content );
-    
-    add_theme_support( 'starter-content', $starter_content );
+
 }
 add_action( 'after_setup_theme', 'typenow_setup' ); 
 
@@ -183,13 +123,9 @@ function typenow_scripts() {
     wp_script_add_data( 'html5', 'conditional', 'lt IE 9' );
     
     wp_enqueue_script( 'typenow-skip-link-focus-fix', get_theme_file_uri( '/assets/js/skip-link-focus-fix.js' ), array(), '1.0', true );
-    
-    $typenow_l10n = array(
-        'quote' => typenow_get_svg( array( 'icon' => 'quote-right' ) ),
-    );
-    
+
     // Include post-directory.js in single and page.
-    if ( is_single() || is_page() ) {
+    if ( is_single() || (is_page() && !is_page_template()) ) {
         wp_enqueue_script( 'post-dir', get_theme_file_uri( '/assets/js/post-directory.js' ), array( 'jquery' ), '1.0', true );
     }
 
@@ -200,9 +136,7 @@ function typenow_scripts() {
     wp_enqueue_script( 'typenow-global', get_theme_file_uri( '/assets/js/global.js' ), array( 'jquery' ), '1.0', true );
     
     wp_enqueue_script( 'jquery-scrollto', get_theme_file_uri( '/assets/js/jquery.scrollTo.js' ), array( 'jquery' ), '2.1.2', true );
-    
-    wp_localize_script( 'typenow-skip-link-focus-fix', 'typenowScreenReaderText', $typenow_l10n );
-    
+
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
         wp_enqueue_script( 'comment-reply' );
     }
@@ -267,44 +201,6 @@ function typenow_post_thumbnail_sizes_attr ( $attr, $attachment, $size ) {
 	return $attr;
 }
 add_filter( 'wp_get_attachment_image_attributes', 'typenow_post_thumbnail_sizes_attr', 10, 3 );
-
-/**
- * Define the related posts.
- */
-function typenow_related_post( $post_id ) {
-    $tags = wp_get_post_tags( $post_id );
-    if ( $tags ) {
-        $tag_ids = array();
-        foreach( $tags as $typenow_tag ) $tag_ids[] = $typenow_tag -> term_id;
-        $args = array (
-            'tag_in' => $tag_ids,
-            'post_not_in' => array( $post_id ),
-            'posts_per_page' => 5,
-            'ingore_sticky_post' => 1
-        );
-    } else {
-        $args = array (
-            'post_not_in' => array( $post_id ),
-            'posts_per_page' => 5,
-            'ingore_sticky_post' => 1
-        );
-    } ?>
-
-    <?php $related_query = new wp_query( $args ); ?>
-        <?php if ( $related_query->have_posts() ) : ?>
-        <div class="related-posts">
-            <h2 class="related-posts-title"><?php _e( 'Related Posts', 'typenow' ); ?></h2>
-            <ul class="related-content">
-                <?php while ( $related_query->have_posts() ) : $related_query->the_post(); ?>
-                <li class="related-post clearfix">
-                    <a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
-                </li><!-- .related-post -->
-                <?php endwhile; ?>
-            </ul><!-- .related-content -->
-        </div><!-- .related-posts -->
-        <?php endif; ?>
-    <?php wp_reset_query(); ?>
-<?php }
 
 /**
  * Get copyright time.
