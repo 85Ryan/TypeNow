@@ -24,11 +24,6 @@ get_header(); ?>
                             'in_same_term'       => true,
                     ) );
 
-                    // If post format is not status, display the related posts.
-                    //if ( ! has_post_format('status') ) :
-                    //    typenow_related_post($post->ID);
-                    //endif;
-
                 endwhile; // End of the loop.
                 ?>
             </main><!-- .site-mian -->
