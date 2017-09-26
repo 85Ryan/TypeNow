@@ -52,6 +52,7 @@
                 <a href="<?php echo esc_url( get_post_format_link( 'quote' ) ); ?>"><?php echo get_post_format_string( 'quote' ); ?></a></span>
                 <?php
                     if ( is_single() ) {
+                        echo typenow_get_svg(array('icon' => 'time'));
                         echo typenow_time_link();
                     } else {
                         echo typenow_get_svg(array('icon' => 'time'));
@@ -59,8 +60,7 @@
                         typenow_edit_link();
                     };
                 ?>
-            </div><!-- .quote-meta-container -->
-        </div><!-- .entry-footer -->
+            </div><!-- .entry-meta -->
+        </div><!-- .entry-footer-container -->
     </div><!-- .entry-content -->
-
 </article>
