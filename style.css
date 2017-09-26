@@ -1668,32 +1668,33 @@ body .entry-header {
 
 /* Post Formats */
 
-.format-quote .entry-header {
+.format-quote .entry-header,
+.format-status .entry-header {
 	display: none;
 }
 
-.format-quote .entry-content {
+.format-quote .entry-content,
+.format-status .entry-content {
+    background-color: #fff;
+    overflow: hidden;
     -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, .04);
     box-shadow: 0 1px 4px rgba(0, 0, 0, .04);
+    border: 1px solid rgba(184, 197, 214, .2);
     border-radius: 4px;
 }
 
 .format-quote .quote-content-container {
     background-color: #222;
     color: #fff;
-    border: none;
-    border-top-left-radius:4px;
-    border-top-right-radius:4px;
     min-height: 320px;
     overflow: hidden;
+    position: relative;
 }
 
 .format-quote .quote-header-image {
     height: 220px;
     overflow: hidden;
     position: relative;
-    border-top-left-radius:4px;
-    border-top-right-radius:4px;
 }
 
 .format-quote .quote-header-image img {
@@ -1701,8 +1702,8 @@ body .entry-header {
     height: auto;
     min-width: 100%;
     min-height: 100%;
-    position: absolute;
     margin: auto;
+    position: absolute;
     top: 0;
     bottom: 0;
     right: 0;
@@ -1746,16 +1747,11 @@ body .entry-header {
 }
 
 .format-quote .quote-footer-container {
-    background-color: #fff;
     padding: 5em 3em 1em 3em;
     text-align: center;
-    border: 1px solid rgba(184, 197, 214, .2);
-    border-top: none;
-    border-bottom-right-radius:4px;
-    border-bottom-left-radius:4px;
+    border: none;
     position: relative;
     height: 150px;
-    z-index: 0
 }
 
 .format-quote .author-avatar-container {
@@ -1803,16 +1799,45 @@ body .entry-header {
     color: #999;
 }
 
-.format-quote .entry-meta .entry-format-text {
+.format-quote .entry-meta .entry-format-text,
+.format-status .entry-meta .entry-format-text {
     margin-right: 10px;
 }
 
-.format-quote .entry-meta .icon-time {
+.format-quote .entry-meta .icon,
+.format-status .entry-meta .icon {
     margin-right: 5px;
 }
 
-.format-quote .text-eof {
+.format-quote .text-eof,
+.format-status .text-eof {
     display: none;
+}
+
+.format-status .status-content-container {
+    padding: 2em;
+}
+
+.format-status .status-author {
+    display: inline-block;
+    float: left;
+}
+
+.format-status .status-author .avatar {
+    display: inline-block;
+    float: left;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 1px solid rgba(184, 197, 214, .2);
+}
+
+.format-status .status-content {
+    margin-left: 6em;
+}
+
+.format-status .entry-meta {
+    margin-left: 7.5em;
 }
 
 /* Post Navigation */
