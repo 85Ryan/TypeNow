@@ -1550,7 +1550,6 @@ body .entry-header {
 .blog .entry-meta a.post-edit-link,
 .archive .entry-meta a.post-edit-link,
 .search .entry-meta a.post-edit-link {
-	/* display: inline-block; */
 	margin-left: 1em;
 	white-space: nowrap;
 }
@@ -1662,17 +1661,18 @@ body .entry-header {
 
 .entry-footer .tags-links a:focus,
 .entry-footer .tags-links a:hover {
-    background: #bbb;
+    background: #222;
 }
-
 
 /* Post Formats */
 
+.format-aside .entry-header,
 .format-quote .entry-header,
 .format-status .entry-header {
 	display: none;
 }
 
+.format-aside .entry-content,
 .format-quote .entry-content,
 .format-status .entry-content {
     background-color: #fff;
@@ -1681,6 +1681,7 @@ body .entry-header {
     box-shadow: 0 1px 4px rgba(0, 0, 0, .04);
     border: 1px solid rgba(184, 197, 214, .2);
     border-radius: 4px;
+    position: relative;
 }
 
 .format-quote .quote-content-container {
@@ -1689,25 +1690,82 @@ body .entry-header {
     min-height: 320px;
     overflow: hidden;
     position: relative;
+    -webkit-border-top-left-radius: 4px;
+    -webkit-border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
 }
 
+.format-aside .aside-header-image,
 .format-quote .quote-header-image {
+    display: block;
     height: 220px;
     overflow: hidden;
     position: relative;
+    -webkit-border-top-left-radius: 4px;
+    -webkit-border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
 }
 
+.format-aside .aside-header-image:after{
+    content: '';
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0.5;
+    background: #000;
+    -webkit-border-top-left-radius: 4px;
+    -webkit-border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.format-aside .aside-header-image img,
 .format-quote .quote-header-image img {
     width: auto;
     height: auto;
-    min-width: 100%;
-    min-height: 100%;
-    margin: auto;
     position: absolute;
+    min-height: 100%;
+    min-width: 100%;
+    margin: auto;
     top: 0;
     bottom: 0;
-    right: 0;
     left: 0;
+    right: 0;
+}
+
+.format-aside .aside-header-image .aside-date {
+    position: absolute;
+    font-size: 120px;
+    font-size: 7.5rem;
+    font-weight: 100;
+    width: 100%;
+    height: 120px;
+    line-height: 120px;
+    bottom: 10px;
+    left: 40px;
+    text-align: left;
+    color: #fff;
+    z-index: 2;
+}
+
+.format-aside .aside-header-image .aside-month-year {
+    font-size: 13px;
+    font-size: .8125rem;
+    font-weight: 300;
+    color: #fff;
+    text-transform: uppercase;
+    box-shadow: none;
+}
+
+.format-aside .aside-header-image .aside-month-year:hover {
+    box-shadow: none;
 }
 
 .format-quote .quote-content {
@@ -1770,10 +1828,14 @@ body .entry-header {
 }
 
 .format-quote .author-avatar-container .author-avatar {
-    width: auto;
-    height: auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    min-height: 100%;
     min-width: 100%;
-    mix-height: 100%
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
 }
 
 .format-quote .author-name {
@@ -1799,11 +1861,13 @@ body .entry-header {
     color: #999;
 }
 
+.format-aside .entry-meta .entry-format-text,
 .format-quote .entry-meta .entry-format-text,
 .format-status .entry-meta .entry-format-text {
     margin-right: 10px;
 }
 
+.format-aside .entry-meta .icon,
 .format-quote .entry-meta .icon,
 .format-status .entry-meta .icon {
     margin-right: 5px;
@@ -1816,6 +1880,14 @@ body .entry-header {
 
 .format-status .status-content-container {
     padding: 2em;
+}
+
+.format-aside .aside-content {
+    padding: 3em;
+}
+
+.format-aside .aside-footer-container {
+    padding: 0 3em 3em 3em;
 }
 
 .format-status .status-author {
@@ -3026,6 +3098,13 @@ object {
         display: block;
         position: absolute;
         right: -120px;
+        top: 50px;
+    }
+
+    .site-header .main-navigation .nav-icon-container {
+        display: block;
+        position: absolute;
+        right: -120px;
         top: 10px;
     }
 
@@ -3048,10 +3127,14 @@ object {
 	}
 
 	.site-header .nav-icon-container a {
+		color: #fff;
+	}
+
+	.site-header .main-navigation .nav-icon-container a {
 		color: #333;
 	}
 
-    .site-header .nav-icon-container a:hover {
+    .site-header .main-navigation .nav-icon-container a:hover {
 		color:#eb5055;
 	}
 
