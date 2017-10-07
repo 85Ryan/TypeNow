@@ -24,15 +24,14 @@
     </header><!-- .entry-header -->
     <div class="entry-content">
         <div class="aside-content-container">
-            <div class="aside-header-image">
-                <?php if ( '' !== get_the_post_thumbnail() ) {
-                    the_post_thumbnail( 'typenow-featured-image' );
-                } else {
-                    echo '<img src="' . get_parent_theme_file_uri('/assets/images/aside.jpg') . '" />';
-                }; ?>
+            <?php if ( '' !== get_the_post_thumbnail() ) : ?>
+                <div class="aside-header-image" style="background-image:url(<?php the_post_thumbnail_url( 'typenow-featured-image' ); ?>)">
+            <?php else: ?>
+                <div class="aside-header-image" style="background-image:url(<?php echo get_parent_theme_file_uri('/assets/images/aside.jpg'); ?>)">
+            <?php endif; ?>
                 <span class="aside-date"><?php echo date('d', get_the_time('U')); ?>
                 <a href="<?php echo esc_url(get_permalink()); ?>" class="aside-month-year"><?php echo date('F / Y', get_the_time('U')); ?></a></span>
-            </div><!-- .quote-header-image -->
+            </div><!-- .aside-header-image -->
             <div class="aside-content">
                 <?php the_content(); ?>
             </div>
@@ -40,7 +39,7 @@
         <div class="aside-footer-container">
             <div class="entry-meta">
                 <span class="entry-format-text">
-                <?php echo typenow_get_svg(array('icon' => 'quote-format')); ?>
+                <?php echo typenow_get_svg(array('icon' => 'aside-format')); ?>
                 <a href="<?php echo esc_url( get_post_format_link( 'aside' ) ); ?>"><?php echo get_post_format_string( 'aside' ); ?></a></span>
                 <?php
                     if ( ! is_single() ) {
