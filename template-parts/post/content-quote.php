@@ -26,9 +26,7 @@
     <div class="entry-content">
         <div class="quote-content-container">
             <?php if ( '' !== get_the_post_thumbnail() ) : ?>
-                <div class="quote-header-image">
-                <?php the_post_thumbnail( 'typenow-featured-image' ); ?>
-                </div><!-- .quote-header-image -->
+                <div class="quote-header-image" style="background-image:url(<?php the_post_thumbnail_url( 'typenow-featured-image' ); ?>)"></div><!-- .quote-header-image -->
             <?php endif; ?>
             <div class="quote-content">
             <?php echo typenow_get_svg( array( 'icon' => 'quote-right' ) ); ?>
@@ -37,13 +35,9 @@
         </div><!-- .quote-content-container -->
         <div class="quote-footer-container">
             <div class="quote-author">
-                <div class="author-avatar-container">
                     <?php if ( get_post_meta($post->ID, 'author_avatar', true) !== '' ) : ?>
-                        <img class="author-avatar" src="<?php echo get_post_meta($post->ID, 'author_avatar', true); ?>" />
-                    <?php else : ?>
-                        <?php echo typenow_get_svg(array('icon' => 'quote-avatar')); ?>
+                        <div class="author-avatar-container" style="background-image:url(<?php echo get_post_meta($post->ID, 'author_avatar', true); ?>)"></div>
                     <?php endif; ?>
-                </div>
                 <p class="author-name"><?php echo get_post_meta( $post->ID , 'q_author' , true ); ?></p>
             </div>
             <div class="entry-meta">
