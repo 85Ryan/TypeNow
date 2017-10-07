@@ -32,7 +32,7 @@
             </div><!-- .status-content -->
             <div class="entry-meta">
                 <span class="entry-format-text">
-                <?php echo typenow_get_svg(array('icon' => 'quote-format')); ?>
+                <?php echo typenow_get_svg(array('icon' => 'status-format')); ?>
                 <a href="<?php echo esc_url( get_post_format_link( 'status' ) ); ?>"><?php echo get_post_format_string( 'status' ); ?></a></span>
                 <?php
                     if ( is_single() ) {
