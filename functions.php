@@ -54,9 +54,7 @@ function typenow_setup() {
     // Enable support for Post Formats.
     add_theme_support( 'post-formats', array(
         'aside',
-        'image',
         'quote',
-        'link',
 		'status',
     ) );
     
