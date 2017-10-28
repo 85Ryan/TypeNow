@@ -53,6 +53,12 @@
         ?>
     </div><!-- .entry-content -->
 
+    <?php if ( is_single() && get_theme_mod( 'typenow_single_ad', '' ) != '' ) : ?>
+        <div class="ad-slot single-ad-slot">
+            <?php echo get_theme_mod('typenow_single_ad', ''); ?>
+        </div><!-- .ad-slot single-ad-slot -->
+    <?php endif; ?>
+
     <?php
     if ( is_single() && get_the_tag_list() ) : ?>
        <div class="entry-footer">
