@@ -2072,11 +2072,6 @@ body .entry-header {
     color: #0084bf;
 }
 
-.social-navigation a[href*="mailto:"]:hover,
-.social-navigation a[href*="mailto:"]:focus {
-    color: #4285f4;
-}
-
 .social-navigation a[href*="pinterest.com"]:hover,
 .social-navigation a[href*="pinterest.com"]:focus {
     color: #bd081c;
