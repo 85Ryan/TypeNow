@@ -18,20 +18,26 @@ get_header(); ?>
                 
         <div id="primary" class="content-area">
             <main id="main" class="site-main" role="main">
-                <?php
-                if ( have_posts() ) :
-                    while ( have_posts() ) : the_post();
-                        get_template_part( 'template-parts/post/content', get_post_format() );
-                    endwhile;
-                    the_posts_pagination( array(
+                <?php $count = 0; ?>
+                <?php if ( have_posts() ) : ?>
+                    <?php while ( have_posts() ) : the_post(); ?>
+                        <?php if ($count == 1 or $count == 2) : ?>
+						    <?php if (get_theme_mod('typenow_home_ad', '') != '') : ?>
+                                <div class="ad-slot home-ad-slot">
+                                    <?php echo get_theme_mod('typenow_home_ad', ''); ?>
+                                </div><!-- .ad-slot home-ad-slot -->
+						    <?php endif; ?>
+					    <?php endif; $count++; ?>
+                        <?php get_template_part( 'template-parts/post/content', get_post_format() ); ?>
+                    <?php endwhile; ?>
+                    <?php the_posts_pagination( array(
                         'prev_text' => typenow_get_svg( array( 'icon' => 'arrow-left' ) ) . '<span class="screen-reader-text">' . __( 'Previous Page', 'typenow' ) . '</span>',
                         'next_text' => '<span class="screen-reader-text">' . __( 'Next Page', 'typenow' ) . '</span>' . typenow_get_svg( array( 'icon' => 'arrow-right' ) ),
                         'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'typenow' ) . ' </span>',
-                    ) );
-                else :
-                    get_template_part( 'template-parts/post/content', 'none' );
-                endif;
-                ?>
+                    ) ); ?>
+                <?php else : ?>
+                    <?php get_template_part( 'template-parts/post/content', 'none' ); ?>
+                <?php endif; ?>
             </main>
         </div><!-- #primary .content-area -->
     </div><!-- .wrap -->
