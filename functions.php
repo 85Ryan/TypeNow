@@ -123,7 +123,7 @@ function typenow_scripts() {
     wp_enqueue_script( 'typenow-skip-link-focus-fix', get_theme_file_uri( '/assets/js/skip-link-focus-fix.js' ), array(), '1.0', true );
 
     // Include post-directory.js in single and page.
-    if ( is_single() || (is_page() && !is_page_template()) ) {
+    if ( get_theme_mod('typenow_post_dir', '') == '1' && ( is_single() || (is_page() && !is_page_template()) ) ) {
         wp_enqueue_script( 'post-dir', get_theme_file_uri( '/assets/js/post-directory.js' ), array( 'jquery' ), '1.0', true );
     }
 
@@ -139,11 +139,14 @@ function typenow_scripts() {
         wp_enqueue_script( 'comment-reply' );
     }
 
-    // Highlight.js
-    wp_enqueue_script( 'bootcdn-highlight', get_theme_file_uri( '/assets/js/highlight.min.js' ), array( 'jquery' ), '9.12.0', true );
+    // Highlight
+    if ( get_theme_mod('typenow_high_light', '') == '1' ) {
+        // Highlight.js
+        wp_enqueue_script( 'bootcdn-highlight', get_theme_file_uri( '/assets/js/highlight.min.js' ), array( 'jquery' ), '9.12.0', true );
 
-    // Highlight.js xcode stylesheet.
-    wp_enqueue_style( 'highlight-style-xcode', get_theme_file_uri( '/assets/css/highlight.js.css' ), array( 'typenow-style' ), '9.12.0' );
+        // Highlight.js xcode stylesheet.
+        wp_enqueue_style( 'highlight-style-xcode', get_theme_file_uri( '/assets/css/highlight.js.css' ), array( 'typenow-style' ), '9.12.0' );
+    }
 }
 add_action( 'wp_enqueue_scripts', 'typenow_scripts' );
 
@@ -206,7 +209,11 @@ add_filter( 'wp_get_attachment_image_attributes', 'typenow_post_thumbnail_sizes_
 function typenow_copyright() {
     global $wpdb;
     $url = home_url( '/' );
-    $copyname = get_bloginfo('name');
+    if ( get_theme_mod('typenow_site_owner', '') != '') {
+        $copyname = get_theme_mod('typenow_site_owner', '');
+    } else {
+        $copyname = get_bloginfo('name');
+    }
     $first = $wpdb -> get_results("
         SELECT user_registered
         FROM   $wpdb->users
@@ -230,12 +237,20 @@ function typenow_copyright() {
  * Add 'EOF' to entry content for single.
  */
 function typenow_single_eof ( $content ) {
-	if ( is_single() && ! has_post_format( 'aside' ) ) {
+	if ( is_single() && ! has_post_format( array ('aside', 'status', 'quote') ) ) {
 		$content .= '<p class="text-eof">#EOF</p>';
 	}
 	return $content;
 }
 add_filter( 'the_content', 'typenow_single_eof', 8 ); // After embeds,
+
+/**
+ * Re-Define the post excerpt length.
+ */
+function typenow_excerpt_length( $length ) {
+    return 150;
+}
+add_filter( 'excerpt_length', 'typenow_excerpt_length', 999 );
 
 /** 
  * Include template file.
