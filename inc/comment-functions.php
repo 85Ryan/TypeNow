@@ -11,6 +11,9 @@
  * Customize the comment form fields.
  */
 function typenow_comment_form_fields($fields) {
+
+    global $randval;
+
     $commenter = wp_get_current_commenter();
     $args = array();
     $args = wp_parse_args( $args );
@@ -21,11 +24,27 @@ function typenow_comment_form_fields($fields) {
     $html_req = ( $req ? " required='required'" : '' );
     $html5    = 'html5' === $args['format'];
 
-    $fields['author'] = '<input id="author" name="author" type="text" placeholder="' . __( 'Name', 'TypeNow' ) . ( $req ? ' *' : '' ) . '" value="' . esc_attr( $commenter['comment_author'] ) . '"' . $aria_req . ' />';
+    for ( $i=0; $i<4; $i++ ) {
+        $randstr = mt_rand(ord('A'),ord('Z'));
+        srand((double)microtime()*1000000);
+        $randv = mt_rand(1,9);
+        if ( $randv%2 == 0 ) {
+            $randval.=mt_rand(1,9);
+        } else {
+            $randval.=chr($randstr);
+        }
+    };
 
-    $fields['email'] = '<input id="email" name="email" ' . ( $html5 ? 'type="email"' : 'type="text"' ) .'placeholder="' . __( 'Email', 'TypeNow' ) . ( $req ? ' *' : '' ) . '" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" aria-describedby="email-notes"' . $aria_req . $html_req  . ' />';
+    $fields['author'] = '<input id="author" name="author" type="text" placeholder="' . __( 'Name', 'typenow' ) . ( $req ? ' *' : '' ) . '" value="' . esc_attr( $commenter['comment_author'] ) . '"' . $aria_req . ' />';
 
-    $fields['url'] = '<input id="url" name="url" ' . ( $html5 ? 'type="url"' : 'type="text"' ) .'placeholder="' . __( 'Website', 'TypeNow' ).' " value="' . esc_attr( $commenter['comment_author_url'] ) . '" />';
+    $fields['email'] = '<input id="email" name="email" ' . ( $html5 ? 'type="email"' : 'type="text"' ) .'placeholder="' . __( 'Email', 'typenow' ) . ( $req ? ' *' : '' ) . '" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" aria-describedby="email-notes"' . $aria_req . $html_req  . ' />';
+
+    $fields['url'] = '<input id="url" name="url" ' . ( $html5 ? 'type="url"' : 'type="text"' ) .'placeholder="' . __( 'Website', 'typenow' ).' " value="' . esc_attr( $commenter['comment_author_url'] ) . '" />';
+
+    // Add comment captcha fields.
+    if (get_theme_mod('typenow_comment_captcha', '') == '1') {
+        $fields['captcha'] = '<p class="comment-form-captcha">' . '<label for="subpcodes">' . __('Please Enter the Xaptcha: ','typenow').' <span class="required">*</span></label><input type="text"  size="4" id="subpcodes" class="subpcodes" name="subpcodes"><span class="pcodes">'.$randval.'</span><input type="hidden" value="'.$randval.'" name="pcodes"></p>';
+    };
 
     return $fields;
 
@@ -42,11 +61,16 @@ function typenow_comment_form_defaults($defaults) {
     $defaults['comment_field'] = '<textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" placeholder="'. __( 'Your email address will not be published. ','typenow') . ( $req ? __('Required fields are marked ( * ).', 'typenow') : __('You can also post a comment anonymously.', 'typenow') ) . '" aria-required="true" required="required"></textarea>';
 
     $defaults['comment_notes_before'] = '';
-    $defaults['comment_notes_after'] = '<div class="comment-notes-after"><p class="form-allowed-tags">' .
-    sprintf(
-      __( 'You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: %s' ),
-      ' <code>' . allowed_tags() . '</code>'
-    ) . '</p></div>';
+
+    if (get_theme_mod('typenow_comment_markdown', '') == '1') {
+        $defaults['comment_notes_after'] = '<div class="comment-notes-after"><p class="form-allowed-tags">' .
+        sprintf(
+        __( 'You may use the <strong>Markdown</strong> tags and attributes.' )) . '</p></div>';
+    } else {
+        $defaults['comment_notes_after'] = '<div class="comment-notes-after"><p class="form-allowed-tags">' .
+        sprintf(
+        __( 'You may use the <strong>HTML</strong> tags and attributes.' )) . '</p></div>';
+    }
     $defaults['label_submit'] = __( 'Submit', 'typenow' );
     $defaults['submit_field'] = '%1$s %2$s';
     $defaults['cancel_reply_before'] = '<span class="cancel-reply">';
@@ -98,3 +122,28 @@ function typenow_comment_add_at( $comment_text, $comment = '') {
   return $comment_text;
 }
 add_filter( 'comment_text' , 'typenow_comment_add_at', 20, 2);
+
+/**
+ * Add Comment captcha.
+ */
+function typenow_comment_captcha(){
+
+    global $alert;
+
+    $user = wp_get_current_user();
+
+	if ( !$user->ID ) {
+		$pcodes = trim($_POST['pcodes']);
+		$subpcodes = trim($_POST['subpcodes']);
+		$alert .= sprintf( __( 'Captcha Error, Please Re-enter!','typenow' ) );
+		if((($pcodes)!=$subpcodes)|| empty($subpcodes)){
+			echo "<meta http-equiv=\"Content-Type\" content=\"text/html\" charset=\"utf-8\">\r\n";
+			echo "<script language=\"JavaScript\">\r\n";
+			echo " alert(\"$alert\");\r\n";
+			echo " history.back();\r\n";
+			echo "</script>";
+			exit;
+		}
+	}
+}
+add_filter('pre_comment_on_post', 'typenow_comment_captcha');
