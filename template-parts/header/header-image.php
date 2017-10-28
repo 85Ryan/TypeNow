@@ -36,9 +36,11 @@
             </div><!-- .site-branding-text -->
             <?php if ( ( typenow_is_frontpage() || ( is_home() && is_front_page() ) ) && ! has_nav_menu( 'top' ) && has_custom_header() ) : ?>
                 <div class="nav-icon-container">
-                    <div class="search-icon-container">
-                        <a class="menu-search-icon" href="http://iiiryan.dev/search/"><?php echo typenow_get_svg( array( 'icon' => 'search' ) ); ?><span class="screen-reader-text"><?php _e( 'Search', 'typenow' ); ?></span></a>
-                    </div><!-- .search-icon-container -->
+                    <?php if( get_theme_mod( 'typenow_search_page', '' ) != '' ) : ?>
+                        <div class="search-icon-container">
+                            <a class="menu-search-icon" href="<?php echo get_theme_mod( 'typenow_search_page', '' ); ?>"><?php echo typenow_get_svg( array( 'icon' => 'search' ) ); ?><span class="screen-reader-text"><?php _e( 'Search', 'typenow' ); ?></span></a>
+                        </div><!-- .search-icon-container -->
+                    <?php endif; ?>
 
                     <?php if ( ! is_user_logged_in() ) : ?>
                         <div class="login-icon-container">
