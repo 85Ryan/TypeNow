@@ -4,7 +4,7 @@ Theme URI: https://github.com/85Ryan/TypeNow
 Author: iiiRyan
 Author URI: https://iiiryan.com/
 Description: Just a WordPress Theme.
-Version: 0.1.05
+Version: 0.2
 License: GPL-3.0
 License URI: https://github.com/85Ryan/TypeNow/blob/master/LICENSE
 Text Domain: TypeNow
@@ -377,7 +377,7 @@ input,
 select,
 textarea {
     color: #333;
-    font-family: -apple-system, SF UI Text, "Helvetica Neue", helvetica, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, WenQuanYi Micro Hei, sans-serif;
+    font-family: -apple-system, SF UI Text, "Helvetica Neue", helvetica, Segoe UI, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, WenQuanYi Micro Hei, sans-serif;
     font-size: 14px;
     font-weight: 400;
     line-height: 1.66;
@@ -1562,6 +1562,16 @@ body .entry-header {
 	font-size: 0.8125rem;
 }
 
+/* AD Slots */
+
+.ad-slot {
+    display: block;
+    clear: both;
+    width: 100%;
+    text-align: center;
+    margin: 4em 0;
+}
+
 /* More tag */
 
 .entry-content .more-link:before {
@@ -1842,11 +1852,6 @@ body .entry-header {
     margin-right: 5px;
 }
 
-.format-quote .text-eof,
-.format-status .text-eof {
-    display: none;
-}
-
 .format-status .status-content-container {
     padding: 2em;
 }
@@ -2007,14 +2012,19 @@ body .entry-header {
     color: #333;
 }
 
-.social-navigation a[href*="twitter.com"]:hover,
-.social-navigation a[href*="twitter.com"]:focus {
-    color: #1da1f2;
+.social-navigation a[href*="behance.net"]:hover,
+.social-navigation a[href*="behance.net"]:focus {
+    color: #0057ff;
 }
 
-.social-navigation a[href*="facebook.com"]:hover,
-.social-navigation a[href*="facebook.com"]:focus {
-    color: #3b5999;
+.social-navigation a[href*="codepen.io"]:hover,
+.social-navigation a[href*="codepen.io"]:focus {
+    color: #000000;
+}
+
+.social-navigation a[href*="digg.com"]:hover,
+.social-navigation a[href*="digg.com"]:focus {
+    color: #000000;
 }
 
 .social-navigation a[href*="dribbble.com"]:hover,
@@ -2022,9 +2032,136 @@ body .entry-header {
     color: #ea4c89;
 }
 
+.social-navigation a[href*="dropbox.com"]:hover,
+.social-navigation a[href*="dropbox.com"]:focus {
+    color: #0061ff;
+}
+
+.social-navigation a[href*="facebook.com"]:hover,
+.social-navigation a[href*="facebook.com"]:focus {
+    color: #4267b2;
+}
+
+.social-navigation a[href*="flickr.com"]:hover,
+.social-navigation a[href*="flickr.com"]:focus {
+    color: #ff0084;
+}
+
+.social-navigation a[href*="foursquare.com"]:hover,
+.social-navigation a[href*="foursquare.com"]:focus {
+    color: #0732a2;
+}
+
+.social-navigation a[href*="plus.google.com"]:hover,
+.social-navigation a[href*="plus.google.com"]:focus {
+    color: #db4437;
+}
+
+.social-navigation a[href*="github.com"]:hover,
+.social-navigation a[href*="github.com"]:focus {
+    color: #24292e;
+}
+
 .social-navigation a[href*="instagram.com"]:hover,
 .social-navigation a[href*="instagram.com"]:focus {
     color: #d6249f;
+}
+
+.social-navigation a[href*="linkedin.com"]:hover,
+.social-navigation a[href*="linkedin.com"]:focus {
+    color: #0084bf;
+}
+
+.social-navigation a[href*="mailto:"]:hover,
+.social-navigation a[href*="mailto:"]:focus {
+    color: #4285f4;
+}
+
+.social-navigation a[href*="pinterest.com"]:hover,
+.social-navigation a[href*="pinterest.com"]:focus {
+    color: #bd081c;
+}
+
+.social-navigation a[href*="getpocket.com"]:hover,
+.social-navigation a[href*="getpocket.com"]:focus {
+    color: #d3505a;
+}
+
+.social-navigation a[href*="reddit.com"]:hover,
+.social-navigation a[href*="reddit.com"]:focus {
+    color: orangered;
+}
+
+.social-navigation a[href*="skype.com"]:hover,
+.social-navigation a[href*="skype.com"]:focus {
+    color: #00AFF0;
+}
+
+.social-navigation a[href*="snapchat.com"]:hover,
+.social-navigation a[href*="snapchat.com"]:focus {
+    color: #fee734;
+}
+
+.social-navigation a[href*="soundcloud.com"]:hover,
+.social-navigation a[href*="soundcloud.com"]:focus {
+    color: #f50;
+}
+
+.social-navigation a[href*="spotify.com"]:hover,
+.social-navigation a[href*="spotify.com"]:focus {
+    color: #1db954;
+}
+
+.social-navigation a[href*="tumblr.com"]:hover,
+.social-navigation a[href*="tumblr.com"]:focus {
+    color: #529ecc;
+}
+
+.social-navigation a[href*="twitch.tv"]:hover,
+.social-navigation a[href*="twitch.tv"]:focus {
+    color: #4b367c;
+}
+
+.social-navigation a[href*="twitter.com"]:hover,
+.social-navigation a[href*="twitter.com"]:focus {
+    color: #1da1f2;
+}
+
+.social-navigation a[href*="vimeo.com"]:hover,
+.social-navigation a[href*="vimeo.com"]:focus {
+    color: #00ADEF;
+}
+
+.social-navigation a[href*="vine.co"]:hover,
+.social-navigation a[href*="vine.co"]:focus {
+    color: #00bf8e;
+}
+
+.social-navigation a[href*="vk.com"]:hover,
+.social-navigation a[href*="vk.com"]:focus {
+    color: #5e81a8;
+}
+
+.social-navigation a[href*="weibo.com"]:hover,
+.social-navigation a[href*="weibo.com"]:focus {
+    color: #d52b2a;
+}
+
+.social-navigation a[href*="wordpress.org"]:hover,
+.social-navigation a[href*="wordpress.org"]:focus,
+.social-navigation a[href*="wordpress.com"]:hover,
+.social-navigation a[href*="wordpress.com"]:focus {
+    color: #0073aa;
+}
+
+.social-navigation a[href*="yelp.com"]:hover,
+.social-navigation a[href*="yelp.com"]:focus {
+    color: #be2020;
+}
+
+.social-navigation a[href*="youtube.com"]:hover,
+.social-navigation a[href*="youtube.com"]:focus {
+    color: #ff0000;
 }
 
 .social-navigation .icon {
@@ -2062,6 +2199,13 @@ body .entry-header {
 .site-info span {
 	display: inline-block;
     margin: 0 1em 0.5em 0;
+}
+
+.site-info .site-copy-notice {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 11px;
+    font-size: 0.6875rem;
 }
 
 /*--------------------------------------------------------------
@@ -2328,26 +2472,28 @@ body .entry-header {
 
 .comment-form {
     position: relative;
-    padding-bottom: 0;
 }
 
 .comment-form input {
     font-size: 13px;
     font-size: 0.8125rem;
-    display: block;
     height: 32px;
+    display: inline-block;
     color: #313131;
     outline: none;
-    float: left;
-    max-width: 27%;
+    width: 32.8%;
     border-left: none;
     border-right: none;
-    border-bottom: none;
-    border-top: 1px dashed #e6e8ea;
+    border-top: none;
+    border-bottom: 1px dashed #e6e8ea;
     border-radius: 0;
     padding: 0;
-    margin-bottom: 3em;
+    margin-bottom: 1em;
     background-color: transparent;
+}
+
+.comment-form input:focus {
+    border-color: #eb5055;
 }
 
 .comment-form textarea {
@@ -2361,6 +2507,49 @@ body .entry-header {
     background-color: transparent;
 }
 
+.comment-form-captcha {
+    position: absolute;
+    right: 0;
+    bottom: -32px;
+    display: inline-block;
+    width: 100%;
+    line-height: 32px;
+    height: 32px;
+    margin: 0;
+}
+
+.comment-form-captcha label {
+    text-transform: uppercase;
+    font-size: 12px;
+    font-size: 0.75rem;
+    color: #5f5f5f;
+    max-width: 200px;
+    float: left;
+    display: inline;
+}
+
+.comment-form-captcha input {
+    width: 80px;
+    float: left;
+    border: 1px solid #e6e8ea;
+    padding: 6px;
+    margin: 0;
+    margin-left: 1em;
+}
+
+.comment-form .pcodes {
+    background-color: #f2f4f6;
+    font-weight: 600;
+    font-size: 14px;
+    font-size: 0.875rem;
+    color: #eb5055;
+    margin-left: 1.5em;
+    letter-spacing: 2px;
+    padding: 5px;
+    border-radius: 2px;
+    font-style: oblique;
+}
+
 .comment-form .submit {
     font-size: 11px;
     font-size: 0.6875rem;
@@ -2369,6 +2558,7 @@ body .entry-header {
     position: absolute;
     right: 0;
     bottom: -32px;
+    height: 32px;
     max-height: 32px;
     width: 90px;
     margin: 0 auto;
@@ -2384,10 +2574,17 @@ body .entry-header {
     border-top: 1px dashed #e6e8ea;
     padding: 10px 0;
     margin-bottom: 0;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-size: 0.75rem;
 }
 
 .comment-form .comment-notes-after p {
     margin-bottom: 0;
+}
+
+.comment-form .required {
+    color: #eb5055;
 }
 
 /* Comment lists. */
@@ -2496,6 +2693,13 @@ body .entry-header {
 
 .comment-metadata a {
     color: #767676;
+}
+
+.comment-awaiting-moderation {
+    font-size: 12px;
+    font-size: 0.75rem;
+    color: #767676;
+    padding-top: 1em;
 }
 
 .comment-list .edit-link {
@@ -3405,15 +3609,15 @@ object {
 
     /* Site footer */
     .social-navigation a {
-        height: 30px;
-        widows: 30px;
+        height: 28px;
+        widows: 28px;
         margin: 0 1.5em 0.5em 0;
     }
 
     .social-navigation .icon {
-	height: 30px;
+	height: 28px;
 	top: 0;
-	width: 30px;
+	width: 28px;
 	vertical-align: top;
     }
 }
