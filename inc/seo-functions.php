@@ -8,6 +8,37 @@
  */
 
 /**
+ * Re-Define the site title.
+ */
+function typenow_document_title_parts( $title ){
+
+    $author = get_queried_object();
+
+    // Remove site title when on single page.
+    if( is_single() && isset( $title['site'] ) ) unset( $title['site'] );
+
+	if ( is_category() )
+		$title['title'] = sprintf( __( 'Category Archives: %s', 'typenow' ), single_cat_title( '', false ) );
+	if ( is_search() )
+		$title['title'] = sprintf( __( 'Search Results for: %s', 'typenow' ), get_search_query() );
+	if ( is_tag() )
+		$title['title'] = sprintf( __( 'Tag Archives: %s', 'typenow' ), single_tag_title( '', false ) );
+	if ( is_date() && is_day() )
+		$title['title'] = sprintf( __( 'Daily Archives: %s', 'typenow' ), get_the_date() );
+	if ( is_date() && is_month() )
+		$title['title'] = sprintf( __( 'Monthly Archives: %s', 'typenow' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'typenow' ) ) );
+	if ( is_date() && is_year() )
+		$title['title'] = sprintf( __( 'Yearly Archives: %s', 'typenow' ), get_the_date( _x( 'Y', 'yearly archives date format', 'typenow' ) ) );
+	if ( is_author() )
+		$title['title'] = sprintf( __( 'All posts by %s', 'typenow' ), $author->display_name );
+	if ( is_tax( 'post_format' ) )
+		$title['title'] = sprintf( __( '%s Archives', 'typenow' ), get_post_format_string( get_post_format() ) );
+
+    return $title;
+}
+add_filter('document_title_parts', 'typenow_document_title_parts', 20, 1);
+
+/**
  * WordPress Breadcrumbs
  * author: Dimox
  * version: 2017.21.01
