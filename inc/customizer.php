@@ -27,7 +27,7 @@ function typenow_customize_register( $wp_customize ) {
     // Display  Bloginfo.
 	$wp_customize->add_setting('typenow_display_title', array(
         'capability' => 'edit_theme_options',
-        'theme-supports' => array( 'custom-logo', 'header-text' ),
+        'theme-supports' => array('custom-logo', 'header-text'),
         'default' => 1,
         'transport' => 'postMessage',
     ));
@@ -41,7 +41,7 @@ function typenow_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting('typenow_display_tagline', array(
         'capability' => 'edit_theme_options',
-        'theme-supports' => array( 'custom-logo', 'header-text' ),
+        'theme-supports' => array('custom-logo', 'header-text'),
         'default' => 1,
         'transport' => 'postMessage',
     ));
@@ -51,6 +51,191 @@ function typenow_customize_register( $wp_customize ) {
         'label'    => __('Display Site Tagline', 'typenow'),
         'section'  => 'title_tagline',
         'type'     => 'checkbox',
+    ));
+
+    // Set the site owner.
+    $wp_customize->add_setting('typenow_site_owner', array(
+        'capability' => 'edit_theme_options',
+    ));
+
+    $wp_customize->add_control('typenow_site_owner', array(
+        'settings'      => 'typenow_site_owner',
+        'label'         => __('Site Owner', 'typenow'),
+        'section'       => 'title_tagline',
+        'type'          => 'text',
+        'description'   =>  __('This only used for the copyright info in the site footer, if blank display the site title.', 'typenow'),
+        'priority'      => 180,
+    ));
+
+    // Set the site ICP.
+    $wp_customize->add_setting('typenow_site_icp', array(
+        'capability' => 'edit_theme_options',
+    ));
+
+    $wp_customize->add_control('typenow_site_icp', array(
+        'settings'      => 'typenow_site_icp',
+        'label'         => __('Site ICP', 'typenow'),
+        'section'       => 'title_tagline',
+        'type'          => 'text',
+        'description'   =>  __('This only used for the copyright info in the site footer, if blank display none.', 'typenow'),
+        'priority'      => 200,
+    ));
+
+    // Theme Options.
+    $wp_customize->add_section('typenow_theme_options', array(
+        'title'         => __('Theme Options', 'typenow'),
+        'priority'      => 110,
+    ));
+
+    // Search page
+    $wp_customize->add_setting('typenow_search_page', array(
+        'capability' => 'edit_theme_options',
+    ));
+
+    $wp_customize->add_control('typenow_search_page', array(
+        'settings'      => 'typenow_search_page',
+        'label'         => __('Search Page URL', 'typenow'),
+        'section'       => 'typenow_theme_options',
+        'type'          => 'text',
+        'description'   =>  __('Before set this, you should add a new page use the page template of TypeNow Search.If blank, display none.', 'typenow'),
+        'priority'      => 10,
+    ));
+
+    // Site Map
+    $wp_customize->add_setting('typenow_site_map', array(
+        'capability' => 'edit_theme_options',
+    ));
+
+    $wp_customize->add_control('typenow_site_map', array(
+        'settings'      => 'typenow_site_map',
+        'label'         => __('Site Map URL', 'typenow'),
+        'section'       => 'typenow_theme_options',
+        'type'          => 'text',
+        'description'   =>  __('If blank, display none.', 'typenow'),
+        'priority'      => 20,
+    ));
+
+    // Post dir.
+    $wp_customize->add_setting('typenow_post_dir', array(
+        'capability' => 'edit_theme_options',
+        'default' => 1,
+    ));
+
+    $wp_customize->add_control('typenow_post_dir', array(
+        'settings'      => 'typenow_post_dir',
+        'label'         => __('Display Post Directory', 'typenow'),
+        'section'       => 'typenow_theme_options',
+        'type'          => 'checkbox',
+        'priority'      => 30,
+    ));
+
+    // Code High Light.
+    $wp_customize->add_setting('typenow_high_light', array(
+        'capability' => 'edit_theme_options',
+        'default' => 1,
+    ));
+
+    $wp_customize->add_control('typenow_high_light', array(
+        'settings'      => 'typenow_high_light',
+        'label'         => __('Enable High Light', 'typenow'),
+        'section'       => 'typenow_theme_options',
+        'type'          => 'checkbox',
+        'priority'      => 40,
+    ));
+
+    // Comment Captcha.
+    $wp_customize->add_setting('typenow_comment_captcha', array(
+        'capability' => 'edit_theme_options',
+        'default' => 1,
+    ));
+
+    $wp_customize->add_control('typenow_comment_captcha', array(
+        'settings'      => 'typenow_comment_captcha',
+        'label'         => __('Enable Comment Captcha', 'typenow'),
+        'section'       => 'typenow_theme_options',
+        'type'          => 'checkbox',
+        'priority'      => 50,
+    ));
+
+    // Enable Markdown.
+    $wp_customize->add_setting('typenow_comment_markdown', array(
+        'capability' => 'edit_theme_options',
+        'default' => 1,
+    ));
+
+    $wp_customize->add_control('typenow_comment_markdown', array(
+        'settings'      => 'typenow_comment_markdown',
+        'label'         => __('Enable Comment Markdown', 'typenow'),
+        'section'       => 'typenow_theme_options',
+        'type'          => 'checkbox',
+        'description'   =>  __('This is a test function.', 'typenow'),
+        'priority'      => 60,
+    ));
+
+    // Copyright Notice.
+    $wp_customize->add_setting('typenow_copy_notice', array(
+        'capability' => 'edit_theme_options',
+    ));
+
+    $wp_customize->add_control('typenow_copy_notice', array(
+        'settings'      => 'typenow_copy_notice',
+        'label'         => __('Copyright Notice', 'typenow'),
+        'section'       => 'typenow_theme_options',
+        'type'          => 'textarea',
+        'description'   =>  __('Set the Copyright Notice in the site footer.', 'typenow'),
+        'priority'      => 70,
+    ));
+
+    // Theme Options.
+    $wp_customize->add_section('typenow_ad_slots', array(
+        'title'         => __('AD Slots', 'typenow'),
+        'priority'      => 115,
+    ));
+
+    // Home AD.
+    $wp_customize->add_setting('typenow_home_ad', array(
+        'capability' => 'edit_theme_options',
+    ));
+
+    $wp_customize->add_control('typenow_home_ad', array(
+        'settings'      => 'typenow_home_ad',
+        'label'         => __('Home Page AD', 'typenow'),
+        'section'       => 'typenow_ad_slots',
+        'type'          => 'textarea',
+        'description'   =>  __('This AD slot will appear behind the first two posts per page.', 'typenow'),
+        'priority'      => 10,
+    ));
+
+    // Single page AD.
+    $wp_customize->add_setting('typenow_single_ad', array(
+        'capability' => 'edit_theme_options',
+    ));
+
+    $wp_customize->add_control('typenow_single_ad', array(
+        'settings'      => 'typenow_single_ad',
+        'label'         => __('Single Page AD', 'typenow'),
+        'section'       => 'typenow_ad_slots',
+        'type'          => 'textarea',
+        'description'   =>  __('This AD slot will appear behind the post content.', 'typenow'),
+        'priority'      => 20,
+    ));
+
+    // Donate.
+    $wp_customize->add_section('typenow_donate', array(
+        'title'         => __('Buy Me a Cup of Coffee', 'typenow'),
+        'priority'      => 200,
+        'description'   => __('<p>Thanks for stopping by!</P><p>If you like what I do and are so inclined, you can help keep this theme (and me!) going by making a contribution to <a href="https://github.com/85Ryan/TypeNow">GitHub</a>.</p><p>Simply scan the QR-Code below to donate through AliPay or WechatPay.</p><p><img src="https://iiiryan.com/wp-content/uploads/2017/10/donate-pay.png" /></p><p>And you can also donate me by clicking the button below through PayPal.</p><p><a href="https://paypal.me/iiiryan"><img src="http://bocachurch.org/wp-content/uploads/2016/01/donate-paypal-1x.png"></a></p><p>Thank you in advance for your kindness.</p><p>@ <a href="https://iiiryan.com">Ryan</a></P>', 'typenow'),
+    ));
+
+    // Home AD.
+    $wp_customize->add_setting('typenow_donate_hidden', array(
+        'capability' => 'edit_theme_options',
+    ));
+
+    $wp_customize->add_control('typenow_donate_hidden', array(
+        'settings'      => 'typenow_donate_hidden',
+        'section'       => 'typenow_donate',
+        'type'          => 'hidden',
     ));
 }
 add_action( 'customize_register', 'typenow_customize_register' );
