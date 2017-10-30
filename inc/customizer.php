@@ -17,18 +17,22 @@ function typenow_customize_register( $wp_customize ) {
 
     $wp_customize->selective_refresh->add_partial( 'blogname', array(
 		'selector' => '.site-title a',
-		'render_callback' => 'typenow_customize_partial_blogname',
+		'render_callback' => function (){
+            bloginfo ( 'name' );
+        },
 	) );
 	$wp_customize->selective_refresh->add_partial( 'blogdescription', array(
 		'selector' => '.site-description',
-		'render_callback' => 'typenow_customize_partial_blogdescription',
+		'render_callback' => function (){
+            bloginfo ( 'description' );
+        },
 	) );
 
     // Display  Bloginfo.
 	$wp_customize->add_setting('typenow_display_title', array(
         'capability' => 'edit_theme_options',
         'theme-supports' => array('custom-logo', 'header-text'),
-        'default' => 1,
+        'default' => true,
         'transport' => 'postMessage',
     ));
 
@@ -42,7 +46,7 @@ function typenow_customize_register( $wp_customize ) {
     $wp_customize->add_setting('typenow_display_tagline', array(
         'capability' => 'edit_theme_options',
         'theme-supports' => array('custom-logo', 'header-text'),
-        'default' => 1,
+        'default' => true,
         'transport' => 'postMessage',
     ));
 
@@ -56,6 +60,7 @@ function typenow_customize_register( $wp_customize ) {
     // Set the site owner.
     $wp_customize->add_setting('typenow_site_owner', array(
         'capability' => 'edit_theme_options',
+        'transport' => 'postMessage',
     ));
 
     $wp_customize->add_control('typenow_site_owner', array(
@@ -67,9 +72,18 @@ function typenow_customize_register( $wp_customize ) {
         'priority'      => 180,
     ));
 
+	$wp_customize->selective_refresh->add_partial( 'typenow_site_owner', array(
+		'selector' => '.site-copyright a',
+        'settings' => 'typenow_site_owner',
+        'render_callback' => function () {
+            return get_theme_mod( 'typenow_site_owner', '' );
+        },
+	) );
+
     // Set the site ICP.
     $wp_customize->add_setting('typenow_site_icp', array(
         'capability' => 'edit_theme_options',
+        'transport' => 'postMessage',
     ));
 
     $wp_customize->add_control('typenow_site_icp', array(
@@ -80,6 +94,14 @@ function typenow_customize_register( $wp_customize ) {
         'description'   =>  __('This only used for the copyright info in the site footer, if blank display none.', 'typenow'),
         'priority'      => 200,
     ));
+
+	$wp_customize->selective_refresh->add_partial( 'typenow_site_icp', array(
+		'selector' => '.site-icp a',
+        'settings' => 'typenow_site_icp',
+        'render_callback' => function () {
+            return get_theme_mod( 'typenow_site_icp', '' );
+        },
+	) );
 
     // Theme Options.
     $wp_customize->add_section('typenow_theme_options', array(
@@ -96,7 +118,7 @@ function typenow_customize_register( $wp_customize ) {
         'settings'      => 'typenow_search_page',
         'label'         => __('Search Page URL', 'typenow'),
         'section'       => 'typenow_theme_options',
-        'type'          => 'text',
+        'type'          => 'url',
         'description'   =>  __('Before set this, you should add a new page use the page template of TypeNow Search.If blank, display none.', 'typenow'),
         'priority'      => 10,
     ));
@@ -110,15 +132,65 @@ function typenow_customize_register( $wp_customize ) {
         'settings'      => 'typenow_site_map',
         'label'         => __('Site Map URL', 'typenow'),
         'section'       => 'typenow_theme_options',
-        'type'          => 'text',
+        'type'          => 'url',
         'description'   =>  __('If blank, display none.', 'typenow'),
         'priority'      => 20,
     ));
 
+    // Related Post.
+    $wp_customize->add_setting('typenow_related_post', array(
+        'capability' => 'edit_theme_options',
+        'default' => 0,
+        'transport' => 'postMessage',
+    ));
+
+    $wp_customize->add_control('typenow_related_post', array(
+        'settings'      => 'typenow_related_post',
+        'label'         => __('Display Related Posts', 'typenow'),
+        'section'       => 'typenow_theme_options',
+        'type'          => 'checkbox',
+        'priority'      => 30,
+    ));
+
+	$wp_customize->selective_refresh->add_partial( 'typenow_related_post', array(
+        'settings' => 'typenow_related_post',
+        'render_callback' => function () {
+            return get_theme_mod( 'typenow_related_post', '' );
+        },
+	) );
+
+    $wp_customize->add_setting('typenow_related_post_num', array(
+        'capability' => 'edit_theme_options',
+        'default' => '2',
+        'transport' => 'postMessage',
+    ));
+
+    $wp_customize->add_control('typenow_related_post_num', array(
+        'settings'      => 'typenow_related_post_num',
+        'label'         => __('Related Posts Number', 'typenow'),
+        'section'       => 'typenow_theme_options',
+        'type'          => 'radio',
+        'priority'      => 35,
+        'choices'       => array (
+                            '2'  => __('Two posts', 'typenow'),
+                            '4' => __('Four posts', 'typenow'),
+                            ),
+        'active_callback' =>  function () {
+            return get_theme_mod( 'typenow_related_post', '' );
+        }
+    ));
+
+	$wp_customize->selective_refresh->add_partial( 'typenow_related_post_num', array(
+        'settings' => 'typenow_related_post_num',
+        'render_callback' => function () {
+            return get_theme_mod( 'typenow_related_post_num', '' );
+        },
+	) );
+
     // Post dir.
     $wp_customize->add_setting('typenow_post_dir', array(
         'capability' => 'edit_theme_options',
-        'default' => 1,
+        'default' => 0,
     ));
 
     $wp_customize->add_control('typenow_post_dir', array(
@@ -126,13 +198,13 @@ function typenow_customize_register( $wp_customize ) {
         'label'         => __('Display Post Directory', 'typenow'),
         'section'       => 'typenow_theme_options',
         'type'          => 'checkbox',
-        'priority'      => 30,
+        'priority'      => 40,
     ));
 
     // Code High Light.
     $wp_customize->add_setting('typenow_high_light', array(
         'capability' => 'edit_theme_options',
-        'default' => 1,
+        'default' => 0,
     ));
 
     $wp_customize->add_control('typenow_high_light', array(
@@ -140,13 +212,13 @@ function typenow_customize_register( $wp_customize ) {
         'label'         => __('Enable High Light', 'typenow'),
         'section'       => 'typenow_theme_options',
         'type'          => 'checkbox',
-        'priority'      => 40,
+        'priority'      => 50,
     ));
 
     // Comment Captcha.
     $wp_customize->add_setting('typenow_comment_captcha', array(
         'capability' => 'edit_theme_options',
-        'default' => 1,
+        'default' => 0,
     ));
 
     $wp_customize->add_control('typenow_comment_captcha', array(
@@ -154,13 +226,13 @@ function typenow_customize_register( $wp_customize ) {
         'label'         => __('Enable Comment Captcha', 'typenow'),
         'section'       => 'typenow_theme_options',
         'type'          => 'checkbox',
-        'priority'      => 50,
+        'priority'      => 60,
     ));
 
     // Enable Markdown.
     $wp_customize->add_setting('typenow_comment_markdown', array(
         'capability' => 'edit_theme_options',
-        'default' => 1,
+        'default' => 0,
     ));
 
     $wp_customize->add_control('typenow_comment_markdown', array(
@@ -169,12 +241,14 @@ function typenow_customize_register( $wp_customize ) {
         'section'       => 'typenow_theme_options',
         'type'          => 'checkbox',
         'description'   =>  __('This is a test function.', 'typenow'),
-        'priority'      => 60,
+        'priority'      => 70,
     ));
 
     // Copyright Notice.
     $wp_customize->add_setting('typenow_copy_notice', array(
         'capability' => 'edit_theme_options',
+        'transport' => 'postMessage',
+        'default' => '',
     ));
 
     $wp_customize->add_control('typenow_copy_notice', array(
@@ -185,6 +259,14 @@ function typenow_customize_register( $wp_customize ) {
         'description'   =>  __('Set the Copyright Notice in the site footer.', 'typenow'),
         'priority'      => 70,
     ));
+
+	$wp_customize->selective_refresh->add_partial( 'typenow_copy_notice', array(
+		'selector' => '.site-copy-notice',
+        'settings' => 'typenow_copy_notice',
+        'render_callback' => function () {
+            return get_theme_mod( 'typenow_copy_notice', '' );
+        },
+	) );
 
     // Theme Options.
     $wp_customize->add_section('typenow_ad_slots', array(
@@ -360,20 +442,6 @@ function typenow_display_sideboxes() {
     endif;
 }
 add_action( 'admin_print_scripts', 'typenow_display_sideboxes', 1000 );
-
-/**
- * Render the site title for the selective refresh partial.
- */
-function typenow_customize_partial_blogname() {
-	bloginfo( 'name' );
-}
-
-/**
- * Render the site tagline for the selective refresh partial.
- */
-function typenow_customize_partial_blogdescription() {
-	bloginfo( 'description' );
-}
 
 /**
  * Bind JS handlers to instantly live-preview changes.
