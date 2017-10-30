@@ -1193,6 +1193,8 @@ body {
 	margin: 0;
 	padding: 0;
 	text-transform: none;
+    position: relative;
+    clip: auto;
 }
 
 .site-title,
@@ -1212,6 +1214,8 @@ body.has-header-image .site-title a {
 	font-size: 13px;
 	font-size: 0.8125rem;
 	margin-bottom: 0;
+    position: relative;
+    clip: auto;
 }
 
 body.has-header-image .site-description {
