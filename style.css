@@ -4,7 +4,7 @@ Theme URI: https://github.com/85Ryan/TypeNow
 Author: iiiRyan
 Author URI: https://iiiryan.com/
 Description: Just a WordPress Theme.
-Version: 0.2
+Version: 0.3
 License: GPL-3.0
 License URI: https://github.com/85Ryan/TypeNow/blob/master/LICENSE
 Text Domain: TypeNow
@@ -1610,6 +1610,74 @@ body .entry-header {
     margin-right: 20px;
 }
 
+/* Related Posts */
+.related-post-container {
+
+}
+
+.related-post-content {
+    padding: 0;
+}
+
+.related-post-list {
+    list-style: none;
+    display: inline-block;
+    overflow: hidden;
+    border: 1px solid rgba(184, 197, 214, .2);
+    border-radius: 3px;
+    background: #fff;
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, .04);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .04);
+    height: 90px;
+    width: 48%;
+    margin-top: 0.75em;
+    margin-bottom: 0.75em;
+    position: relative;
+}
+
+.related-post-list:nth-child(odd) {
+    float: left;
+}
+
+.related-post-list:nth-child(even) {
+    float: right;
+}
+
+.related-post-list:first-child,
+.related-post-list:nth-child(2) {
+    margin-top: 1.5em;
+}
+
+.related-post-thumb {
+    width : 90px;
+    height: 90px;
+    overflow: hidden;
+    display: block;
+    background-position: center center;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+}
+
+.related-post-title {
+    width: calc(100% - 115px);
+    display: block;
+    position: absolute;
+    left: 100px;
+    top: 15px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.related-post-time {
+    display: block;
+    position: absolute;
+    left: 100px;
+    top: 50px;
+}
+
 /* Post Directory */
 
 .directory-wrap {
@@ -1893,7 +1961,7 @@ body .entry-header {
 }
 
 .post-navigation .nav-links {
-	padding: 1em 0;
+	padding: 2em 0;
 }
 
 .post-navigation .nav-links .nav-text {
@@ -2274,6 +2342,7 @@ body .entry-header {
     width: 100%;
 }
 
+.related-post-list:hover,
 .archives .post-list-item:hover {
     -webkit-transition-duration: .4s;
     transition-duration: .4s;
@@ -2289,7 +2358,6 @@ body .entry-header {
     border: 1px solid rgba(184, 197, 214, .2);
     border-radius: 3px;
     background: #fff;
-    border-radius: 3px;
     -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, .04);
     box-shadow: 0 1px 4px rgba(0, 0, 0, .04);
     height: 75px;
@@ -2307,14 +2375,16 @@ body .entry-header {
     margin-bottom: 5px;
 }
 
-.archives .post-list-item .item-date {
-    font-size: 11px;
-    font-size: 0.6875rem;
+.archives .post-list-item .item-date,
+.related-post-time a {
+    font-size: 10px;
+    font-size: 0.625rem;
     text-transform: uppercase;
     color: #999;
 }
 
-.archives .post-list-item .icon-time {
+.archives .post-list-item .icon-time,
+.related-post-time .icon-time {
     margin-right: 5px;
     width: 10px;
     height: 10px;
