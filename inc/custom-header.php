@@ -48,7 +48,7 @@ function typenow_header_style() {
         }
     <?php } ?>
     <?php
-        if ( false === get_theme_mod( 'typenow_display_tagline', typenow_get_theme_default( 'typenow_display_tagline' ), ) ) {
+        if ( false === get_theme_mod( 'typenow_display_tagline', typenow_get_theme_default( 'typenow_display_tagline' ) ) ) {
     ?>
         .site-description {
             position: absolute;
