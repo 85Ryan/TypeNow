@@ -42,7 +42,7 @@ function typenow_comment_form_fields($fields) {
     $fields['url'] = '<input id="url" name="url" ' . ( $html5 ? 'type="url"' : 'type="text"' ) .'placeholder="' . __( 'Website', 'typenow' ).' " value="' . esc_attr( $commenter['comment_author_url'] ) . '" />';
 
     // Add comment captcha fields.
-    if (get_theme_mod('typenow_comment_captcha', '') == '1') {
+    if (get_theme_mod('typenow_comment_captcha', typenow_get_theme_default( 'typenow_comment_captcha' )) == true) {
         $fields['captcha'] = '<p class="comment-form-captcha">' . '<label for="subpcodes">' . __('Please Enter the Xaptcha: ','typenow').' <span class="required">*</span></label><input type="text"  size="4" id="subpcodes" class="subpcodes" name="subpcodes"><span class="pcodes">'.$randval.'</span><input type="hidden" value="'.$randval.'" name="pcodes"></p>';
     };
 
@@ -62,7 +62,7 @@ function typenow_comment_form_defaults($defaults) {
 
     $defaults['comment_notes_before'] = '';
 
-    if (get_theme_mod('typenow_comment_markdown', '') == '1') {
+    if (get_theme_mod('typenow_comment_markdown', typenow_get_theme_default( 'typenow_comment_markdown' )) == true) {
         $defaults['comment_notes_after'] = '<div class="comment-notes-after"><p class="form-allowed-tags">' .
         sprintf(
         __( 'You may use the <strong>Markdown</strong> tags and attributes.' )) . '</p></div>';
