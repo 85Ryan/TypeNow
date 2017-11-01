@@ -32,7 +32,7 @@ function typenow_customize_register( $wp_customize ) {
 	$wp_customize->add_setting('typenow_display_title', array(
         'capability' => 'edit_theme_options',
         'theme-supports' => array('custom-logo', 'header-text'),
-        'default' => true,
+        'default' => typenow_get_theme_default( 'typenow_display_title' ),
         'transport' => 'postMessage',
     ));
 
@@ -46,7 +46,7 @@ function typenow_customize_register( $wp_customize ) {
     $wp_customize->add_setting('typenow_display_tagline', array(
         'capability' => 'edit_theme_options',
         'theme-supports' => array('custom-logo', 'header-text'),
-        'default' => true,
+        'default' => typenow_get_theme_default( 'typenow_display_tagline' ),
         'transport' => 'postMessage',
     ));
 
@@ -60,6 +60,7 @@ function typenow_customize_register( $wp_customize ) {
     // Set the site owner.
     $wp_customize->add_setting('typenow_site_owner', array(
         'capability' => 'edit_theme_options',
+        'default' => typenow_get_theme_default( 'typenow_site_owner' ),
         'transport' => 'postMessage',
     ));
 
@@ -76,13 +77,14 @@ function typenow_customize_register( $wp_customize ) {
 		'selector' => '.site-copyright a',
         'settings' => 'typenow_site_owner',
         'render_callback' => function () {
-            return get_theme_mod( 'typenow_site_owner', '' );
+            return get_theme_mod( 'typenow_site_owner', typenow_get_theme_default( 'typenow_site_owner' ) );
         },
 	) );
 
     // Set the site ICP.
     $wp_customize->add_setting('typenow_site_icp', array(
         'capability' => 'edit_theme_options',
+        'default' => typenow_get_theme_default( 'typenow_site_icp' ),
         'transport' => 'postMessage',
     ));
 
@@ -99,7 +101,7 @@ function typenow_customize_register( $wp_customize ) {
 		'selector' => '.site-icp a',
         'settings' => 'typenow_site_icp',
         'render_callback' => function () {
-            return get_theme_mod( 'typenow_site_icp', '' );
+            return get_theme_mod( 'typenow_site_icp', typenow_get_theme_default( 'typenow_site_icp' ) );
         },
 	) );
 
@@ -112,6 +114,7 @@ function typenow_customize_register( $wp_customize ) {
     // Search page
     $wp_customize->add_setting('typenow_search_page', array(
         'capability' => 'edit_theme_options',
+        'default' => typenow_get_theme_default( 'typenow_search_page' ),
     ));
 
     $wp_customize->add_control('typenow_search_page', array(
@@ -126,6 +129,7 @@ function typenow_customize_register( $wp_customize ) {
     // Site Map
     $wp_customize->add_setting('typenow_site_map', array(
         'capability' => 'edit_theme_options',
+        'default' => typenow_get_theme_default( 'typenow_site_map' ),
     ));
 
     $wp_customize->add_control('typenow_site_map', array(
@@ -140,7 +144,7 @@ function typenow_customize_register( $wp_customize ) {
     // Related Post.
     $wp_customize->add_setting('typenow_related_post', array(
         'capability' => 'edit_theme_options',
-        'default' => 0,
+        'default' => typenow_get_theme_default( 'typenow_related_post' ),
         'transport' => 'postMessage',
     ));
 
@@ -155,13 +159,13 @@ function typenow_customize_register( $wp_customize ) {
 	$wp_customize->selective_refresh->add_partial( 'typenow_related_post', array(
         'settings' => 'typenow_related_post',
         'render_callback' => function () {
-            return get_theme_mod( 'typenow_related_post', '' );
+            return get_theme_mod( 'typenow_related_post', typenow_get_theme_default( 'typenow_related_post' ) );
         },
 	) );
 
     $wp_customize->add_setting('typenow_related_post_num', array(
         'capability' => 'edit_theme_options',
-        'default' => '2',
+        'default' => typenow_get_theme_default( 'typenow_related_post_num' ),
         'transport' => 'postMessage',
     ));
 
@@ -176,21 +180,21 @@ function typenow_customize_register( $wp_customize ) {
                             '4' => __('Four posts', 'typenow'),
                             ),
         'active_callback' =>  function () {
-            return get_theme_mod( 'typenow_related_post', '' );
-        }
+            return get_theme_mod( 'typenow_related_post', typenow_get_theme_default( 'typenow_related_post' ) );
+        },
     ));
 
 	$wp_customize->selective_refresh->add_partial( 'typenow_related_post_num', array(
         'settings' => 'typenow_related_post_num',
         'render_callback' => function () {
-            return get_theme_mod( 'typenow_related_post_num', '' );
+            return get_theme_mod( 'typenow_related_post_num', typenow_get_theme_default( 'typenow_related_post_num' ) );
         },
 	) );
 
     // Post dir.
     $wp_customize->add_setting('typenow_post_dir', array(
         'capability' => 'edit_theme_options',
-        'default' => 0,
+        'default' => typenow_get_theme_default( 'typenow_post_dir' ),
     ));
 
     $wp_customize->add_control('typenow_post_dir', array(
@@ -204,7 +208,7 @@ function typenow_customize_register( $wp_customize ) {
     // Code High Light.
     $wp_customize->add_setting('typenow_high_light', array(
         'capability' => 'edit_theme_options',
-        'default' => 0,
+        'default' => typenow_get_theme_default( 'typenow_high_light' ),
     ));
 
     $wp_customize->add_control('typenow_high_light', array(
@@ -218,7 +222,7 @@ function typenow_customize_register( $wp_customize ) {
     // Comment Captcha.
     $wp_customize->add_setting('typenow_comment_captcha', array(
         'capability' => 'edit_theme_options',
-        'default' => 0,
+        'default' => typenow_get_theme_default( 'typenow_comment_captcha' ),
     ));
 
     $wp_customize->add_control('typenow_comment_captcha', array(
@@ -232,7 +236,7 @@ function typenow_customize_register( $wp_customize ) {
     // Enable Markdown.
     $wp_customize->add_setting('typenow_comment_markdown', array(
         'capability' => 'edit_theme_options',
-        'default' => 0,
+        'default' => typenow_get_theme_default( 'typenow_comment_markdown' ),
     ));
 
     $wp_customize->add_control('typenow_comment_markdown', array(
@@ -248,7 +252,7 @@ function typenow_customize_register( $wp_customize ) {
     $wp_customize->add_setting('typenow_copy_notice', array(
         'capability' => 'edit_theme_options',
         'transport' => 'postMessage',
-        'default' => '',
+        'default' => typenow_get_theme_default( 'typenow_copy_notice' ),
     ));
 
     $wp_customize->add_control('typenow_copy_notice', array(
@@ -264,11 +268,11 @@ function typenow_customize_register( $wp_customize ) {
 		'selector' => '.site-copy-notice',
         'settings' => 'typenow_copy_notice',
         'render_callback' => function () {
-            return get_theme_mod( 'typenow_copy_notice', '' );
+            return get_theme_mod( 'typenow_copy_notice', typenow_get_theme_default( 'typenow_copy_notice' ) );
         },
 	) );
 
-    // Theme Options.
+    // AD Slots.
     $wp_customize->add_section('typenow_ad_slots', array(
         'title'         => __('AD Slots', 'typenow'),
         'priority'      => 115,
@@ -277,6 +281,7 @@ function typenow_customize_register( $wp_customize ) {
     // Home AD.
     $wp_customize->add_setting('typenow_home_ad', array(
         'capability' => 'edit_theme_options',
+        'default' => typenow_get_theme_default( 'typenow_home_ad' ),
     ));
 
     $wp_customize->add_control('typenow_home_ad', array(
@@ -291,6 +296,7 @@ function typenow_customize_register( $wp_customize ) {
     // Single page AD.
     $wp_customize->add_setting('typenow_single_ad', array(
         'capability' => 'edit_theme_options',
+        'default' => typenow_get_theme_default( 'typenow_single_ad' ),
     ));
 
     $wp_customize->add_control('typenow_single_ad', array(
@@ -309,7 +315,7 @@ function typenow_customize_register( $wp_customize ) {
         'description'   => __('<p>Thanks for stopping by!</P><p>If you like what I do and are so inclined, you can help keep this theme (and me!) going by making a contribution to <a href="https://github.com/85Ryan/TypeNow">GitHub</a>.</p><p>Simply scan the QR-Code below to donate through AliPay or WechatPay.</p><p><img src="https://iiiryan.com/wp-content/uploads/2017/10/donate-pay.png" /></p><p>And you can also donate me by clicking the button below through PayPal.</p><p><a href="https://paypal.me/iiiryan"><img src="http://bocachurch.org/wp-content/uploads/2016/01/donate-paypal-1x.png"></a></p><p>Thank you in advance for your kindness.</p><p>@ <a href="https://iiiryan.com">Ryan</a></P>', 'typenow'),
     ));
 
-    // Home AD.
+    // Donate hidden.
     $wp_customize->add_setting('typenow_donate_hidden', array(
         'capability' => 'edit_theme_options',
     ));
@@ -321,6 +327,32 @@ function typenow_customize_register( $wp_customize ) {
     ));
 }
 add_action( 'customize_register', 'typenow_customize_register' );
+
+/**
+ * Set Options default value.
+ */
+function typenow_get_theme_default( $setting ) {
+    $defaults = array (
+        'typenow_display_title'         =>  true,
+        'typenow_display_tagline'       =>  true,
+        'typenow_site_owner'            =>  '',
+        'typenow_site_icp'              =>  '',
+        'typenow_search_page'           =>  '',
+        'typenow_site_map'              =>  '',
+        'typenow_related_post'          =>  false,
+        'typenow_related_post_num'      =>  '2',
+        'typenow_post_dir'              =>  false,
+        'typenow_high_light'            =>  false,
+        'typenow_comment_captcha'       =>  false,
+        'typenow_comment_markdown'      =>  false,
+        'typenow_copy_notice'           =>  '',
+        'typenow_home_ad'               =>  '',
+        'typenow_single_ad'             =>  '',
+
+    );
+
+    return $defaults[$setting];
+}
 
 /**
  * Add meta box on new post page.
