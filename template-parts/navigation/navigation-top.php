@@ -23,9 +23,9 @@
     ) ); ?>
     
     <div class="nav-icon-container">
-        <?php if( get_theme_mod( 'typenow_search_page', '' ) != '' ) : ?>
+        <?php if( get_theme_mod( 'typenow_search_page', typenow_get_theme_default( 'typenow_search_page' ) ) != '' ) : ?>
             <div class="search-icon-container">
-                <a class="menu-search-icon" href="<?php echo get_theme_mod( 'typenow_search_page', '' ); ?>"><?php echo typenow_get_svg( array( 'icon' => 'search' ) ); ?><span class="screen-reader-text"><?php _e( 'Search', 'typenow' ); ?></span></a>
+                <a class="menu-search-icon" href="<?php echo get_theme_mod( 'typenow_search_page', typenow_get_theme_default( 'typenow_search_page' ) ); ?>"><?php echo typenow_get_svg( array( 'icon' => 'search' ) ); ?><span class="screen-reader-text"><?php _e( 'Search', 'typenow' ); ?></span></a>
             </div><!-- .search-icon-container -->
         <?php endif; ?>
 
