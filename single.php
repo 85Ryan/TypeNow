@@ -18,7 +18,7 @@ get_header(); ?>
                 while ( have_posts() ) : the_post();
                     get_template_part( 'template-parts/post/content', get_post_format() );
 
-                    if ( get_theme_mod( 'typenow_related_post', '' ) == '1' && ! has_post_format( array ('aside', 'status', 'quote') ) ) {
+                    if ( get_theme_mod( 'typenow_related_post', typenow_get_theme_default( 'typenow_related_post' ) ) == true && ! has_post_format( array ('aside', 'status', 'quote') ) ) {
                         typenow_related_post($post->ID);
                     };
 
