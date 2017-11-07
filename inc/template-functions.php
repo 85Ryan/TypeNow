@@ -50,23 +50,6 @@ function typenow_body_classes( $classes ) {
 add_filter( 'body_class', 'typenow_body_classes' );
 
 /**
- * Count our number of active panels.
- */
-function typenow_panel_count() {
-    $panel_count = 0;
-    $num_sections = apply_filters( 'typenow_front_page_sections', 4 );
-    
-    // Create a setting and control for each of the sections available in the theme.
-    for ( $i = 1; $i < ( 1 + $num_sections ); $i++ ) {
-        if ( get_theme_mod( 'panel_' . $i ) ) {
-            $panel_count++;
-        }
-    }
-    
-    return $panel_count;
-}
-
-/**
  * Checks to see if we're on the homepage or not.
  */
 function typenow_is_frontpage() {
