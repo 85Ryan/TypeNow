@@ -1,0 +1,486 @@
+/*
+Theme Name: TypeNow
+Description: Used to style the TinyMCE editor.
+*/
+
+/**
+ * 1.0 - Body
+ */
+
+body {
+	background-color: #fff;
+	color: #333;
+	margin: 20px 40px;
+}
+
+/**
+ * 2.0 - Typography
+ */
+
+body,
+button,
+input,
+select,
+textarea {
+	font-family: -apple-system, SF UI Text, "Helvetica Neue", helvetica, Segoe UI, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, WenQuanYi Micro Hei, sans-serif;
+	font-size: 16px;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.66;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    clear: both;
+    color: #333;
+    line-height: 1.4;
+    margin: 0 0 0.75em;
+    padding: 0.75em 0 0;
+    text-transform: capitalize;
+    position: relative;
+}
+
+h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child,
+h5:first-child,
+h6:first-child {
+	padding-top: 0;
+}
+
+h1 {
+    font-size: 26px;
+    font-size: 1.625em;
+    font-weight: 300;
+}
+
+h2 {
+	font-size: 22px;
+	font-size: 1.375rem;
+	font-weight: 500;
+}
+
+h3 {
+    font-size: 20px;
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+h4 {
+    font-size: 18px;
+	font-size: 1.125rem;
+	font-weight: 500;
+}
+
+h5 {
+	font-size: 16px;
+	font-size: 1rem;
+	font-weight: 500;
+}
+
+h6 {
+	font-size: 15px;
+	font-size: 0.9375rem;
+	font-weight: 500;
+}
+
+p {
+	margin: 0 0 1.5em;
+	padding: 0;
+    text-align: justify;
+}
+
+dfn,
+cite,
+em,
+i {
+	font-style: italic;
+}
+
+blockquote {
+	color: #666;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-style: italic;
+	line-height: 1.7;
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+    text-align: justify;
+}
+
+blockquote cite {
+	display: block;
+	font-style: normal;
+	font-weight: 600;
+	margin-top: 0.5em;
+}
+
+blockquote.alignleft,
+blockquote.alignright {
+	font-size: 14px;
+	font-size: 0.875rem;
+	width: 34%;
+}
+
+address {
+	margin: 0 0 1.5em;
+}
+
+pre {
+	background: #f6f8fa;
+	font-family: Monaco, Menlo, "Courier 10 Pitch", Courier, monospace;
+	font-size: 13px;
+	font-size: 0.813rem;
+	line-height: 1.4;
+	margin-bottom: 1.6em;
+	max-width: 100%;
+	overflow: auto;
+	padding: 1em;
+    border-radius: 3px;
+    tab-size: 4;
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+}
+
+code,
+kbd,
+tt,
+var {
+	font-family: Monaco, Menlo, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+	font-size: 13px;
+	font-size: 0.813rem;
+    margin: 0 1px;
+    padding: 0 1px;
+    border-radius: 2px;
+    background-color: #f2f4f6;
+}
+
+pre > code {
+    background-color: #f6f8fa;
+}
+
+abbr,
+acronym {
+	border-bottom: 1px dotted #666;
+	cursor: help;
+}
+
+mark,
+ins {
+	background: #f2f4f6;
+    border-radius: 2px;
+    margin: 0 1px;
+    padding: 1px 2px;
+	text-decoration: none;
+}
+
+big {
+	font-size: 125%;
+}
+
+blockquote,
+q {
+	quotes: "" "";
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: "";
+}
+
+/* Typography for Thai Font */
+
+html[lang="th"] h1,
+html[lang="th"] h2,
+html[lang="th"] h3,
+html[lang="th"] h4,
+html[lang="th"] h5,
+html[lang="th"] h6 {
+	letter-spacing: 0;
+	line-height: 1.65;
+}
+
+html[lang="th"] body,
+html[lang="th"] button,
+html[lang="th"] input,
+html[lang="th"] select,
+html[lang="th"] textarea {
+	line-height: 1.8;
+}
+
+/**
+ * 3.0 - Elements
+ */
+
+hr {
+	background-color: #e6e8ea;
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.5em;
+}
+
+ul,
+ol {
+	margin: 5px 0;
+    padding-left: 24px;
+    vertical-align: baseline;
+    text-align: justify;
+}
+
+dl {
+    text-align: justify;
+}
+
+ul {
+    list-style: circle;
+}
+
+
+ol {
+	list-style: decimal;
+}
+
+li > ul {
+	margin-bottom: 0;
+	margin-left: 1.5em;
+    padding-left: 0.625em;
+    list-style: circle;
+}
+
+li > ol {
+	margin-bottom: 0;
+	margin-left: 1.5em;
+    padding-left: 0.625em;
+}
+
+dt {
+	font-weight: 700;
+}
+
+dd {
+	margin: 0 1.5em 1.5em;
+}
+
+table {
+    font-size: 13px;
+    overflow: auto;
+    width: 100%;
+    border-collapse: collapse;
+    word-wrap: normal;
+    word-break: normal;
+    margin: 0 0 1.5em;
+}
+
+caption {
+    font-size: 12px;
+	margin: 10px 0;
+    caption-side: bottom;
+}
+
+th {
+    font-weight: 600;
+    padding: 0.4em;
+    text-align: left;
+}
+
+thead th {
+    border-top: 2px solid #f2f4f6;
+	border-bottom: 2px solid #f2f4f6;
+    padding-bottom: 0.5em;
+}
+
+tr {
+	border-bottom: 1px solid #f2f4f6;
+}
+
+td {
+	padding: 0.4em;
+}
+
+th:first-child,
+td:first-child {
+	padding-left: 0;
+}
+
+th:last-child,
+td:last-child {
+	padding-right: 0;
+}
+
+tr:last-child {
+    border-bottom: 2px solid #f2f4f6;
+}
+
+a {
+	-webkit-box-shadow: inset 0 -1px 0 rgba(15, 15, 15, 1);
+	box-shadow: inset 0 -1px 0 rgba(15, 15, 15, 1);
+	color: #222;
+	text-decoration: none;
+	-webkit-transition: color 80ms ease-in, -webkit-box-shadow 130ms ease-in-out;
+	transition: color 80ms ease-in, -webkit-box-shadow 130ms ease-in-out;
+	transition: color 80ms ease-in, box-shadow 130ms ease-in-out;
+	transition: color 80ms ease-in, box-shadow 130ms ease-in-out, -webkit-box-shadow 130ms ease-in-out;
+}
+
+a:focus {
+	outline: thin dotted;
+}
+
+a:hover,
+a:focus {
+	color: #000;
+	-webkit-box-shadow: inset 0 0 0 rgba(0, 0, 0, 0), 0 3px 0 rgba(0, 0, 0, 1);
+	box-shadow: inset 0 0 0 rgba(0, 0, 0, 0), 0 3px 0 rgba(0, 0, 0, 1);
+}
+
+/* Fixes linked images */
+
+a img {
+	background: #fff;
+	-webkit-box-shadow: 0 0 0 6px #fff;
+	box-shadow: 0 0 0 6px #fff;
+}
+
+/**
+ * 4.0 - Alignment
+ */
+
+img {
+	height: auto; /* Make sure images are scaled correctly. */
+	width: inherit;  /* Make images fill their parent's space. Solves IE8. */
+	max-width: 100%; /* Adhere to container width. */
+}
+
+embed,
+iframe,
+object {
+	margin-bottom: 1.5em;
+	max-width: 100%;
+}
+
+/**
+ * 5.0 - Caption
+ */
+
+.wp-caption {
+	color: #666;
+	font-size: 13px;
+	font-size: 0.8125rem;
+	font-style: italic;
+	margin-bottom: 1.5em;
+	max-width: 100%;
+}
+
+.wp-caption img[class*="wp-image-"] {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption .wp-caption-text {
+	margin: 0.8075em 0;
+}
+
+/**
+ * 6.0 - Galleries
+ */
+
+.gallery {
+	margin-bottom: 1.5em;
+}
+
+.gallery-item {
+	display: inline-block;
+	text-align: center;
+	vertical-align: top;
+	width: 100%;
+}
+
+.gallery-item a,
+.gallery-item a:hover,
+.gallery-item a:focus {
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	background: none;
+	display: inline-block;
+}
+
+.gallery-columns-2 .gallery-item {
+	max-width: 50%;
+}
+
+.gallery-columns-3 .gallery-item {
+	max-width: 33.33%;
+}
+
+.gallery-columns-4 .gallery-item {
+	max-width: 25%;
+}
+
+.gallery-columns-5 .gallery-item {
+	max-width: 20%;
+}
+
+.gallery-columns-6 .gallery-item {
+	max-width: 16.66%;
+}
+
+.gallery-columns-7 .gallery-item {
+	max-width: 14.28%;
+}
+
+.gallery-columns-8 .gallery-item {
+	max-width: 12.5%;
+}
+
+.gallery-columns-9 .gallery-item {
+	max-width: 11.11%;
+}
+
+.gallery-caption {
+	display: block;
+}
+
+/**
+ * 7.0 - Media Elements
+ */
+
+.mejs-container {
+	margin-bottom: 1.5em;
+}
+
+
+/**
+ * 8.0 - RTL
+ */
+
+.rtl th {
+	text-align: right;
+}
+
+.rtl ol {
+	counter-reset: item;
+}
+
+.rtl ol li:before {
+	left: auto;
+	right: -1.5em;
+}
+
+.rtl li > ul,
+.rtl li > ol {
+	margin-left: 0;
+	margin-right: 1.5em;
+}
+
+.rtl .mejs-offscreen {
+	right: -10000px;
+}
