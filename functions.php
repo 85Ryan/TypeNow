@@ -68,6 +68,77 @@ function typenow_setup() {
     // Customize the visual editor to resemble the theme style.
     add_editor_style( 'assets/css/editor-style.css' );
 
+    // Define and register starter content to showcase the theme on new sites.
+    $starter_content = array(
+        // Specify the core-defined pages to create and add custom thumbnails to some of them.
+        'posts' => array(
+            'about' => array(
+                'thumbnail' => '{{image-espresso}}',
+            ),
+            'archive' => array(
+                'post_type' => 'page',
+                'post_title' => __('Archive', 'typenow'),
+                'post_name' => 'archive',
+                'template' => 'archives.php',
+                'thumbnail' => '{{image-coffee}}',
+            ),
+            'search' => array(
+                'post_type' => 'page',
+                'post_title' => __('Search', 'typenow'),
+                'post_name' => 'search',
+                'template' => 'search-page.php',
+                'thumbnail' => '{{image-sandwich}}',
+            ),
+        ),
+
+        // Create the custom image attachments used as post thumbnails for pages.
+		'attachments' => array(
+			'image-espresso' => array(
+				'post_title' => _x( 'Espresso', 'Theme starter content', 'typenow' ),
+				'file' => 'assets/images/espresso.jpg',
+			),
+			'image-sandwich' => array(
+				'post_title' => _x( 'Sandwich', 'Theme starter content', 'typenow' ),
+				'file' => 'assets/images/sandwich.jpg',
+			),
+			'image-coffee' => array(
+				'post_title' => _x( 'Coffee', 'Theme starter content', 'typenow' ),
+				'file' => 'assets/images/coffee.jpg',
+			),
+		),
+
+		// Set up nav menus for each of the two areas registered in the theme.
+		'nav_menus' => array(
+			// Assign a menu to the "top" location.
+			'top' => array(
+				'name' => __( 'Top Menu', 'typenow' ),
+				'items' => array(
+					'link_home',
+					'page_archive' => array (
+                        'type' => 'post_type',
+                        'object' => 'page',
+                        'object_id' => '{{archive}}',
+                    ),
+                    'page_about',
+				),
+			),
+			// Assign a menu to the "social" location.
+			'social' => array(
+				'name' => __( 'Social Links Menu', 'typenow' ),
+				'items' => array(
+					'link_github',
+					'link_facebook',
+					'link_twitter',
+					'link_instagram',
+                    'link_yelp',
+					'link_email',
+				),
+			),
+		),
+    );
+    $starter_content = apply_filters( 'typenow_starter_content', $starter_content );
+    add_theme_support( 'starter-content', $starter_content );
+
 }
 add_action( 'after_setup_theme', 'typenow_setup' ); 
 
@@ -343,9 +414,33 @@ function typenow_related_post( $post_id ) {
     echo '</ul></div>';
 }
 
+/**
+ * Customize the Password Protected Form.
+ **/
+function typenow_password_form( $post = 0 ) {
+    $post = get_post( $post );
+    $icon = typenow_get_svg( array( 'icon' => 'keychain' ) );
+
+    $label = 'pwbox-' . ( empty($post->ID) ? rand() : $post->ID );
+
+    $output = '<p class="protected-post-text">' . __('This content is password protected. To view it please enter your password below:') .'</p><div class="protected-post-form-container"><form class="protected-post-form" action="' . esc_url( site_url( 'wp-login.php?action=postpass', 'login_post' ) ) . '" class="post-password-form" method="post"><input name="post_password" id="' . $label . '" class="pw-field" type="password" placeholder="' . __('Please Enter the PassWord...', 'typenow') . '" size="20" /><button type="submit" class="pw-submit" name="Submit">' . $icon . '</button></form></div>';
+
+    return $output;
+}
+add_filter( 'the_password_form', 'typenow_password_form' );
+
+/**
+ * Customize the protected title prefix.
+ **/
+function typenow_title_format() {
+    return '%s';
+}
+add_filter('private_title_format', 'typenow_title_format');
+add_filter('protected_title_format', 'typenow_title_format');
+
 /** 
  * Include template file.
- */
+ **/
 // Implement the Custom Header feature.
 require get_parent_theme_file_path( '/inc/custom-header.php' );
 // Custom template tags for this theme.
