@@ -73,37 +73,37 @@ function typenow_setup() {
         // Specify the core-defined pages to create and add custom thumbnails to some of them.
         'posts' => array(
             'about' => array(
-                'thumbnail' => '{{image-espresso}}',
+                'thumbnail' => '{{image-about}}',
             ),
             'archive' => array(
                 'post_type' => 'page',
                 'post_title' => __('Archive', 'typenow'),
                 'post_name' => 'archive',
                 'template' => 'archives.php',
-                'thumbnail' => '{{image-coffee}}',
+                'thumbnail' => '{{image-archive}}',
             ),
             'search' => array(
                 'post_type' => 'page',
                 'post_title' => __('Search', 'typenow'),
                 'post_name' => 'search',
                 'template' => 'search-page.php',
-                'thumbnail' => '{{image-sandwich}}',
+                'thumbnail' => '{{image-search}}',
             ),
         ),
 
         // Create the custom image attachments used as post thumbnails for pages.
 		'attachments' => array(
-			'image-espresso' => array(
-				'post_title' => _x( 'Espresso', 'Theme starter content', 'typenow' ),
-				'file' => 'assets/images/espresso.jpg',
+			'image-about' => array(
+				'post_title' => _x( 'About', 'Theme starter content', 'typenow' ),
+				'file' => 'assets/images/about.jpg',
 			),
-			'image-sandwich' => array(
-				'post_title' => _x( 'Sandwich', 'Theme starter content', 'typenow' ),
-				'file' => 'assets/images/sandwich.jpg',
+			'image-archive' => array(
+				'post_title' => _x( 'Archive', 'Theme starter content', 'typenow' ),
+				'file' => 'assets/images/archive.jpg',
 			),
-			'image-coffee' => array(
-				'post_title' => _x( 'Coffee', 'Theme starter content', 'typenow' ),
-				'file' => 'assets/images/coffee.jpg',
+			'image-search' => array(
+				'post_title' => _x( 'Search', 'Theme starter content', 'typenow' ),
+				'file' => 'assets/images/search.jpg',
 			),
 		),
 
