@@ -4,7 +4,7 @@ Theme URI: https://github.com/85Ryan/TypeNow
 Author: iiiRyan
 Author URI: https://iiiryan.com/
 Description: Just a WordPress Theme.
-Version: 0.3
+Version: 1.0
 License: GPL-3.0
 License URI: https://github.com/85Ryan/TypeNow/blob/master/LICENSE
 Text Domain: TypeNow
@@ -379,6 +379,7 @@ textarea {
     color: #333;
     font-family: -apple-system, SF UI Text, "Helvetica Neue", helvetica, Segoe UI, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, WenQuanYi Micro Hei, sans-serif;
     font-size: 14px;
+    font-size: 0.875rem;
     font-weight: 400;
     line-height: 1.66;
 }
@@ -1358,7 +1359,9 @@ body:not(.has-header-image) .custom-header-image {
 
 /* Post Landing Page */
 
-.sticky {
+.sticky,
+.status-private,
+.post-password-required {
 	position: relative;
 }
 
@@ -1366,7 +1369,9 @@ body:not(.has-header-image) .custom-header-image {
 	display: none;
 }
 
-.sticky .icon-sticky {
+.sticky .icon-sticky,
+.status-private .icon-lock,
+.post-password-required .icon-lock {
 	display: block;
 	height: 24px;
 	left: -1.75em;
@@ -2394,7 +2399,8 @@ body .entry-header {
 13.7 Search page
 --------------------------------------------------------------*/
 
-.search-form-container {
+.search-form-container,
+.protected-post-form-container {
     position: relative;
     display: inline-block;
     width: 100%;
@@ -2403,14 +2409,16 @@ body .entry-header {
     margin-bottom: 3em;
 }
 
-.search-form-container:hover {
+.search-form-container:hover,
+.protected-post-form-container:hover {
     -webkit-transition-duration: .3s;
     transition-duration: .3s;
     -webkit-transform: scale(1.02);
     transform: scale(1.02);
 }
 
-.search-form-container .search-field {
+.search-form-container .search-field,
+.protected-post-form-container .pw-field {
     font-size: 14px;
     position: absolute;
     top: 0;
@@ -2431,11 +2439,14 @@ body .entry-header {
 }
 
 .search-form-container .search-field:focus,
-.search-form-container .search-field:hover {
+.search-form-container .search-field:hover,
+.protected-post-form-container .pw-field:focus,
+.protected-post-form-container .pw-field:hover {
     border: solid 1px #e6e8ea;
 }
 
-.search-form-container .search-submit {
+.search-form-container .search-submit,
+.protected-post-form-container .pw-submit {
     position: absolute;
     right: 10px;
     top: 0;
@@ -2447,7 +2458,8 @@ body .entry-header {
     background-color: transparent;
 }
 
-.search-form-container .search-submit .icon {
+.search-form-container .search-submit .icon,
+.protected-post-form-container .pw-submit .icon {
     height: 18px;
     width: 18px;
 }
@@ -2500,10 +2512,6 @@ body .entry-header {
 .tag-cloud-container .tagcount {
     margin-left: 5px;
 }
-
-/*--------------------------------------------------------------
-13.8 Front page
---------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
 14.0 Comments
@@ -3456,7 +3464,9 @@ object {
     
     /* Blog, archive, search */
 
-	.sticky .icon-sticky {
+	.sticky .icon-sticky,
+    .status-private .icon-lock,
+    .post-password-required .icon-lock  {
 		height: 26px;
 		left: -2.5em;
 		top: 0.6em;
@@ -3508,7 +3518,6 @@ object {
     /* Pages */
 
 	.page .entry-header,
-	.typenow-front-page .entry-header,
 	.archive .page-header {
 		margin-bottom: 2em;
 	}
@@ -3580,7 +3589,9 @@ object {
     
     /* Sticky posts */
 
-	.sticky .icon-sticky {
+	.sticky .icon-sticky,
+    .status-private .icon-lock,
+    .post-password-required .icon-lock {
 		font-size: 36px;
 		font-size: 2.25rem;
 		height: 28px;
@@ -3753,6 +3764,7 @@ object {
 	.header-image,
 	.panel-image-prop,
 	.icon-sticky,
+    .icon-lock,
 	.page-links,
 	.edit-link,
 	.post-navigation,
