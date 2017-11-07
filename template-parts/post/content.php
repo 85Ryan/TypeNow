@@ -14,6 +14,11 @@
         echo typenow_get_svg( array( 'icon' => 'sticky' ) );
     endif;
     ?>
+    <?php
+    if ( post_password_required() || get_post_status () == 'private'  ) :
+        echo typenow_get_svg( array( 'icon' => 'lock' ) );
+    endif;
+    ?>
     <header class="entry-header">
         <?php 
 		if ( is_single() ) {
