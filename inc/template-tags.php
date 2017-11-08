@@ -70,16 +70,3 @@ function typenow_edit_link() {
     );
 }
 endif;
-
-/**
- * Show post number in tag cloud.
- */
-function typenow_tag_cloud($content, $tags, $args) {
-    $count=0;
-    $output=preg_replace_callback('(</a\s*>)',
-    function($match) use ($tags, &$count) {
-        return "<span class=\"tagcount\">(".$tags[$count++]->count.")</span></a>";
-    } , $content);
-    return $output;
-}
-add_filter('wp_generate_tag_cloud','typenow_tag_cloud', 10, 3);
