@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TypeNow\n"
-"POT-Creation-Date: 2017-11-08 15:52+0800\n"
-"PO-Revision-Date: 2017-11-08 15:54+0800\n"
+"POT-Creation-Date: 2017-11-08 20:04+0800\n"
+"PO-Revision-Date: 2017-11-08 20:05+0800\n"
 "Last-Translator: \n"
 "Language-Team: Ryan\n"
 "Language: zh_CN\n"
@@ -12,8 +12,16 @@ msgstr ""
 "X-Generator: Poedit 2.0.4\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Poedit-KeywordsList: __;_e;_x;_ex;_n\n"
+"X-Poedit-KeywordsList: __;_e;_x;_ex;_n;esc_attr_x\n"
 "X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:18
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "有点尴尬诶！该页无法显示。"
+
+#: 404.php:21
+msgid "It looks like nothing was found at this location. Maybe try a search?"
+msgstr "这儿似乎什么都没有，试试搜索？"
 
 #: archive.php:31 index.php:34 search.php:29
 msgid "Previous Page"
@@ -286,20 +294,19 @@ msgid ""
 "you can help keep this theme (and me!) going by making a contribution to <a "
 "href=\"https://github.com/85Ryan/TypeNow\">GitHub</a>.</p><p>Simply scan the "
 "QR-Code below to donate me through AliPay or WechatPay.</p><p><img src="
-"\"https://iiiryan.com/wp-content/uploads/2017/10/donate-pay.png\" /></"
-"p><p>And you can also donate me by clicking the button below through PayPal."
-"</p><p><a href=\"https://paypal.me/iiiryan\"><img src=\"http://bocachurch."
-"org/wp-content/uploads/2016/01/donate-paypal-1x.png\"></a></p><p>Thank you "
-"in advance for your kindness.</p><p>@ <a href=\"https://iiiryan.com\">Ryan</"
-"a></P>"
+"\"https://img.iiiryan.com/donate/donate-pay.png\" /></p><p>And you can also "
+"donate me by clicking the button below through PayPal.</p><p><a href="
+"\"https://paypal.me/iiiryan\"><img src=\"https://img.iiiryan.com/donate/"
+"donate-paypal.png\"></a></p><p>Thank you in advance for your kindness.</"
+"p><p>@ <a href=\"https://iiiryan.com\">Ryan</a></P>"
 msgstr ""
 "<p>感谢关注！</P><p>如果您喜欢这个主题，您可以通过 <a href=\"https://github."
 "com/85Ryan/TypeNow\">GitHub</a> 贡献代码。</p><p>您可以扫描下方的二维码，通过"
-"支付宝或者微信支付向我捐赠。</p><p><img src=\"https://iiiryan.com/wp-content/"
-"uploads/2017/10/donate-pay.png\" /></p><p>您也可点击下方的图片按钮通过 "
-"PayPal 向我捐赠。</p><p><a href=\"https://paypal.me/iiiryan\"><img src="
-"\"http://bocachurch.org/wp-content/uploads/2016/01/donate-paypal-1x.png\"></"
-"a></p><p>感觉感谢！</p><p>@ <a href=\"https://iiiryan.com\">Ryan</a></P>"
+"支付宝或者微信支付向我捐赠。</p><p><img src=\"https://img.iiiryan.com/donate/"
+"donate-pay.png\" /></p><p>您也可点击下方的图片按钮通过 PayPal 向我捐赠。</"
+"p><p><a href=\"https://paypal.me/iiiryan\"><img src=\"https://img.iiiryan."
+"com/donate/donate-paypal.png\"></a></p><p>非常感谢！</p><p>@ <a href="
+"\"https://iiiryan.com\">Ryan</a></P>"
 
 #: inc/customizer.php:375
 msgid "Quote Options"
@@ -418,21 +425,21 @@ msgstr "第 %s 页"
 #: inc/template-tags.php:16
 #, php-format
 msgid "%s"
-msgstr "%s"
+msgstr ""
 
 #: inc/template-tags.php:19
 #, php-format
 msgid "%1$sin %2$s"
-msgstr "%1$sin %2$s"
+msgstr ""
 
 #: inc/template-tags.php:20
 msgid ", "
-msgstr ", "
+msgstr ""
 
 #: inc/template-tags.php:24
 #, php-format
 msgid "by %s"
-msgstr "by %s"
+msgstr ""
 
 #: inc/template-tags.php:28
 msgid "Posted on "
@@ -441,12 +448,12 @@ msgstr "Posted on "
 #: inc/template-tags.php:52
 #, php-format
 msgid "<span class=\"screen-reader-text\">Posted on</span> %s"
-msgstr "<span class=“screen-reader-text”>Posted on</span> %s"
+msgstr ""
 
 #: inc/template-tags.php:65
 #, php-format
 msgid "Edit<span class=\"screen-reader-text\"> \"%s\"</span>"
-msgstr "编辑<span class=“screen-reader-text”> “%s”</span>"
+msgstr ""
 
 #: search-page.php:21
 msgid "The following tabs can help you! :)"
@@ -465,6 +472,10 @@ msgstr "我们可能无法找到您需要的内容。或许搜索功能可以帮
 #: searchform.php:14
 msgid "Search for:"
 msgstr "搜索："
+
+#: searchform.php:17
+msgid "Search &hellip;"
+msgstr "搜索 &hellip;"
 
 #: single.php:26
 msgid "Previous Post"

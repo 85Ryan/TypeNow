@@ -324,7 +324,7 @@ function typenow_customize_register( $wp_customize ) {
     $wp_customize->add_section('typenow_donate', array(
         'title'         => __('Buy Me a Cup of Coffee', 'typenow'),
         'priority'      => 200,
-        'description'   => __('<p>Thanks for stopping by!</P><p>If you like what I do and are so inclined, you can help keep this theme (and me!) going by making a contribution to <a href="https://github.com/85Ryan/TypeNow">GitHub</a>.</p><p>Simply scan the QR-Code below to donate me through AliPay or WechatPay.</p><p><img src="https://iiiryan.com/wp-content/uploads/2017/10/donate-pay.png" /></p><p>And you can also donate me by clicking the button below through PayPal.</p><p><a href="https://paypal.me/iiiryan"><img src="http://bocachurch.org/wp-content/uploads/2016/01/donate-paypal-1x.png"></a></p><p>Thank you in advance for your kindness.</p><p>@ <a href="https://iiiryan.com">Ryan</a></P>', 'typenow'),
+        'description'   => __('<p>Thanks for stopping by!</P><p>If you like what I do and are so inclined, you can help keep this theme (and me!) going by making a contribution to <a href="https://github.com/85Ryan/TypeNow">GitHub</a>.</p><p>Simply scan the QR-Code below to donate me through AliPay or WechatPay.</p><p><img src="https://img.iiiryan.com/donate/donate-pay.png" /></p><p>And you can also donate me by clicking the button below through PayPal.</p><p><a href="https://paypal.me/iiiryan"><img src="https://img.iiiryan.com/donate/donate-paypal.png"></a></p><p>Thank you in advance for your kindness.</p><p>@ <a href="https://iiiryan.com">Ryan</a></P>', 'typenow'),
     ));
 
     // Donate hidden.

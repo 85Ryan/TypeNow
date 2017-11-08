@@ -1145,12 +1145,8 @@ body {
 /* Header Title fonts */
 
 @font-face {
-    font-family: 'AaarghNormal';
-    src: url('Assets/fonts/Aaargh/Aaargh-webfont.eot');
-    src: url('Assets/fonts/Aaargh/Aaargh-webfont.eot?#iefix') format('embedded-opentype'),
-         url('Assets/fonts/Aaargh/Aaargh-webfont.woff') format('woff'),
-         url('Assets/fonts/Aaargh/Aaargh-webfont.ttf') format('truetype'),
-         url('Assets/fonts/Aaargh/Aaargh-webfont.svg#AaarghNormal') format('svg');
+    font-family: 'Aaargh';
+    src: url('Assets/fonts/Aaargh/Aaargh.ttf');
     font-weight: normal;
     font-style: normal;
 }
@@ -1187,7 +1183,7 @@ body {
 
 .site-title {
 	clear: none;
-    font-family: 'AaarghNormal', -apple-system, SF UI Text, "Helvetica Neue", helvetica, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, WenQuanYi Micro Hei, sans-serif;
+    font-family: 'Aaargh', -apple-system, SF UI Text, "Helvetica Neue", helvetica, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, WenQuanYi Micro Hei, sans-serif;
 	font-size: 32px;
 	font-size: 2rem;
 	line-height: 1.25;
@@ -2021,6 +2017,10 @@ body .entry-header {
 }
 
 /* 404 page */
+
+.error404 .site-content-contain {
+    margin-top: 3em;
+}
 
 .error404 .page-content {
 	padding-bottom: 4em;
