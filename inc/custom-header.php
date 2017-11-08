@@ -29,6 +29,16 @@ function typenow_custom_header_setup() {
             'thumbnail_url' => '%s/assets/images/header.jpg',
             'description'   => __( 'Default Header Image', 'typenow' ),
         ),
+        'default-image-2' => array(
+            'url'           => '%s/assets/images/header-2.jpg',
+            'thumbnail_url' => '%s/assets/images/header-2.jpg',
+            'description'   => __( 'Default Header Image', 'typenow' ),
+        ),
+        'default-image-3' => array(
+            'url'           => '%s/assets/images/header-3.jpg',
+            'thumbnail_url' => '%s/assets/images/header-3.jpg',
+            'description'   => __( 'Default Header Image', 'typenow' ),
+        ),
     ) );
 }
 add_action( 'after_setup_theme', 'typenow_custom_header_setup' );

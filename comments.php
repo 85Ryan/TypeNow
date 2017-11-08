@@ -29,7 +29,8 @@ if ( post_password_required() ) {
         <?php the_comments_pagination( array(
 			'prev_text' => typenow_get_svg( array( 'icon' => 'arrow-left' ) ) . '<span class="screen-reader-text">' . __( 'Previous', 'typenow' ) . '</span>',
 			'next_text' => '<span class="screen-reader-text">' . __( 'Next', 'typenow' ) . '</span>' . typenow_get_svg( array( 'icon' => 'arrow-right' ) ),
-            'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'typenow' ) . ' </span>',
+            'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page ', 'typenow' ) . ' </span>',
+            'after_page_number' => '<span class="meta-nav screen-reader-text">' . __( ' ', 'typenow' ) . ' </span>',
 		) );
     endif;
     ?>

@@ -381,7 +381,7 @@ $metaboxes = array (
             'q_author' => array (
                 'title' => __('Quote Author:', 'typenow'),
                 'type' => 'text',
-                'description' => __('Please enter the author name. ', 'typenow'),
+                'description' => __('Please enter the author name.', 'typenow'),
                 'size' => 28,
             ),
             'author_avatar' => array (

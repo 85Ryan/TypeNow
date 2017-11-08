@@ -43,7 +43,7 @@ function typenow_comment_form_fields($fields) {
 
     // Add comment captcha fields.
     if (get_theme_mod('typenow_comment_captcha', typenow_get_theme_default( 'typenow_comment_captcha' )) == true) {
-        $fields['captcha'] = '<p class="comment-form-captcha">' . '<label for="subpcodes">' . __('Please Enter the Xaptcha: ','typenow').' <span class="required">*</span></label><input type="text"  size="4" id="subpcodes" class="subpcodes" name="subpcodes"><span class="pcodes">'.$randval.'</span><input type="hidden" value="'.$randval.'" name="pcodes"></p>';
+        $fields['captcha'] = '<p class="comment-form-captcha">' . '<label for="subpcodes">' . __('Please Enter the Captcha: ','typenow').' <span class="required">*</span></label><input type="text"  size="4" id="subpcodes" class="subpcodes" name="subpcodes"><span class="pcodes">'.$randval.'</span><input type="hidden" value="'.$randval.'" name="pcodes"></p>';
     };
 
     return $fields;
@@ -65,11 +65,11 @@ function typenow_comment_form_defaults($defaults) {
     if (get_theme_mod('typenow_comment_markdown', typenow_get_theme_default( 'typenow_comment_markdown' )) == true) {
         $defaults['comment_notes_after'] = '<div class="comment-notes-after"><p class="form-allowed-tags">' .
         sprintf(
-        __( 'You may use the <strong>Markdown</strong> tags and attributes.' )) . '</p></div>';
+        __( 'You may use the <strong>Markdown</strong> tags and attributes.', 'typenow' )) . '</p></div>';
     } else {
         $defaults['comment_notes_after'] = '<div class="comment-notes-after"><p class="form-allowed-tags">' .
         sprintf(
-        __( 'You may use the <strong>HTML</strong> tags and attributes.' )) . '</p></div>';
+        __( 'You may use the <strong>HTML</strong> tags and attributes.', 'typenow' )) . '</p></div>';
     }
     $defaults['label_submit'] = __( 'Submit', 'typenow' );
     $defaults['submit_field'] = '%1$s %2$s';

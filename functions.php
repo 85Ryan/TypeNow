@@ -21,7 +21,7 @@ if ( version_compare( $GLOBALS['wp_version'], '4.7-alpha', '<' ) ) {
 function typenow_setup() {
     
     // Make theme available for translation.
-    load_theme_textdomain( 'typenow' );
+    load_theme_textdomain( 'typenow', get_template_directory() . '/lang' );
     
     // Add default posts and comments RSS feed links to head.
     add_theme_support( 'automatic-feed-links' );

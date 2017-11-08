@@ -30,7 +30,8 @@ get_header(); ?>
                 the_posts_pagination( array(
                     'prev_text' => typenow_get_svg( array( 'icon' => 'arrow-left' ) ) . '<span class="screen-reader-text">' . __( 'Previous Page', 'typenow' ) . '</span>',
                     'next_text' => '<span class="screen-reader-text">' . __( 'Next Page', 'typenow' ) . '</span>' . typenow_get_svg( array( 'icon' => 'arrow-right' ) ),
-                    'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'typenow' ) . ' </span>',
+                    'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page ', 'typenow' ) . ' </span>',
+                    'after_page_number' => '<span class="meta-nav screen-reader-text">' . __( ' ', 'typenow' ) . ' </span>',
                 ) );
                 else :
                     get_template_part( 'template-parts/post/content', 'none' );
