@@ -1,0 +1,526 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: TypeNow\n"
+"POT-Creation-Date: 2017-11-08 15:52+0800\n"
+"PO-Revision-Date: 2017-11-08 15:54+0800\n"
+"Last-Translator: \n"
+"Language-Team: Ryan\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.4\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-KeywordsList: __;_e;_x;_ex;_n\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: archive.php:31 index.php:34 search.php:29
+msgid "Previous Page"
+msgstr "上一页"
+
+#: archive.php:32 index.php:35 search.php:30
+msgid "Next Page"
+msgstr "下一页"
+
+#: archive.php:33 comments.php:32 index.php:36 search.php:31
+msgid "Page "
+msgstr "第 "
+
+#: archive.php:34 comments.php:33 index.php:37 search.php:32
+msgid " "
+msgstr " 页"
+
+#: archives.php:19
+msgid "Timeline"
+msgstr "时间归档"
+
+#: archives.php:20
+msgid "Category"
+msgstr "分类归档"
+
+#: comments.php:24
+msgid "Reply"
+msgstr "回复"
+
+#: comments.php:30
+msgid "Previous"
+msgstr "上一页"
+
+#: comments.php:31
+msgid "Next"
+msgstr "下一页"
+
+#: footer.php:19
+msgid "You Can Speak <strong>\"Hi\"</strong> to Me in Those Ways"
+msgstr "You Can Speak <strong>\"Hi\"</strong> to Me in Those Ways"
+
+#: functions.php:42 functions.php:114
+msgid "Top Menu"
+msgstr "顶部菜单"
+
+#: functions.php:43 functions.php:127
+msgid "Social Links Menu"
+msgstr "社交媒体菜单"
+
+#: functions.php:80 functions.php:101
+msgid "Archive"
+msgstr "归档"
+
+#: functions.php:87 functions.php:105 searchform.php:19
+#: template-parts/header/header-image.php:41
+#: template-parts/navigation/navigation-top.php:28
+msgid "Search"
+msgstr "搜索"
+
+#: functions.php:97
+msgid "About"
+msgstr "关于"
+
+#: functions.php:156 template-parts/post/content.php:47
+#, php-format
+msgid "Continue Reading<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr "继续阅读 <span class=“screen-reader-text”> “%s”</span>"
+
+#: functions.php:302
+#, php-format
+msgid "&copy; <a href=\"%1$s\">%2$s</a>, %3$s"
+msgstr "&copy; <a href=“%1$s”>%2$s</a>, %3$s"
+
+#: functions.php:426
+msgid ""
+"This content is password protected. To view it please enter your password "
+"below:"
+msgstr ""
+
+#: functions.php:426
+msgid "Please Enter the PassWord..."
+msgstr "请输入密码…"
+
+#: header.php:20
+msgid "Skip to Content"
+msgstr "跳至内容"
+
+#: inc/back-compat.php:20 inc/back-compat.php:28 inc/back-compat.php:39
+#, php-format
+msgid ""
+"TypeNow requires at least WordPress version 4.7. You are running version %s. "
+"Please upgrade and try again."
+msgstr ""
+"TypeNow 需要 WordPress 4.7 或更高版本。您运行的 %s 版，请在更新 WordPress 后"
+"重试。"
+
+#: inc/comment-functions.php:38
+msgid "Name"
+msgstr "用户名"
+
+#: inc/comment-functions.php:40
+msgid "Email"
+msgstr "邮箱"
+
+#: inc/comment-functions.php:42
+msgid "Website"
+msgstr "网站"
+
+#: inc/comment-functions.php:46
+msgid "Please Enter the Captcha: "
+msgstr "请输入验证码： "
+
+#: inc/comment-functions.php:61
+msgid "Your email address will not be published. "
+msgstr "你的电子邮件地址不会被公开。 "
+
+#: inc/comment-functions.php:61
+msgid "Required fields are marked ( * )."
+msgstr "必填项目已用(*)标记。"
+
+#: inc/comment-functions.php:61
+msgid "You can also post a comment anonymously."
+msgstr "你可以以匿名方式发表评论。"
+
+#: inc/comment-functions.php:68
+msgid "You may use the <strong>Markdown</strong> tags and attributes."
+msgstr "你可以使用 <strong>Markdown</strong> 标签和语法。"
+
+#: inc/comment-functions.php:72
+msgid "You may use the <strong>HTML</strong> tags and attributes."
+msgstr "你可以使用 <strong>HTML</strong> 标签和语法。"
+
+#: inc/comment-functions.php:74
+msgid "Submit"
+msgstr "发表评论"
+
+#: inc/comment-functions.php:78
+msgid "Cancel Reply"
+msgstr "取消回复"
+
+#: inc/comment-functions.php:138
+msgid "Captcha Error, Please Re-enter!"
+msgstr "验证码错误，请重新输入！"
+
+#: inc/custom-header.php:30 inc/custom-header.php:35 inc/custom-header.php:40
+msgid "Default Header Image"
+msgstr "默认头部图像"
+
+#: inc/customizer.php:53
+msgid "Display Site Title"
+msgstr "显示网站标题"
+
+#: inc/customizer.php:67
+msgid "Display Site Tagline"
+msgstr "显示网站副标题"
+
+#: inc/customizer.php:81
+msgid "Site Owner"
+msgstr "网站所有人"
+
+#: inc/customizer.php:84
+msgid ""
+"This only used for the copyright info in the site footer, if blank display "
+"the site title."
+msgstr "只作用于网站底部的版权信息内容，如不填则显示网站标题。"
+
+#: inc/customizer.php:105
+msgid "Site ICP"
+msgstr "ICP 备案号"
+
+#: inc/customizer.php:108
+msgid ""
+"This only used for the copyright info in the site footer, if blank display "
+"none."
+msgstr "只作用于网站底部的版权信息内容，如不填则不显示。"
+
+#: inc/customizer.php:122
+msgid "Theme Options"
+msgstr "主题选项"
+
+#: inc/customizer.php:134
+msgid "Search Page URL"
+msgstr "搜索页 URL"
+
+#: inc/customizer.php:137
+msgid ""
+"Before set this, you should add a new page use the page template of TypeNow "
+"Search.If blank, display none."
+msgstr "设置前，需要先使用模板“TypeNow Search”创建一个页面。如果不填则不显示。"
+
+#: inc/customizer.php:149
+msgid "Site Map URL"
+msgstr "网站地图 URL"
+
+#: inc/customizer.php:152
+msgid "If blank, display none."
+msgstr "如果不填则不显示。"
+
+#: inc/customizer.php:165
+msgid "Display Related Posts"
+msgstr "显示相关文章"
+
+#: inc/customizer.php:186
+msgid "Related Posts Number"
+msgstr "相关文章数量"
+
+#: inc/customizer.php:191
+msgid "Two posts"
+msgstr "两篇文章"
+
+#: inc/customizer.php:192
+msgid "Four posts"
+msgstr "四篇文章"
+
+#: inc/customizer.php:214
+msgid "Display Post Directory"
+msgstr "显示文章目录"
+
+#: inc/customizer.php:228
+msgid "Enable High Light"
+msgstr "开启代码高亮"
+
+#: inc/customizer.php:242
+msgid "Enable Comment Captcha"
+msgstr "开启评论验证码"
+
+#: inc/customizer.php:256
+msgid "Enable Comment Markdown"
+msgstr "开启评论 Markdown 支持"
+
+#: inc/customizer.php:259
+msgid "This is a test function."
+msgstr "这是一个测试功能。"
+
+#: inc/customizer.php:272
+msgid "Copyright Notice"
+msgstr "版权公告"
+
+#: inc/customizer.php:275
+msgid "Set the Copyright Notice in the site footer."
+msgstr "设置网站底部的版权公告。"
+
+#: inc/customizer.php:289
+msgid "AD Slots"
+msgstr "广告位"
+
+#: inc/customizer.php:301
+msgid "Home Page AD"
+msgstr "首页广告位"
+
+#: inc/customizer.php:304
+msgid "This AD slot will appear behind the first two posts per page."
+msgstr "这个广告位位于网站主页的前两篇文章后面。"
+
+#: inc/customizer.php:316
+msgid "Single Page AD"
+msgstr "文章页广告位"
+
+#: inc/customizer.php:319
+msgid "This AD slot will appear behind the post content."
+msgstr "这个广告位位于文章页内容的后面。"
+
+#: inc/customizer.php:325
+msgid "Buy Me a Cup of Coffee"
+msgstr "请我喝杯咖啡"
+
+#: inc/customizer.php:327
+msgid ""
+"<p>Thanks for stopping by!</P><p>If you like what I do and are so inclined, "
+"you can help keep this theme (and me!) going by making a contribution to <a "
+"href=\"https://github.com/85Ryan/TypeNow\">GitHub</a>.</p><p>Simply scan the "
+"QR-Code below to donate me through AliPay or WechatPay.</p><p><img src="
+"\"https://iiiryan.com/wp-content/uploads/2017/10/donate-pay.png\" /></"
+"p><p>And you can also donate me by clicking the button below through PayPal."
+"</p><p><a href=\"https://paypal.me/iiiryan\"><img src=\"http://bocachurch."
+"org/wp-content/uploads/2016/01/donate-paypal-1x.png\"></a></p><p>Thank you "
+"in advance for your kindness.</p><p>@ <a href=\"https://iiiryan.com\">Ryan</"
+"a></P>"
+msgstr ""
+"<p>感谢关注！</P><p>如果您喜欢这个主题，您可以通过 <a href=\"https://github."
+"com/85Ryan/TypeNow\">GitHub</a> 贡献代码。</p><p>您可以扫描下方的二维码，通过"
+"支付宝或者微信支付向我捐赠。</p><p><img src=\"https://iiiryan.com/wp-content/"
+"uploads/2017/10/donate-pay.png\" /></p><p>您也可点击下方的图片按钮通过 "
+"PayPal 向我捐赠。</p><p><a href=\"https://paypal.me/iiiryan\"><img src="
+"\"http://bocachurch.org/wp-content/uploads/2016/01/donate-paypal-1x.png\"></"
+"a></p><p>感觉感谢！</p><p>@ <a href=\"https://iiiryan.com\">Ryan</a></P>"
+
+#: inc/customizer.php:375
+msgid "Quote Options"
+msgstr "引语选项"
+
+#: inc/customizer.php:382
+msgid "Quote Author:"
+msgstr "引语作者："
+
+#: inc/customizer.php:384
+msgid "Please enter the author name."
+msgstr "请输入作者名字。"
+
+#: inc/customizer.php:388
+msgid "Author Avatar:"
+msgstr "作者头像："
+
+#: inc/customizer.php:390
+msgid "Please enter a image URL for author avatar."
+msgstr "请输入作者头像的图片链接。"
+
+#: inc/icon-functions.php:29
+msgid "Please define default parameters in the form of an array."
+msgstr "请用数组的形式定义默认参数。"
+
+#: inc/icon-functions.php:34
+msgid "Please define an SVG icon filename."
+msgstr "请定义SVG图标文件名。"
+
+#: inc/seo-functions.php:21
+#, php-format
+msgid "Category Archives: %s"
+msgstr "分类归档：%s"
+
+#: inc/seo-functions.php:23 search.php:15
+#, php-format
+msgid "Search Results for: %s"
+msgstr "搜索结果：%s"
+
+#: inc/seo-functions.php:25
+#, php-format
+msgid "Tag Archives: %s"
+msgstr "标签归档：%s"
+
+#: inc/seo-functions.php:27
+#, php-format
+msgid "Daily Archives: %s"
+msgstr "日期归档：%s"
+
+#: inc/seo-functions.php:29
+#, php-format
+msgid "Monthly Archives: %s"
+msgstr "月度归档：%s"
+
+#: inc/seo-functions.php:29
+msgid "F Y"
+msgstr ""
+
+#: inc/seo-functions.php:31
+#, php-format
+msgid "Yearly Archives: %s"
+msgstr "年度归档：%s"
+
+#: inc/seo-functions.php:31
+msgid "Y"
+msgstr ""
+
+#: inc/seo-functions.php:33
+#, php-format
+msgid "All posts by %s"
+msgstr "%s 的所有文章"
+
+#: inc/seo-functions.php:35
+#, php-format
+msgid "%s Archives"
+msgstr "%s 归档"
+
+#: inc/seo-functions.php:50
+msgid "Home"
+msgstr "首页"
+
+#: inc/seo-functions.php:51
+#, php-format
+msgid "Archive by Category \"%s\""
+msgstr "分类归档：%s"
+
+#: inc/seo-functions.php:52
+#, php-format
+msgid "Search Results for \"%s\" Query"
+msgstr "搜索结果：%s"
+
+#: inc/seo-functions.php:53
+#, php-format
+msgid "Posts Tagged \"%s\""
+msgstr "文章标签：%s"
+
+#: inc/seo-functions.php:54
+#, php-format
+msgid "Articles Posted by %s"
+msgstr "%s 文章归档"
+
+#: inc/seo-functions.php:55
+msgid "Error 404"
+msgstr "404 错误"
+
+#: inc/seo-functions.php:56
+#, php-format
+msgid "Page %s"
+msgstr "第 %s 页"
+
+#: inc/seo-functions.php:57
+#, php-format
+msgid "Comment Page %s"
+msgstr "第 %s 页"
+
+#: inc/template-tags.php:16
+#, php-format
+msgid "%s"
+msgstr "%s"
+
+#: inc/template-tags.php:19
+#, php-format
+msgid "%1$sin %2$s"
+msgstr "%1$sin %2$s"
+
+#: inc/template-tags.php:20
+msgid ", "
+msgstr ", "
+
+#: inc/template-tags.php:24
+#, php-format
+msgid "by %s"
+msgstr "by %s"
+
+#: inc/template-tags.php:28
+msgid "Posted on "
+msgstr "Posted on "
+
+#: inc/template-tags.php:52
+#, php-format
+msgid "<span class=\"screen-reader-text\">Posted on</span> %s"
+msgstr "<span class=“screen-reader-text”>Posted on</span> %s"
+
+#: inc/template-tags.php:65
+#, php-format
+msgid "Edit<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr "编辑<span class=“screen-reader-text”> “%s”</span>"
+
+#: search-page.php:21
+msgid "The following tabs can help you! :)"
+msgstr "您可以参考下面的标签云！:)"
+
+#: search.php:17 template-parts/post/content-none.php:8
+msgid "Nothing Found"
+msgstr "什么也没发现"
+
+#: search.php:35
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr "我们可能无法找到您需要的内容。或许搜索功能可以帮到您。"
+
+#: searchform.php:14
+msgid "Search for:"
+msgstr "搜索："
+
+#: single.php:26
+msgid "Previous Post"
+msgstr "前一篇"
+
+#: single.php:27
+msgid "Next Post"
+msgstr "后一篇"
+
+#: template-parts/footer/site-info.php:18
+msgid "http://www.miibeian.gov.cn/"
+msgstr "http://www.miibeian.gov.cn/"
+
+#: template-parts/footer/site-info.php:24
+msgid "Site Map"
+msgstr "网站地图"
+
+#: template-parts/footer/site-info.php:32
+#, php-format
+msgid "Theme is <a href=\"%1$s\">TypeNow</a> by <a href=\"%2$s\">Ryan</a>"
+msgstr "Theme is <a href=“%1$s”>TypeNow</a> by <a href=“%2$s”>Ryan</a>"
+
+#: template-parts/footer/site-info.php:40
+#, php-format
+msgid "Powerd by <a href=\"%s\">WordPress</a>"
+msgstr "Powerd by <a href=“%s”>WordPress</a>"
+
+#: template-parts/header/header-image.php:47
+#: template-parts/navigation/navigation-top.php:34
+msgid "Login"
+msgstr "登录"
+
+#: template-parts/header/header-image.php:52
+#: template-parts/navigation/navigation-top.php:40
+msgid "Scroll Down to Content"
+msgstr "滚动至内容"
+
+#: template-parts/navigation/navigation-top.php:15
+msgid "Menu"
+msgstr "菜单"
+
+#: template-parts/post/content-none.php:12
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr "准备好发布第一篇文章了？<a href=“%1$s”>从这里开始</a>。"
+
+#: template-parts/post/content-none.php:14
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr "我们可能无法找到您需要的内容。或许搜索功能可以帮到您。"
+
+#: template-parts/post/content.php:71
+msgid "Tags"
+msgstr "标签"
+
+#~ msgid "Page"
+#~ msgstr "第 "
