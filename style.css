@@ -1145,8 +1145,8 @@ body {
 /* Header Title fonts */
 
 @font-face {
-    font-family: 'Aaargh';
-    src: url('Assets/fonts/Aaargh/Aaargh.ttf');
+    font-family: 'Agh';
+    src: url('Assets/fonts/Aaargh/Aaargh.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -1183,7 +1183,7 @@ body {
 
 .site-title {
 	clear: none;
-    font-family: 'Aaargh', -apple-system, SF UI Text, "Helvetica Neue", helvetica, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, WenQuanYi Micro Hei, sans-serif;
+    font-family: 'Agh', -apple-system, SF UI Text, "Helvetica Neue", helvetica, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, WenQuanYi Micro Hei, sans-serif;
 	font-size: 32px;
 	font-size: 2rem;
 	line-height: 1.25;
