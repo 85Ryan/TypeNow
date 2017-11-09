@@ -225,7 +225,9 @@ add_action( 'wp_enqueue_scripts', 'typenow_scripts' );
  * Load Highlight.js.
  */
 function typenow_highlighting_load() {
-    echo "<script>hljs.initHighlightingOnLoad();</script>\n";
+    if ( get_theme_mod('typenow_high_light', typenow_get_theme_default( 'typenow_high_light' )) == true ) {
+        echo "<script>hljs.initHighlightingOnLoad();</script>\n";
+    }
 }
 add_action( 'wp_footer', 'typenow_highlighting_load',99 );
 
