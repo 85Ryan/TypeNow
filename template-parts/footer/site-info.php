@@ -29,7 +29,7 @@
         <?php
             $urltheme = 'https://github.com/85Ryan/TypeNow';
             $urlauthor = 'https://iiiryan.com';
-            $sitetheme = sprintf( wp_kses( __( 'Theme is <a href="%1$s">TypeNow</a> by <a href="%2$s">Ryan</a>', 'typenow' ), array(  'a' => array( 'href' => array() ) ) ), esc_url( $urltheme ), esc_url( $urlauthor ) );
+            $sitetheme = sprintf( wp_kses( __( 'Theme is <a href=%1$s>TypeNow</a> by <a href=%2$s>Ryan</a>', 'typenow' ), array(  'a' => array( 'href' => array() ) ) ), esc_url( $urltheme ), esc_url( $urlauthor ) );
             echo $sitetheme;
         ?>
     </span><!-- .site-theme -->
@@ -37,7 +37,7 @@
     <span class="site-power">
         <?php
             $url = 'https://wordpress.org';
-            $sitepower = sprintf( wp_kses( __( 'Powerd by <a href="%s">WordPress</a>', 'typenow' ), array(  'a' => array( 'href' => array() ) ) ), esc_url( $url ) );
+            $sitepower = sprintf( wp_kses( __( 'Powerd by <a href=%s>WordPress</a>', 'typenow' ), array(  'a' => array( 'href' => array() ) ) ), esc_url( $url ) );
             echo $sitepower;
         ?>
     </span><!-- .site-power -->
