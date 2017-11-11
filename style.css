@@ -1146,7 +1146,7 @@ body {
 
 @font-face {
     font-family: 'Agh';
-    src: url('Assets/fonts/Aaargh/Aaargh.ttf') format('truetype');
+    src: url('assets/fonts/Aaargh/Aaargh.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
