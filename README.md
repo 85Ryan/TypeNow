@@ -45,6 +45,10 @@ normalize.css, Copyright 2012-2016 Nicolas Gallagher and Jonathan Neal
 License: MIT
 Source: https://necolas.github.io/normalize.css/
 
+Site title font: Aaargh
+License: Creative Commons attribution license
+Source: https://www.fontsquirrel.com/fonts/aaargh
+
 Font Awesome icons, Copyright Dave Gandy
 License: SIL Open Font License, version 1.1.
 Source: http://fontawesome.io/
