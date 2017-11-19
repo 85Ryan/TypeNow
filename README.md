@@ -8,7 +8,7 @@ TypeNow 根据 WordPress 官方主题 [TwentySeventeen](https://github.com/WordP
 
 ### 主题安装
 
-Clone 或者 [下载 Zip](https://github.com/85Ryan/TypeNow/archive/v1.0.zip) 文件 ，主传到 `wp-content` 文件夹。
+Clone 或者 [下载 Zip](https://github.com/85Ryan/TypeNow/releases/latest) 文件 ，主传到 `wp-content` 文件夹。
 
 仅在以下环境测试可行，其他环境下请自行测试：
 
