@@ -33,25 +33,25 @@ Clone 或者 [下载 Zip](https://github.com/85Ryan/TypeNow/archive/master.zip) 
 
 ### 第三方资源
 
-HTML5 Shiv, Copyright 2014 Alexander Farkas
-Licenses: MIT/GPL2
-Source: https://github.com/aFarkas/html5shiv
+HTML5 Shiv, Copyright 2014 Alexander Farkas  
+Licenses: MIT/GPL2  
+Source: https://github.com/aFarkas/html5shiv  
 
-jQuery scrollTo, Copyright 2007-2015 Ariel Flesler
-License: MIT
-Source: https://github.com/flesler/jquery.scrollTo
+jQuery scrollTo, Copyright 2007-2015 Ariel Flesler  
+License: MIT  
+Source: https://github.com/flesler/jquery.scrollTo  
 
-normalize.css, Copyright 2012-2016 Nicolas Gallagher and Jonathan Neal
-License: MIT
-Source: https://necolas.github.io/normalize.css/
+normalize.css, Copyright 2012-2016 Nicolas Gallagher and Jonathan Neal  
+License: MIT  
+Source: https://necolas.github.io/normalize.css/  
 
-Site title font: Aaargh
-License: Creative Commons attribution license
-Source: https://www.fontsquirrel.com/fonts/aaargh
+Site title font: Aaargh  
+License: Creative Commons attribution license  
+Source: https://www.fontsquirrel.com/fonts/aaargh  
 
-Font Awesome icons, Copyright Dave Gandy
-License: SIL Open Font License, version 1.1.
-Source: http://fontawesome.io/
+Font Awesome icons, Copyright Dave Gandy  
+License: SIL Open Font License, version 1.1  
+Source: http://fontawesome.io/  
 
 Bundled header image：
 - Header Image 1: [Photo by Mathieu Barrette on Unsplash](https://unsplash.com/photos/RYd9aBMp194)
@@ -62,18 +62,18 @@ Bundled header image：
 - Search Page Header Image: [Photo by Hedi Alija on Unsplash](https://unsplash.com/photos/V21dkuL8dnM)
 - Aside Post Featured Image: [Photo by Anete Lūsiņa on Unsplash](https://unsplash.com/photos/VwiLLyETLcQ)
 
-部分 CSS 样式参考：Pinghsu, A Typecho Theme
-License: MIT
-Source: https://github.com/chakhsu/pinghsu
+部分 CSS 样式参考：Pinghsu, A Typecho Theme  
+License: MIT  
+Source: https://github.com/chakhsu/pinghsu  
 
-WordPress breadcrumbs function
-License: MIT
-Source: http://dimox.net/wordpress-breadcrumbs-without-a-plugin/
+WordPress breadcrumbs function  
+License: MIT  
+Source: http://dimox.net/wordpress-breadcrumbs-without-a-plugin/  
 
-Get copyright time
-Source: https://www.gznotes.com/wp-copyrighttime/
+Get copyright time  
+Source: https://www.gznotes.com/wp-copyrighttime/  
 
-Display Metaboxes According to the Current Post Format
-Source: https://code.tutsplus.com/tutorials/how-to-display-metaboxes-according-to-the-current-post-format--wp-27970
+Display Metaboxes According to the Current Post Format  
+Source: https://code.tutsplus.com/tutorials/how-to-display-metaboxes-according-to-the-current-post-format--wp-27970  
 
 ### 就这样吧....
