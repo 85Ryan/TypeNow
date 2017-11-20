@@ -18,14 +18,13 @@ get_header(); ?>
                 while ( have_posts() ) : the_post();
                     get_template_part( 'template-parts/post/content', get_post_format() );
 
-                    if ( get_theme_mod( 'typenow_related_post', typenow_get_theme_default( 'typenow_related_post' ) ) == true && ! has_post_format( array ('aside', 'status', 'quote') ) ) {
+                    if ( get_theme_mod( 'typenow_related_post', typenow_get_theme_default( 'typenow_related_post' ) ) == true && ! has_post_format( array ('aside', 'status', 'quote') ) ) :
                         typenow_related_post($post->ID);
-                    };
+                    endif;
 
                     the_post_navigation( array(
                             'prev_text' => '<span class="screen-reader-text">' . __( 'Previous Post', 'typenow' ) . '</span><span class="nav-title-icon-wrapper">' . typenow_get_svg( array( 'icon' => 'arrow-left' ) ) . '</span> <span aria-hidden="true" class="nav-text">' . __( 'Previous Post', 'typenow' ) . '</span>',
                             'next_text' => '<span class="screen-reader-text">' . __( 'Next Post', 'typenow' ) . '</span><span aria-hidden="true" class="nav-text">' . __( 'Next Post', 'typenow' ) . '</span> <span class="nav-title-icon-wrapper">' . typenow_get_svg( array( 'icon' => 'arrow-right' ) ) . '</span>',
-                            'in_same_term'       => true,
                     ) );
 
                 endwhile; // End of the loop.
