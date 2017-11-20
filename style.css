@@ -729,6 +729,7 @@ ul,
 ol {
 	margin: 5px 0;
     padding-left: 24px;
+    padding-bottom: 24px;
     vertical-align: baseline;
     text-align: justify;
 }
@@ -1571,6 +1572,7 @@ body .entry-header {
     width: 100%;
     text-align: center;
     margin: 4em 0;
+    min-height: 50px;
 }
 
 /* More tag */
