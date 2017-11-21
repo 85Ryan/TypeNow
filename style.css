@@ -3632,12 +3632,12 @@ object {
         margin: 0;
         padding-left: 0;
         list-style: none;
-        padding-bottom: 0;
     }
 
     .directory-wrap .post-dir>ul {
         position: relative;
         border-left: 1px solid #e6e8ea;
+        padding-bottom: 5px;
     }
 
     .directory-wrap .post-dir>ul>li::before {
