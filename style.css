@@ -2067,6 +2067,7 @@ body .entry-header {
 	margin-left: 0;
     padding-left: 0;
     text-align: center;
+    padding-bottom: 0;
 }
 
 .social-navigation li {
