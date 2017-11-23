@@ -3620,30 +3620,49 @@ object {
         top: 120px;
         display: inline-block;
         text-align: left;
-        padding-left: 3.5em;
+        padding-left: 50px;
+        width: 250px;
     }
 
     .logged-in .directory-wrap .post-dir {
         top: 150px;
     }
 
-    .directory-wrap .post-dir li,
     .directory-wrap .post-dir ul {
         margin: 0;
         padding-left: 0;
+        padding-bottom: 0;
+    }
+
+    .directory-wrap .post-dir li {
+        margin: 0;
         list-style: none;
+        overflow: hidden;
+        -ms-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .directory-wrap .post-dir a {
+
     }
 
     .directory-wrap .post-dir>ul {
         position: relative;
-        border-left: 1px solid #e6e8ea;
         padding-bottom: 5px;
+        background-image: url(assets/images/post-dir-line.png);
+        background-repeat: repeat-y;
+        background-position: 3px 0px;
+    }
+
+    .directory-wrap .post-dir>ul>li {
+        padding-left: 5px;
     }
 
     .directory-wrap .post-dir>ul>li::before {
         position: relative;
         top: 0;
-        left: -4px;
+        left: -5px;
         display: inline-block;
         width: 7px;
         height: 7px;
@@ -3653,7 +3672,6 @@ object {
     }
 
     .directory-wrap .post-dir ul li a {
-        display: inline-table;
         margin-left: 5px;
         white-space: nowrap;
     }
