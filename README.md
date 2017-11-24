@@ -61,6 +61,7 @@ Bundled header image：
 - About Page Header Image: [Photo by Max Langelott on Unsplash](https://unsplash.com/photos/Hw62tzAkXXE)
 - Search Page Header Image: [Photo by Hedi Alija on Unsplash](https://unsplash.com/photos/V21dkuL8dnM)
 - Aside Post Featured Image: [Photo by Anete Lūsiņa on Unsplash](https://unsplash.com/photos/VwiLLyETLcQ)
+- Related Post Default Image: [Photo by Breather on Unsplash](https://unsplash.com/photos/pDifHWbftrg)
 
 部分 CSS 样式参考：Pinghsu, A Typecho Theme  
 License: MIT  
