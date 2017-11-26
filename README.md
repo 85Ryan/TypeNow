@@ -35,25 +35,26 @@ Clone 或者 [下载 Zip](https://github.com/85Ryan/TypeNow/releases/latest) 文
 
 HTML5 Shiv, Copyright 2014 Alexander Farkas  
 Licenses: MIT/GPL2  
-Source: https://github.com/aFarkas/html5shiv  
+Source: [https://github.com/aFarkas/html5shiv](https://github.com/aFarkas/html5shiv)  
 
 jQuery scrollTo, Copyright 2007-2015 Ariel Flesler  
 License: MIT  
-Source: https://github.com/flesler/jquery.scrollTo  
+Source: [https://github.com/flesler/jquery.scrollTo](https://github.com/flesler/jquery.scrollTo)  
 
 normalize.css, Copyright 2012-2016 Nicolas Gallagher and Jonathan Neal  
 License: MIT  
-Source: https://necolas.github.io/normalize.css/  
+Source: [https://necolas.github.io/normalize.css](https://necolas.github.io/normalize.css)  
 
 Site title font: Aaargh  
 License: Creative Commons attribution license  
-Source: https://www.fontsquirrel.com/fonts/aaargh  
+Source: [https://www.fontsquirrel.com/fonts/aaargh](https://www.fontsquirrel.com/fonts/aaargh)  
 
 Font Awesome icons, Copyright Dave Gandy  
 License: SIL Open Font License, version 1.1  
-Source: http://fontawesome.io/  
+Source: [http://fontawesome.io/](http://fontawesome.io/)  
 
 Bundled header image：
+
 - Header Image 1: [Photo by Mathieu Barrette on Unsplash](https://unsplash.com/photos/RYd9aBMp194)
 - Header Image 3: [Photo by Simon Matzinger on Unsplash](https://unsplash.com/photos/-O8r5oLosYo)
 - Header Image 2: [Photo by dan carlson on Unsplash](https://unsplash.com/photos/EXSh-k3wjds)
@@ -65,16 +66,16 @@ Bundled header image：
 
 部分 CSS 样式参考：Pinghsu, A Typecho Theme  
 License: MIT  
-Source: https://github.com/chakhsu/pinghsu  
+Source: [https://github.com/chakhsu/pinghsu](https://github.com/chakhsu/pinghsu)  
 
 WordPress breadcrumbs function  
 License: MIT  
-Source: http://dimox.net/wordpress-breadcrumbs-without-a-plugin/  
+Source: [http://dimox.net/wordpress-breadcrumbs-without-a-plugin/](http://dimox.net/wordpress-breadcrumbs-without-a-plugin/)  
 
 Get copyright time  
-Source: https://www.gznotes.com/wp-copyrighttime/  
+Source: [https://www.gznotes.com/wp-copyrighttime/](https://www.gznotes.com/wp-copyrighttime/)  
 
 Display Metaboxes According to the Current Post Format  
-Source: https://code.tutsplus.com/tutorials/how-to-display-metaboxes-according-to-the-current-post-format--wp-27970  
+Source: [https://code.tutsplus.com/tutorials/how-to-display-metaboxes-according-to-the-current-post-format--wp-27970](https://code.tutsplus.com/tutorials/how-to-display-metaboxes-according-to-the-current-post-format--wp-27970)  
 
 ### 就这样吧....
