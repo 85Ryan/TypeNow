@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TypeNow\n"
-"POT-Creation-Date: 2017-11-08 20:04+0800\n"
-"PO-Revision-Date: 2017-12-07 15:40+0800\n"
+"POT-Creation-Date: 2017-12-08 20:55+0800\n"
+"PO-Revision-Date: 2017-12-08 20:56+0800\n"
 "Last-Translator: \n"
 "Language-Team: Ryan\n"
 "Language: zh_CN\n"
@@ -90,22 +90,22 @@ msgstr "关于"
 msgid "Continue Reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr "继续阅读 <span class=“screen-reader-text”> “%s”</span>"
 
-#: functions.php:302
+#: functions.php:304
 #, php-format
 msgid "&copy; <a href=\"%1$s\">%2$s</a>, %3$s"
 msgstr "&copy; <a href=“%1$s”>%2$s</a>, %3$s"
 
-#: functions.php:426
+#: functions.php:428
 msgid ""
 "This content is password protected. To view it please enter your password "
 "below:"
 msgstr ""
 
-#: functions.php:426
+#: functions.php:428
 msgid "Please Enter the PassWord..."
 msgstr "请输入密码…"
 
-#: header.php:20
+#: header.php:25
 msgid "Skip to Content"
 msgstr "跳至内容"
 
@@ -265,30 +265,46 @@ msgid "Set the Copyright Notice in the site footer."
 msgstr "设置网站底部的版权公告。"
 
 #: inc/customizer.php:289
+msgid "SEO Options"
+msgstr "SEO 选项"
+
+#: inc/customizer.php:302
+msgid "Meta Description"
+msgstr "Meta Description"
+
+#: inc/customizer.php:317
+msgid "Meta Keywords"
+msgstr "Meta Keywords"
+
+#: inc/customizer.php:320
+msgid "Use commas(,) to separate."
+msgstr "使用英文逗号（,）分隔"
+
+#: inc/customizer.php:326
 msgid "AD Slots"
 msgstr "广告位"
 
-#: inc/customizer.php:301
+#: inc/customizer.php:339
 msgid "Home Page AD"
 msgstr "首页广告位"
 
-#: inc/customizer.php:304
+#: inc/customizer.php:342
 msgid "This AD slot will appear behind the first two posts per page."
 msgstr "这个广告位位于网站主页的前两篇文章后面。"
 
-#: inc/customizer.php:316
+#: inc/customizer.php:355
 msgid "Single Page AD"
 msgstr "文章页广告位"
 
-#: inc/customizer.php:319
+#: inc/customizer.php:358
 msgid "This AD slot will appear behind the post content."
 msgstr "这个广告位位于文章页内容的后面。"
 
-#: inc/customizer.php:325
+#: inc/customizer.php:364
 msgid "Buy Me a Cup of Coffee"
 msgstr "请我喝杯咖啡"
 
-#: inc/customizer.php:327
+#: inc/customizer.php:366
 msgid ""
 "<p>Thanks for stopping by!</P><p>If you like what I do and are so inclined, "
 "you can help keep this theme (and me!) going by making a contribution to <a "
@@ -308,23 +324,23 @@ msgstr ""
 "com/donate/donate-paypal.png\"></a></p><p>非常感谢！</p><p>@ <a href="
 "\"https://iiiryan.com\">Ryan</a></P>"
 
-#: inc/customizer.php:375
+#: inc/customizer.php:416
 msgid "Quote Options"
 msgstr "引语选项"
 
-#: inc/customizer.php:382
+#: inc/customizer.php:423
 msgid "Quote Author:"
 msgstr "引语作者："
 
-#: inc/customizer.php:384
+#: inc/customizer.php:425
 msgid "Please enter the author name."
 msgstr "请输入作者名字。"
 
-#: inc/customizer.php:388
+#: inc/customizer.php:429
 msgid "Author Avatar:"
 msgstr "作者头像："
 
-#: inc/customizer.php:390
+#: inc/customizer.php:431
 msgid "Please enter a image URL for author avatar."
 msgstr "请输入作者头像的图片链接。"
 
@@ -495,12 +511,12 @@ msgstr "网站地图"
 
 #: template-parts/footer/site-info.php:32
 #, php-format
-msgid "Theme is <a href=\"%1$s\">TypeNow</a> by <a href=\"%2$s\">Ryan</a>"
+msgid "Theme is <a href=%1$s>TypeNow</a> by <a href=%2$s>Ryan</a>"
 msgstr "Theme is <a href=\"%1$s\">TypeNow</a> by <a href=\"%2$s\">Ryan</a>"
 
 #: template-parts/footer/site-info.php:40
 #, php-format
-msgid "Powerd by <a href=\"%s\">WordPress</a>"
+msgid "Powerd by <a href=%s>WordPress</a>"
 msgstr "Powerd by <a href=\"%s\">WordPress</a>"
 
 #: template-parts/header/header-image.php:47
