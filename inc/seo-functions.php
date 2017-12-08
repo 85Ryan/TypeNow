@@ -14,9 +14,6 @@ function typenow_document_title_parts( $title ){
 
     $author = get_queried_object();
 
-    // Remove site title when on single page.
-    if( is_single() && isset( $title['site'] ) ) unset( $title['site'] );
-
 	if ( is_category() )
 		$title['title'] = sprintf( __( 'Category Archives: %s', 'typenow' ), single_cat_title( '', false ) );
 	if ( is_search() )
