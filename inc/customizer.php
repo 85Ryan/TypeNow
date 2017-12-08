@@ -284,6 +284,43 @@ function typenow_customize_register( $wp_customize ) {
         },
 	) );
 
+    // SEO Options.
+    $wp_customize->add_section('typenow_seo_option', array(
+        'title'         => __('SEO Options', 'typenow'),
+        'priority'      => 116,
+    ));
+
+    // Meta Description.
+    $wp_customize->add_setting('typenow_meta_description', array(
+        'capability' => 'edit_theme_options',
+        'default' => typenow_get_theme_default( 'typenow_meta_description' ),
+        'transport' => 'postMessage',
+    ));
+
+    $wp_customize->add_control('typenow_meta_description', array(
+        'settings'      => 'typenow_meta_description',
+        'label'         => __('Meta Description', 'typenow'),
+        'section'       => 'typenow_seo_option',
+        'type'          => 'textarea',
+        'priority'      => 10,
+    ));
+
+    // Meta Keywords.
+    $wp_customize->add_setting('typenow_meta_keywords', array(
+        'capability' => 'edit_theme_options',
+        'default' => typenow_get_theme_default( 'typenow_meta_keywords' ),
+        'transport' => 'postMessage',
+    ));
+
+    $wp_customize->add_control('typenow_meta_keywords', array(
+        'settings'      => 'typenow_meta_keywords',
+        'label'         => __('Meta Keywords', 'typenow'),
+        'section'       => 'typenow_seo_option',
+        'type'          => 'textarea',
+        'description'   =>  __('Use commas(,) to separate.', 'typenow'),
+        'priority'      => 20,
+    ));
+
     // AD Slots.
     $wp_customize->add_section('typenow_ad_slots', array(
         'title'         => __('AD Slots', 'typenow'),
@@ -294,6 +331,7 @@ function typenow_customize_register( $wp_customize ) {
     $wp_customize->add_setting('typenow_home_ad', array(
         'capability' => 'edit_theme_options',
         'default' => typenow_get_theme_default( 'typenow_home_ad' ),
+        'transport' => 'postMessage',
     ));
 
     $wp_customize->add_control('typenow_home_ad', array(
@@ -309,6 +347,7 @@ function typenow_customize_register( $wp_customize ) {
     $wp_customize->add_setting('typenow_single_ad', array(
         'capability' => 'edit_theme_options',
         'default' => typenow_get_theme_default( 'typenow_single_ad' ),
+        'transport' => 'postMessage',
     ));
 
     $wp_customize->add_control('typenow_single_ad', array(
@@ -360,6 +399,8 @@ function typenow_get_theme_default( $setting ) {
         'typenow_copy_notice'           =>  '',
         'typenow_home_ad'               =>  '',
         'typenow_single_ad'             =>  '',
+        'typenow_meta_description'      =>  '',
+        'typenow_meta_keywords'         =>  '',
 
     );
 

@@ -12,7 +12,12 @@
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="profile" href="http://gmpg.org/xfn/11">
-    
+    <?php if(get_theme_mod('typenow_meta_description') != '') : ?>
+    <meta name="description" content="<?php echo get_theme_mod('typenow_meta_description'); ?>">
+    <?php endif; ?>
+    <?php if(get_theme_mod('typenow_meta_keywords') != '') : ?>
+    <meta name="keywords" content="<?php echo get_theme_mod('typenow_meta_keywords'); ?>">
+    <?php endif; ?>
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
