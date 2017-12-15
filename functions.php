@@ -458,9 +458,8 @@ function typenow_comment_mail_notify($comment_id) {
         $notify_message .= sprintf( __('<p>Hi, %s', 'typenow'), trim(get_comment($parent_id)->comment_author) ) . '</p>';
         $notify_message .= sprintf( __('<p>Your comment in "%s": ', 'typenow'), $post->post_title ) . '</p><blockquote style="padding-left:15px;border-left:4px solid #ddd;"><p>' . get_comment($parent_id)->comment_content . '</p></blockquote>';
         $notify_message .= sprintf( __('<p>%s reply: ', 'typenow'), $comment->comment_author ) . '</p><blockquote style="padding-left:15px;border-left:4px solid #ddd;"><p>' . $comment->comment_content . '</p></blockquote>';
-        $notify_message .= __('<p>You can click here to reply the comment: ', 'typenow') .'</p><p>' . get_permalink($comment->comment_post_ID) . "#comment-$comment_id</p>";
-        $notify_message .= __('<p>You can see all comments on this post here: ', 'typenow') . '</p><p>' . get_permalink($comment->comment_post_ID) . "#comments</p>";
-        $notify_message .= __('<p>The email address for notification only, does not receive a reply, so please do not reply to this email.</p>', 'typenow');
+        $notify_message .= __('<p>You can click here to reply the comment: ', 'typenow') . get_permalink($comment->comment_post_ID) . "#comment-$comment_id</p>";
+        $notify_message .= __('<hr /><p>The email address for notification only, does not receive a reply, so please do not reply to this email.</p>', 'typenow');
         
         $from = "From: \"$blogname-Reply\" <$wp_email>";
         $message_headers = "$from\n"

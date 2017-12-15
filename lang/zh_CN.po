@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TypeNow\n"
-"POT-Creation-Date: 2017-12-15 19:41+0800\n"
-"PO-Revision-Date: 2017-12-15 19:48+0800\n"
+"POT-Creation-Date: 2017-12-15 21:40+0800\n"
+"PO-Revision-Date: 2017-12-15 21:40+0800\n"
 "Last-Translator: \n"
 "Language-Team: Ryan\n"
 "Language: zh_CN\n"
@@ -105,40 +105,37 @@ msgstr ""
 msgid "Please Enter the PassWord..."
 msgstr "请输入密码…"
 
-#: functions.php:456
+#: functions.php:457
 #, php-format
 msgid "[%1$s] New Reply in \"%2$s\""
 msgstr "[%1$s] 有新回复在：《%2$s》"
 
-#: functions.php:457
+#: functions.php:458
 #, php-format
 msgid "<p>Hi, %s"
-msgstr "<p>%s，你好！"
+msgstr "<p>%s，您好！"
 
-#: functions.php:458
+#: functions.php:459
 #, php-format
 msgid "<p>Your comment in \"%s\": "
 msgstr "<p>您在 《%s》的评论："
 
-#: functions.php:459
+#: functions.php:460
 #, php-format
 msgid "<p>%s reply: "
-msgstr "<p>%s 回复："
+msgstr "<p>%s 给您回复："
 
-#: functions.php:460
+#: functions.php:461
 msgid "<p>You can click here to reply the comment: "
 msgstr "<p>您可以点击链接回复评论："
 
-#: functions.php:461
-msgid "<p>You can see all comments on this post here: "
-msgstr "<p>您可以点击链接查看这篇文章的所有评论："
-
 #: functions.php:462
 msgid ""
-"<p>The email address for notification only, does not receive a reply, so "
-"please do not reply to this email.</p>"
+"<hr /><p>The email address for notification only, does not receive a reply, "
+"so please do not reply to this email.</p>"
 msgstr ""
-"<p>这个邮件地址仅作通知用，不能接收回信，请不要直接回复这个邮件地址。</p>"
+"<hr /><p>这个邮件地址仅作通知用，不能接收回信，请不要直接回复这个邮件地址。</"
+"p>"
 
 #: header.php:25
 msgid "Skip to Content"
@@ -283,67 +280,71 @@ msgstr "开启代码高亮"
 msgid "Enable Comment Captcha"
 msgstr "开启评论验证码"
 
-#: inc/customizer.php:257
+#: inc/customizer.php:256
 msgid "Enable Comment Reply Mail Notification"
 msgstr "开启评论回复邮件提醒"
 
 #: inc/customizer.php:271
+msgid "SMTP Send Mail"
+msgstr ""
+
+#: inc/customizer.php:288
 msgid "Enable Comment Markdown"
 msgstr "开启评论 Markdown 支持"
 
-#: inc/customizer.php:274
+#: inc/customizer.php:291
 msgid "This is a test function."
 msgstr "这是一个测试功能。"
 
-#: inc/customizer.php:287
+#: inc/customizer.php:304
 msgid "Copyright Notice"
 msgstr "版权公告"
 
-#: inc/customizer.php:290
+#: inc/customizer.php:307
 msgid "Set the Copyright Notice in the site footer."
 msgstr "设置网站底部的版权公告。"
 
-#: inc/customizer.php:304
+#: inc/customizer.php:321
 msgid "AD Slots"
 msgstr "广告位"
 
-#: inc/customizer.php:317
+#: inc/customizer.php:334
 msgid "Home Page AD"
 msgstr "首页广告位"
 
-#: inc/customizer.php:320
+#: inc/customizer.php:337
 msgid "This AD slot will appear behind the first two posts per page."
 msgstr "这个广告位位于网站主页的前两篇文章后面。"
 
-#: inc/customizer.php:333
+#: inc/customizer.php:350
 msgid "Single Page AD"
 msgstr "文章页广告位"
 
-#: inc/customizer.php:336
+#: inc/customizer.php:353
 msgid "This AD slot will appear behind the post content."
 msgstr "这个广告位位于文章页内容的后面。"
 
-#: inc/customizer.php:342
+#: inc/customizer.php:359
 msgid "SEO Options"
 msgstr "SEO 选项"
 
-#: inc/customizer.php:355
+#: inc/customizer.php:372
 msgid "Meta Description"
 msgstr "Meta Description"
 
-#: inc/customizer.php:370
+#: inc/customizer.php:387
 msgid "Meta Keywords"
 msgstr "Meta Keywords"
 
-#: inc/customizer.php:373
+#: inc/customizer.php:390
 msgid "Use commas(,) to separate."
 msgstr "使用英文逗号（,）分隔"
 
-#: inc/customizer.php:379
+#: inc/customizer.php:396
 msgid "Buy Me a Cup of Coffee"
 msgstr "请我喝杯咖啡"
 
-#: inc/customizer.php:381
+#: inc/customizer.php:398
 msgid ""
 "<p>Thanks for stopping by!</P><p>If you like what I do and are so inclined, "
 "you can help keep this theme (and me!) going by making a contribution to <a "
@@ -363,23 +364,23 @@ msgstr ""
 "com/donate/donate-paypal.png\"></a></p><p>非常感谢！</p><p>@ <a href="
 "\"https://iiiryan.com\">Ryan</a></P>"
 
-#: inc/customizer.php:432
+#: inc/customizer.php:450
 msgid "Quote Options"
 msgstr "引语选项"
 
-#: inc/customizer.php:439
+#: inc/customizer.php:457
 msgid "Quote Author:"
 msgstr "引语作者："
 
-#: inc/customizer.php:441
+#: inc/customizer.php:459
 msgid "Please enter the author name."
 msgstr "请输入作者名字。"
 
-#: inc/customizer.php:445
+#: inc/customizer.php:463
 msgid "Author Avatar:"
 msgstr "作者头像："
 
-#: inc/customizer.php:447
+#: inc/customizer.php:465
 msgid "Please enter a image URL for author avatar."
 msgstr "请输入作者头像的图片链接。"
 
@@ -587,6 +588,9 @@ msgstr "我们可能无法找到您需要的内容。或许搜索功能可以帮
 #: template-parts/post/content.php:71
 msgid "Tags"
 msgstr "标签"
+
+#~ msgid "<p>You can see all comments on this post here: "
+#~ msgstr "<p>您可以点击链接查看这篇文章的所有评论："
 
 #~ msgid "Page"
 #~ msgstr "第 "
