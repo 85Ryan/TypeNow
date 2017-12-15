@@ -263,6 +263,7 @@ function typenow_customize_register( $wp_customize ) {
     $wp_customize->add_setting('typenow_send_mail', array(
         'capability' => 'edit_theme_options',
         'default' => typenow_get_theme_default( 'typenow_send_mail' ),
+        'transport' => 'postMessage',
     ));
 
     $wp_customize->add_control('typenow_send_mail', array(
