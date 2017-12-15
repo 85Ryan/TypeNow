@@ -440,6 +440,38 @@ function typenow_title_format() {
 add_filter('private_title_format', 'typenow_title_format');
 add_filter('protected_title_format', 'typenow_title_format');
 
+/**
+ * Post Comment Reply Mail Notification.
+ **/
+function typenow_comment_mail_notify($comment_id) {
+    $admin_email 	= get_bloginfo ('admin_email');
+    $comment		= get_comment($comment_id);
+    $post			= get_post( $comment->comment_post_ID );
+    $parent_id		= $comment->comment_parent ? $comment->comment_parent : '';
+    $spam_confirmed	= $comment->comment_approved;
+    $blogname		= wp_specialchars_decode(get_option('blogname'), ENT_QUOTES);
+    if (($parent_id != '') && ($spam_confirmed != 'spam') && ($to != $admin_email)  && get_theme_mod('typenow_comment_email') == true ) {
+        $wp_email = 'no-reply@' . preg_replace('#^www\.#', '', strtolower($_SERVER['SERVER_NAME']));
+        $to = trim(get_comment($parent_id)->comment_author_email);
+        $subject = sprintf( __('[%1$s] New Reply in "%2$s"', 'typenow'), $blogname, $post->post_title );
+        $notify_message .= sprintf( __('<p>Hi, %s', 'typenow'), trim(get_comment($parent_id)->comment_author) ) . '</p>';
+        $notify_message .= sprintf( __('<p>Your comment in "%s": ', 'typenow'), $post->post_title ) . '</p><blockquote style="padding-left:15px;border-left:4px solid #ddd;"><p>' . get_comment($parent_id)->comment_content . '</p></blockquote>';
+        $notify_message .= sprintf( __('<p>%s reply: ', 'typenow'), $comment->comment_author ) . '</p><blockquote style="padding-left:15px;border-left:4px solid #ddd;"><p>' . $comment->comment_content . '</p></blockquote>';
+        $notify_message .= __('<p>You can click here to reply the comment: ', 'typenow') .'</p><p>' . get_permalink($comment->comment_post_ID) . "#comment-$comment_id</p>";
+        $notify_message .= __('<p>You can see all comments on this post here: ', 'typenow') . '</p><p>' . get_permalink($comment->comment_post_ID) . "#comments</p>";
+        $notify_message .= __('<p>The email address for notification only, does not receive a reply, so please do not reply to this email.</p>', 'typenow');
+        
+        $from = "From: \"$blogname-reply\" <$wp_email>";
+        $message_headers = "$from\n"
+			. "Content-Type: text/html; charset=\"" . get_option('blog_charset') . "\"\n";
+        $notify_message = apply_filters('comment_notification_text', $notify_message, $comment_id);
+        $subject = apply_filters('comment_notification_subject', $subject, $comment_id);
+        $message_headers = apply_filters('comment_notification_headers', $message_headers, $comment_id);
+        @wp_mail( $to, $subject, $notify_message, $message_headers );
+    }
+}
+add_action('comment_post', 'typenow_comment_mail_notify');
+
 /** 
  * Include template file.
  **/

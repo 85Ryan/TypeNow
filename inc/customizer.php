@@ -244,6 +244,21 @@ function typenow_customize_register( $wp_customize ) {
         'type'          => 'checkbox',
         'priority'      => 60,
     ));
+    
+    // Comment reply mail notification.
+    $wp_customize->add_setting('typenow_comment_email', array(
+        'capability' => 'edit_theme_options',
+        'default' => typenow_get_theme_default( 'typenow_comment_email' ),
+        'transport' => 'postMessage',
+    ));
+
+    $wp_customize->add_control('typenow_comment_email', array(
+        'settings'      => 'typenow_comment_email',
+        'label'         => __('Enable Comment Reply Mail Notification', 'typenow'),
+        'section'       => 'typenow_theme_options',
+        'type'          => 'checkbox',
+        'priority'      => 60,
+    ));
 
     // Enable Markdown.
     $wp_customize->add_setting('typenow_comment_markdown', array(
@@ -284,43 +299,6 @@ function typenow_customize_register( $wp_customize ) {
         },
 	) );
 
-    // SEO Options.
-    $wp_customize->add_section('typenow_seo_option', array(
-        'title'         => __('SEO Options', 'typenow'),
-        'priority'      => 116,
-    ));
-
-    // Meta Description.
-    $wp_customize->add_setting('typenow_meta_description', array(
-        'capability' => 'edit_theme_options',
-        'default' => typenow_get_theme_default( 'typenow_meta_description' ),
-        'transport' => 'postMessage',
-    ));
-
-    $wp_customize->add_control('typenow_meta_description', array(
-        'settings'      => 'typenow_meta_description',
-        'label'         => __('Meta Description', 'typenow'),
-        'section'       => 'typenow_seo_option',
-        'type'          => 'textarea',
-        'priority'      => 10,
-    ));
-
-    // Meta Keywords.
-    $wp_customize->add_setting('typenow_meta_keywords', array(
-        'capability' => 'edit_theme_options',
-        'default' => typenow_get_theme_default( 'typenow_meta_keywords' ),
-        'transport' => 'postMessage',
-    ));
-
-    $wp_customize->add_control('typenow_meta_keywords', array(
-        'settings'      => 'typenow_meta_keywords',
-        'label'         => __('Meta Keywords', 'typenow'),
-        'section'       => 'typenow_seo_option',
-        'type'          => 'textarea',
-        'description'   =>  __('Use commas(,) to separate.', 'typenow'),
-        'priority'      => 20,
-    ));
-
     // AD Slots.
     $wp_customize->add_section('typenow_ad_slots', array(
         'title'         => __('AD Slots', 'typenow'),
@@ -356,6 +334,43 @@ function typenow_customize_register( $wp_customize ) {
         'section'       => 'typenow_ad_slots',
         'type'          => 'textarea',
         'description'   =>  __('This AD slot will appear behind the post content.', 'typenow'),
+        'priority'      => 20,
+    ));
+    
+    // SEO Options.
+    $wp_customize->add_section('typenow_seo_option', array(
+        'title'         => __('SEO Options', 'typenow'),
+        'priority'      => 112,
+    ));
+
+    // Meta Description.
+    $wp_customize->add_setting('typenow_meta_description', array(
+        'capability' => 'edit_theme_options',
+        'default' => typenow_get_theme_default( 'typenow_meta_description' ),
+        'transport' => 'postMessage',
+    ));
+
+    $wp_customize->add_control('typenow_meta_description', array(
+        'settings'      => 'typenow_meta_description',
+        'label'         => __('Meta Description', 'typenow'),
+        'section'       => 'typenow_seo_option',
+        'type'          => 'textarea',
+        'priority'      => 10,
+    ));
+
+    // Meta Keywords.
+    $wp_customize->add_setting('typenow_meta_keywords', array(
+        'capability' => 'edit_theme_options',
+        'default' => typenow_get_theme_default( 'typenow_meta_keywords' ),
+        'transport' => 'postMessage',
+    ));
+
+    $wp_customize->add_control('typenow_meta_keywords', array(
+        'settings'      => 'typenow_meta_keywords',
+        'label'         => __('Meta Keywords', 'typenow'),
+        'section'       => 'typenow_seo_option',
+        'type'          => 'textarea',
+        'description'   =>  __('Use commas(,) to separate.', 'typenow'),
         'priority'      => 20,
     ));
 
@@ -395,6 +410,7 @@ function typenow_get_theme_default( $setting ) {
         'typenow_post_dir'              =>  false,
         'typenow_high_light'            =>  false,
         'typenow_comment_captcha'       =>  false,
+        'typenow_comment_email'         =>  false,
         'typenow_comment_markdown'      =>  false,
         'typenow_copy_notice'           =>  '',
         'typenow_home_ad'               =>  '',
