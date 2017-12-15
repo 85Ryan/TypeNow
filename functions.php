@@ -451,7 +451,8 @@ function typenow_comment_mail_notify($comment_id) {
     $spam_confirmed	= $comment->comment_approved;
     $blogname		= wp_specialchars_decode(get_option('blogname'), ENT_QUOTES);
     if (($parent_id != '') && ($spam_confirmed != 'spam') && ($to != $admin_email)  && get_theme_mod('typenow_comment_email') == true ) {
-        $wp_email = 'no-reply@' . preg_replace('#^www\.#', '', strtolower($_SERVER['SERVER_NAME']));
+        //$wp_email = 'no-reply@' . preg_replace('#^www\.#', '', strtolower($_SERVER['SERVER_NAME']));
+        $wp_email = get_theme_mod('typenow_send_mail', typenow_get_theme_default( 'typenow_send_mail' ));
         $to = trim(get_comment($parent_id)->comment_author_email);
         $subject = sprintf( __('[%1$s] New Reply in "%2$s"', 'typenow'), $blogname, $post->post_title );
         $notify_message .= sprintf( __('<p>Hi, %s', 'typenow'), trim(get_comment($parent_id)->comment_author) ) . '</p>';
@@ -461,7 +462,7 @@ function typenow_comment_mail_notify($comment_id) {
         $notify_message .= __('<p>You can see all comments on this post here: ', 'typenow') . '</p><p>' . get_permalink($comment->comment_post_ID) . "#comments</p>";
         $notify_message .= __('<p>The email address for notification only, does not receive a reply, so please do not reply to this email.</p>', 'typenow');
         
-        $from = "From: \"$blogname-reply\" <$wp_email>";
+        $from = "From: \"$blogname-Reply\" <$wp_email>";
         $message_headers = "$from\n"
 			. "Content-Type: text/html; charset=\"" . get_option('blog_charset') . "\"\n";
         $notify_message = apply_filters('comment_notification_text', $notify_message, $comment_id);

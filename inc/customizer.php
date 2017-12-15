@@ -242,14 +242,13 @@ function typenow_customize_register( $wp_customize ) {
         'label'         => __('Enable Comment Captcha', 'typenow'),
         'section'       => 'typenow_theme_options',
         'type'          => 'checkbox',
-        'priority'      => 60,
+        'priority'      => 55,
     ));
     
     // Comment reply mail notification.
     $wp_customize->add_setting('typenow_comment_email', array(
         'capability' => 'edit_theme_options',
         'default' => typenow_get_theme_default( 'typenow_comment_email' ),
-        'transport' => 'postMessage',
     ));
 
     $wp_customize->add_control('typenow_comment_email', array(
@@ -258,6 +257,23 @@ function typenow_customize_register( $wp_customize ) {
         'section'       => 'typenow_theme_options',
         'type'          => 'checkbox',
         'priority'      => 60,
+    ));
+    
+    // Send E-Mail.
+    $wp_customize->add_setting('typenow_send_mail', array(
+        'capability' => 'edit_theme_options',
+        'default' => typenow_get_theme_default( 'typenow_send_mail' ),
+    ));
+
+    $wp_customize->add_control('typenow_send_mail', array(
+        'settings'      => 'typenow_send_mail',
+        'label'         => __('SMTP Send Mail', 'typenow'),
+        'section'       => 'typenow_theme_options',
+        'type'          => 'text',
+        'active_callback' =>  function () {
+            return get_theme_mod( 'typenow_comment_email', typenow_get_theme_default( 'typenow_comment_email' ) );
+        },
+        'priority'      => 65,
     ));
 
     // Enable Markdown.
@@ -411,6 +427,7 @@ function typenow_get_theme_default( $setting ) {
         'typenow_high_light'            =>  false,
         'typenow_comment_captcha'       =>  false,
         'typenow_comment_email'         =>  false,
+        'typenow_send_mail'             =>  '',
         'typenow_comment_markdown'      =>  false,
         'typenow_copy_notice'           =>  '',
         'typenow_home_ad'               =>  '',
