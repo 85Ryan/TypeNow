@@ -450,10 +450,10 @@ function typenow_comment_mail_notify($comment_id) {
     $parent_id		= $comment->comment_parent ? $comment->comment_parent : '';
     $spam_confirmed	= $comment->comment_approved;
     $blogname		= wp_specialchars_decode(get_option('blogname'), ENT_QUOTES);
-    if (($parent_id != '') && ($spam_confirmed != 'spam') && ($to != $admin_email)  && get_theme_mod('typenow_comment_email') == true ) {
+    $to = trim(get_comment($parent_id)->comment_author_email);
+    if ($parent_id != '' && $spam_confirmed != 'spam' && $to != $admin_email  && get_theme_mod('typenow_comment_email') == true ) {
         //$wp_email = 'no-reply@' . preg_replace('#^www\.#', '', strtolower($_SERVER['SERVER_NAME']));
         $wp_email = get_theme_mod('typenow_send_mail', typenow_get_theme_default( 'typenow_send_mail' ));
-        $to = trim(get_comment($parent_id)->comment_author_email);
         $subject = sprintf( __('[%1$s] New Reply in "%2$s"', 'typenow'), $blogname, $post->post_title );
         $notify_message .= sprintf( __('<p>Hi, %s', 'typenow'), trim(get_comment($parent_id)->comment_author) ) . '</p>';
         $notify_message .= sprintf( __('<p>Your comment in "%s": ', 'typenow'), $post->post_title ) . '</p><blockquote style="padding-left:15px;border-left:4px solid #ddd;"><p>' . get_comment($parent_id)->comment_content . '</p></blockquote>';
