@@ -390,6 +390,21 @@ function typenow_customize_register( $wp_customize ) {
         'description'   =>  __('Use commas(,) to separate.', 'typenow'),
         'priority'      => 20,
     ));
+    
+    // Google Analytics.
+    $wp_customize->add_setting('typenow_google_analytics', array(
+        'capability' => 'edit_theme_options',
+        'transport' => 'postMessage',
+        'default' => typenow_get_theme_default( 'typenow_google_analytics' ),
+    ));
+
+    $wp_customize->add_control('typenow_copy_notice', array(
+        'settings'      => 'typenow_google_analytics',
+        'label'         => __('Google Analytics', 'typenow'),
+        'section'       => 'typenow_seo_option',
+        'type'          => 'textarea',
+        'priority'      => 30,
+    ));
 
     // Donate.
     $wp_customize->add_section('typenow_donate', array(
@@ -435,6 +450,7 @@ function typenow_get_theme_default( $setting ) {
         'typenow_single_ad'             =>  '',
         'typenow_meta_description'      =>  '',
         'typenow_meta_keywords'         =>  '',
+        'typenow_google_analytics'      =>  '',
 
     );
 

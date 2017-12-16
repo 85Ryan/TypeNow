@@ -18,6 +18,9 @@
     <?php if(get_theme_mod('typenow_meta_keywords') && is_home()) : ?>
         <meta name="keywords" content="<?php echo get_theme_mod('typenow_meta_keywords', typenow_get_theme_default( 'typenow_comment_email' )); ?>">
     <?php endif; ?>
+    <?php if(get_theme_mod('typenow_google_analytics')) : ?>
+        <?php echo get_theme_mod('typenow_google_analytics', typenow_get_theme_default( 'typenow_google_analytics' )); ?>
+    <?php endif; ?>
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
