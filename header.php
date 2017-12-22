@@ -13,10 +13,10 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="profile" href="http://gmpg.org/xfn/11">
     <?php if(get_theme_mod('typenow_meta_description') && is_home()) : ?>
-        <meta name="description" content="<?php echo get_theme_mod('typenow_meta_description', typenow_get_theme_default( 'typenow_comment_email' )); ?>">
+        <meta name="description" content="<?php echo get_theme_mod('typenow_meta_description', typenow_get_theme_default( 'typenow_meta_description' )); ?>">
     <?php endif; ?>
     <?php if(get_theme_mod('typenow_meta_keywords') && is_home()) : ?>
-        <meta name="keywords" content="<?php echo get_theme_mod('typenow_meta_keywords', typenow_get_theme_default( 'typenow_comment_email' )); ?>">
+        <meta name="keywords" content="<?php echo get_theme_mod('typenow_meta_keywords', typenow_get_theme_default( 'typenow_meta_keywords' )); ?>">
     <?php endif; ?>
     <?php if(get_theme_mod('typenow_google_analytics')) : ?>
         <?php echo get_theme_mod('typenow_google_analytics', typenow_get_theme_default( 'typenow_google_analytics' )); ?>
