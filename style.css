@@ -3581,9 +3581,9 @@ object {
 		max-width: 766px;
 	}
 
-    .site-header .wrap {
+    /* .site-header .wrap {
         max-width: 844px;
-    }
+    } */
 
     /* Navigation */
     .navigation-top nav {
