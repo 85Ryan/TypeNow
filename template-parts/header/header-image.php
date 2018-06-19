@@ -52,7 +52,6 @@
                         <a href="#content" class="menu-scroll-down"><?php echo typenow_get_svg( array( 'icon' => 'arrow-right' ) ); ?><span class="screen-reader-text"><?php _e( 'Scroll Down to Content', 'typenow' ); ?></span></a>
                     </div><!-- .scroll-icon-container -->
             <?php endif; ?>
-          </div><!-- .nav-icon-container -->
         </div><!-- .wrap -->
     </div><!-- .site-branding -->
 </div><!-- .custom-header -->
