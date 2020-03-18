@@ -15,7 +15,7 @@
     </span><!-- .site-copyright -->
     <?php if ( get_theme_mod('typenow_site_icp', typenow_get_theme_default( 'typenow_site_icp' )) != '' ) : ?>
         <span class="site-icp">
-            <a href="<?php echo esc_url( __( 'http://www.miibeian.gov.cn/', 'typenow' ) ); ?>"><?php echo get_theme_mod('typenow_site_icp', typenow_get_theme_default( 'typenow_site_icp' )); ?></a>
+            <a href="<?php echo esc_url( __( 'http://www.beian.miit.gov.cn/', 'typenow' ) ); ?>"><?php echo get_theme_mod('typenow_site_icp', typenow_get_theme_default( 'typenow_site_icp' )); ?></a>
         </span><!-- .site-icp -->
     <?php endif; ?>
 
